@@ -9,6 +9,7 @@ namespace zirsakht_stock
     {
         /// <summary>
         /// The main entry point for the application.
+        /// llllll
         /// </summary>
         [STAThread]
         static void Main()
