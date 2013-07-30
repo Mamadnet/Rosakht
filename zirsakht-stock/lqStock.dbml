@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="stock" Class="lqStockDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\stock.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="zirsakht_stock.Properties.Settings" SettingsPropertyName="stockConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblSites" Member="tblSites">
+    <Type Name="tblSite">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ostan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblSite_tblDelivered" Member="tblDelivereds" ThisKey="ID" OtherKey="SiteID" Type="tblDelivered" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTypes" Member="tblTypes">
+    <Type Name="tblType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TypeDesc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblType_tblEquipment" Member="tblEquipments" ThisKey="ID" OtherKey="Type" Type="tblEquipment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDelivered" Member="tblDelivereds">
+    <Type Name="tblDelivered">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PartNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Agent" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="ReceivedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SiteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tedad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EquipID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblSite_tblDelivered" Member="tblSite" ThisKey="SiteID" OtherKey="ID" Type="tblSite" IsForeignKey="true" />
+      <Association Name="tblEquipment_tblDelivered" Member="tblEquipment" ThisKey="EquipID" OtherKey="ID" Type="tblEquipment" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUnits" Member="tblUnits">
+    <Type Name="tblUnit">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Uint" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="tblUnit_tblEquipment" Member="tblEquipments" ThisKey="ID" OtherKey="UnitID" Type="tblEquipment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEquipments" Member="tblEquipments">
+    <Type Name="tblEquipment">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Partnumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnitID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblEquipment_tblDelivered" Member="tblDelivereds" ThisKey="ID" OtherKey="EquipID" Type="tblDelivered" />
+      <Association Name="tblEquipment_tblRecieved" Member="tblRecieveds" ThisKey="ID" OtherKey="EquipID" Type="tblRecieved" />
+      <Association Name="tblType_tblEquipment" Member="tblType" ThisKey="Type" OtherKey="ID" Type="tblType" IsForeignKey="true" />
+      <Association Name="tblUnit_tblEquipment" Member="tblUnit" ThisKey="UnitID" OtherKey="ID" Type="tblUnit" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRecieved" Member="tblRecieveds">
+    <Type Name="tblRecieved">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PartNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Source" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="Tedad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EquipID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReceivedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblEquipment_tblRecieved" Member="tblEquipment" ThisKey="EquipID" OtherKey="ID" Type="tblEquipment" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
