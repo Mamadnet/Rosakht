@@ -39,6 +39,12 @@ namespace zirsakht_stock
             frmD.ShowDialog();
         }
 
+        private void کاردکسToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmkardex m = new frmkardex();
+            m.ShowDialog();
+        }
+
        
        
     }

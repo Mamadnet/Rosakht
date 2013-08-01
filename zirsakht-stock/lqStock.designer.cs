@@ -127,6 +127,14 @@ namespace zirsakht_stock
 				return this.GetTable<tblUnit>();
 			}
 		}
+		
+		public System.Data.Linq.Table<vwKarde> vwKardes
+		{
+			get
+			{
+				return this.GetTable<vwKarde>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblSites")]
@@ -1395,6 +1403,159 @@ namespace zirsakht_stock
 		{
 			this.SendPropertyChanging();
 			entity.tblUnit = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vwKardes")]
+	public partial class vwKarde
+	{
+		
+		private int _id;
+		
+		private string _partnumber;
+		
+		private string _date;
+		
+		private System.Nullable<long> _tedad;
+		
+		private System.Nullable<int> _equipid;
+		
+		private string _dahande;
+		
+		private string _receivedby;
+		
+		private int _status;
+		
+		public vwKarde()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_partnumber", DbType="NVarChar(50)")]
+		public string partnumber
+		{
+			get
+			{
+				return this._partnumber;
+			}
+			set
+			{
+				if ((this._partnumber != value))
+				{
+					this._partnumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date", DbType="NVarChar(50)")]
+		public string date
+		{
+			get
+			{
+				return this._date;
+			}
+			set
+			{
+				if ((this._date != value))
+				{
+					this._date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tedad", DbType="BigInt")]
+		public System.Nullable<long> tedad
+		{
+			get
+			{
+				return this._tedad;
+			}
+			set
+			{
+				if ((this._tedad != value))
+				{
+					this._tedad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_equipid", DbType="Int")]
+		public System.Nullable<int> equipid
+		{
+			get
+			{
+				return this._equipid;
+			}
+			set
+			{
+				if ((this._equipid != value))
+				{
+					this._equipid = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dahande", DbType="NVarChar(50)")]
+		public string dahande
+		{
+			get
+			{
+				return this._dahande;
+			}
+			set
+			{
+				if ((this._dahande != value))
+				{
+					this._dahande = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_receivedby", DbType="NVarChar(50)")]
+		public string receivedby
+		{
+			get
+			{
+				return this._receivedby;
+			}
+			set
+			{
+				if ((this._receivedby != value))
+				{
+					this._receivedby = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Int NOT NULL")]
+		public int status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this._status = value;
+				}
+			}
 		}
 	}
 }
