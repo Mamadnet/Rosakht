@@ -39,15 +39,15 @@ namespace zirsakht_stock
     partial void InserttblDelivered(tblDelivered instance);
     partial void UpdatetblDelivered(tblDelivered instance);
     partial void DeletetblDelivered(tblDelivered instance);
-    partial void InserttblUnit(tblUnit instance);
-    partial void UpdatetblUnit(tblUnit instance);
-    partial void DeletetblUnit(tblUnit instance);
     partial void InserttblEquipment(tblEquipment instance);
     partial void UpdatetblEquipment(tblEquipment instance);
     partial void DeletetblEquipment(tblEquipment instance);
     partial void InserttblRecieved(tblRecieved instance);
     partial void UpdatetblRecieved(tblRecieved instance);
     partial void DeletetblRecieved(tblRecieved instance);
+    partial void InserttblUnit(tblUnit instance);
+    partial void UpdatetblUnit(tblUnit instance);
+    partial void DeletetblUnit(tblUnit instance);
     #endregion
 		
 		public lqStockDataContext() : 
@@ -104,14 +104,6 @@ namespace zirsakht_stock
 			}
 		}
 		
-		public System.Data.Linq.Table<tblUnit> tblUnits
-		{
-			get
-			{
-				return this.GetTable<tblUnit>();
-			}
-		}
-		
 		public System.Data.Linq.Table<tblEquipment> tblEquipments
 		{
 			get
@@ -125,6 +117,14 @@ namespace zirsakht_stock
 			get
 			{
 				return this.GetTable<tblRecieved>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblUnit> tblUnits
+		{
+			get
+			{
+				return this.GetTable<tblUnit>();
 			}
 		}
 	}
@@ -717,144 +717,6 @@ namespace zirsakht_stock
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblUnits")]
-	public partial class tblUnit : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _Uint;
-		
-		private string _Description;
-		
-		private EntitySet<tblEquipment> _tblEquipments;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnUintChanging(string value);
-    partial void OnUintChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    #endregion
-		
-		public tblUnit()
-		{
-			this._tblEquipments = new EntitySet<tblEquipment>(new Action<tblEquipment>(this.attach_tblEquipments), new Action<tblEquipment>(this.detach_tblEquipments));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Uint", DbType="NVarChar(50)")]
-		public string Uint
-		{
-			get
-			{
-				return this._Uint;
-			}
-			set
-			{
-				if ((this._Uint != value))
-				{
-					this.OnUintChanging(value);
-					this.SendPropertyChanging();
-					this._Uint = value;
-					this.SendPropertyChanged("Uint");
-					this.OnUintChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NChar(10)")]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblUnit_tblEquipment", Storage="_tblEquipments", ThisKey="ID", OtherKey="UnitID")]
-		public EntitySet<tblEquipment> tblEquipments
-		{
-			get
-			{
-				return this._tblEquipments;
-			}
-			set
-			{
-				this._tblEquipments.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_tblEquipments(tblEquipment entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblUnit = this;
-		}
-		
-		private void detach_tblEquipments(tblEquipment entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblUnit = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblEquipments")]
 	public partial class tblEquipment : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1395,6 +1257,144 @@ namespace zirsakht_stock
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblUnits")]
+	public partial class tblUnit : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _Unit;
+		
+		private string _Description;
+		
+		private EntitySet<tblEquipment> _tblEquipments;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnUnitChanging(string value);
+    partial void OnUnitChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    #endregion
+		
+		public tblUnit()
+		{
+			this._tblEquipments = new EntitySet<tblEquipment>(new Action<tblEquipment>(this.attach_tblEquipments), new Action<tblEquipment>(this.detach_tblEquipments));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Unit", DbType="NVarChar(50)")]
+		public string Unit
+		{
+			get
+			{
+				return this._Unit;
+			}
+			set
+			{
+				if ((this._Unit != value))
+				{
+					this.OnUnitChanging(value);
+					this.SendPropertyChanging();
+					this._Unit = value;
+					this.SendPropertyChanged("Unit");
+					this.OnUnitChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NChar(10)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblUnit_tblEquipment", Storage="_tblEquipments", ThisKey="ID", OtherKey="UnitID")]
+		public EntitySet<tblEquipment> tblEquipments
+		{
+			get
+			{
+				return this._tblEquipments;
+			}
+			set
+			{
+				this._tblEquipments.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tblEquipments(tblEquipment entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblUnit = this;
+		}
+		
+		private void detach_tblEquipments(tblEquipment entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblUnit = null;
 		}
 	}
 }
