@@ -52,6 +52,8 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="PersianDate, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\PersianDate.dll</HintPath>
@@ -63,6 +65,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -97,6 +100,12 @@
     <Compile Include="frmkardex.Designer.cs">
       <DependentUpon>frmkardex.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmKardexviewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKardexviewer.Designer.cs">
+      <DependentUpon>frmKardexviewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="lqStock.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,6 +128,10 @@
     <EmbeddedResource Include="frmkardex.resx">
       <DependentUpon>frmkardex.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmKardexviewer.resx">
+      <DependentUpon>frmKardexviewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="template.resx">
       <DependentUpon>template.cs</DependentUpon>
     </EmbeddedResource>

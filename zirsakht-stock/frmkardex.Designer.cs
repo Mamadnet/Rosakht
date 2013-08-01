@@ -41,6 +41,7 @@
             this.cmbTypes = new System.Windows.Forms.ComboBox();
             this.cmbEquipments = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -61,6 +62,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.btnPrint);
             this.splitContainer1.Panel2.Controls.Add(this.cmbTypes);
             this.splitContainer1.Panel2.Controls.Add(this.cmbEquipments);
             this.splitContainer1.Panel2.Controls.Add(this.btnAdd);
@@ -184,8 +186,19 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(87, 28);
             this.btnAdd.TabIndex = 1001;
-            this.btnAdd.Text = "ثبت";
+            this.btnAdd.Text = "جستجو";
             this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(130, 383);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(87, 28);
+            this.btnPrint.TabIndex = 1002;
+            this.btnPrint.Text = "گزارش";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // frmkardex
             // 
@@ -217,5 +230,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dahande;
         private System.Windows.Forms.DataGridViewTextBoxColumn receivedby;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.Button btnPrint;
     }
 }

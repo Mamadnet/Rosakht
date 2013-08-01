@@ -65,6 +65,16 @@ namespace zirsakht_stock
             dataGridView1.DataSource = sql;
         }
 
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            var sql = (from s in lq.vwKardes
+                       where s.equipid == Convert.ToInt32(cmbEquipments.SelectedValue)
+                       select s);
+            frmKardexviewer m = new frmKardexviewer(sql);
+            m.ShowDialog();
+                
+        }
+
        
     }
 }
