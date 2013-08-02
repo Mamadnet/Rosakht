@@ -106,6 +106,12 @@
     <Compile Include="frmKardexviewer.Designer.cs">
       <DependentUpon>frmKardexviewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="lqStock.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -131,6 +137,9 @@
     <EmbeddedResource Include="frmKardexviewer.resx">
       <DependentUpon>frmKardexviewer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="template.resx">
       <DependentUpon>template.cs</DependentUpon>
@@ -150,6 +159,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="lqStock.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
@@ -168,6 +178,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\es_shift6250_img1.jpg" />
     <Content Include="stock.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
