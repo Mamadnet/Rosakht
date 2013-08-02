@@ -167,8 +167,10 @@ namespace zirsakht_stock
             if (textBoxPassword.Text == "123456")
             {
                 Form1 m = new Form1();
-                m.Show();
-                this.Hide();
+                this.Visible = false;
+
+                m.ShowDialog();
+                this.Close();
 
             }
 

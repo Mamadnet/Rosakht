@@ -30,10 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.rvKardex = new Microsoft.Reporting.WinForms.ReportViewer();
             this.lqStockDataContextBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rvKardex = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.lqStockDataContextBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lqStockDataContextBindingSource
+            // 
+            this.lqStockDataContextBindingSource.DataSource = typeof(zirsakht_stock.lqStockDataContext);
             // 
             // rvKardex
             // 
@@ -47,16 +51,14 @@
             this.rvKardex.Size = new System.Drawing.Size(892, 373);
             this.rvKardex.TabIndex = 0;
             // 
-            // lqStockDataContextBindingSource
-            // 
-            this.lqStockDataContextBindingSource.DataSource = typeof(zirsakht_stock.lqStockDataContext);
-            // 
             // frmKardexviewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.ClientSize = new System.Drawing.Size(892, 373);
             this.Controls.Add(this.rvKardex);
             this.Name = "frmKardexviewer";
+            this.Text = "کاردکس";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmKardexviewer_FormClosing);
             this.Load += new System.EventHandler(this.frmKardexviewer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lqStockDataContextBindingSource)).EndInit();
             this.ResumeLayout(false);

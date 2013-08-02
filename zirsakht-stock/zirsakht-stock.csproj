@@ -180,6 +180,7 @@
   <ItemGroup>
     <None Include="Resources\images.jpg" />
     <None Include="Resources\es_shift6250_img1.jpg" />
+    <None Include="Resources\Optical-Fiber.jpg" />
     <Content Include="stock.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

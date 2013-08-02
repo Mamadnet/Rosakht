@@ -38,10 +38,10 @@
             this.dahande = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.receivedby = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.cmbTypes = new System.Windows.Forms.ComboBox();
             this.cmbEquipments = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -92,9 +92,10 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1.Size = new System.Drawing.Size(878, 441);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
             // ID
             // 
@@ -155,7 +156,17 @@
             this.status.HeaderText = "وضعیت";
             this.status.Name = "status";
             this.status.ReadOnly = true;
-            this.status.Visible = false;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(130, 383);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(87, 28);
+            this.btnPrint.TabIndex = 1002;
+            this.btnPrint.Text = "گزارش";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // cmbTypes
             // 
@@ -189,23 +200,13 @@
             this.btnAdd.Text = "جستجو";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
-            // btnPrint
-            // 
-            this.btnPrint.Location = new System.Drawing.Point(130, 383);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(87, 28);
-            this.btnPrint.TabIndex = 1002;
-            this.btnPrint.Text = "گزارش";
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
             // frmkardex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.ClientSize = new System.Drawing.Size(1187, 441);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmkardex";
+            this.Load += new System.EventHandler(this.frmkardex_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -222,6 +223,7 @@
         private System.Windows.Forms.ComboBox cmbTypes;
         private System.Windows.Forms.ComboBox cmbEquipments;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn PartNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
@@ -230,6 +232,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dahande;
         private System.Windows.Forms.DataGridViewTextBoxColumn receivedby;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
-        private System.Windows.Forms.Button btnPrint;
     }
 }

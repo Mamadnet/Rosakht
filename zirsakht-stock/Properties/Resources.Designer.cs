@@ -73,5 +73,12 @@ namespace zirsakht_stock.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        internal static System.Drawing.Bitmap Optical_Fiber {
+            get {
+                object obj = ResourceManager.GetObject("Optical-Fiber", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -14,12 +14,12 @@ namespace zirsakht_stock
     public partial class frmkardex : zirsakht_stock.template
     {
         lqStockDataContext lq = new lqStockDataContext();
-
+        object sql;
         public frmkardex()
         {
             InitializeComponent();
-
-            var sql = (from s in lq.vwKardes 
+            var
+            sql = (from s in lq.vwKardes 
                              select s);
 
             dataGridView1.AutoGenerateColumns = false;
@@ -30,8 +30,16 @@ namespace zirsakht_stock
                              select s).ToList();
             cmbTypes.DisplayMember = "TypeDesc";
             cmbTypes.ValueMember = "ID";
-            cmbTypes.DataSource = typequery.ToArray(); 
-           
+            cmbTypes.DataSource = typequery.ToArray();
+
+            tblType a = new tblType();
+            a.TypeDesc = "سایر";
+            a.ID = -1;
+            typequery.Add(a);
+            cmbTypes.DisplayMember = "TypeDesc";
+            cmbTypes.ValueMember = "ID";
+            cmbTypes.DataSource = typequery.ToArray();
+
         }
 
         private void cmbTypes_SelectedIndexChanged(object sender, EventArgs e)
@@ -42,23 +50,37 @@ namespace zirsakht_stock
 
         private void _cmbequipments()
         {
-            var query = (from s in lq.tblEquipments
-                         where s.tblType.ID == Convert.ToInt32(cmbTypes.SelectedValue)
-                         select s).ToList();
+            if (Convert.ToInt32(cmbTypes.SelectedValue) == -1)
+            {
+                sql = (from s in lq.vwKardes
+                          orderby s.id
+                             select s);
 
-            tblEquipment a = new tblEquipment();
-            a.Partnumber = "سایر";
-            a.ID = -1;
-            query.Add(a);
-            cmbEquipments.DisplayMember = "Partnumber";
-            cmbEquipments.ValueMember = "ID";
-            cmbEquipments.DataSource = query.ToArray();
+                dataGridView1.DataSource = sql;
+                cmbEquipments.Enabled = false;
+            
+            }
+            else
+            {
+                cmbEquipments.Enabled = true;
+                var query = (from s in lq.tblEquipments
+                             where s.tblType.ID == Convert.ToInt32(cmbTypes.SelectedValue)
+                             select s).ToList();
+
+                tblEquipment a = new tblEquipment();
+                a.Partnumber = "سایر";
+                a.ID = -1;
+                query.Add(a);
+                cmbEquipments.DisplayMember = "Partnumber";
+                cmbEquipments.ValueMember = "ID";
+                cmbEquipments.DataSource = query.ToArray();
+            }
 
         }
 
         private void cmbEquipments_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var sql = (from s in lq.vwKardes
+            sql = (from s in lq.vwKardes
                        where s.equipid==Convert.ToInt32( cmbEquipments.SelectedValue)
                        select s);
 
@@ -67,12 +89,38 @@ namespace zirsakht_stock
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            var sql = (from s in lq.vwKardes
-                       where s.equipid == Convert.ToInt32(cmbEquipments.SelectedValue)
-                       select s);
-            frmKardexviewer m = new frmKardexviewer(sql);
+           frmKardexviewer m = new frmKardexviewer(sql);
             m.ShowDialog();
                 
+        }
+
+        private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            if ((e.RowIndex) < (this.dataGridView1.Rows.Count ))
+            {
+
+                DataGridViewRow gvr = this.dataGridView1.Rows[e.RowIndex];
+
+                if (Convert.ToInt32(gvr.Cells["status"].Value.ToString()) == 1)
+                {
+
+                    gvr.DefaultCellStyle.BackColor = Color.Green;
+
+                }
+
+                else if (Convert.ToInt32(gvr.Cells["status"].Value.ToString()) ==-1)
+                {
+
+                    gvr.DefaultCellStyle.BackColor = Color.Red;
+
+                }
+
+            }
+        }
+
+        private void frmkardex_Load(object sender, EventArgs e)
+        {
+
         }
 
        
