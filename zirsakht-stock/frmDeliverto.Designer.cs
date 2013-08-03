@@ -30,6 +30,15 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.PartNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tedad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Agent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReceivedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDelete = new System.Windows.Forms.Button();
             this.cmbTypes = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,15 +53,6 @@
             this.txtPerson = new System.Windows.Forms.TextBox();
             this.txtPartNum = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.PartNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tedad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Agent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReceivedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -118,6 +118,75 @@
             this.dataGridView1.Size = new System.Drawing.Size(872, 436);
             this.dataGridView1.TabIndex = 0;
             // 
+            // PartNumber
+            // 
+            this.PartNumber.DataPropertyName = "PartNumber";
+            this.PartNumber.HeaderText = "part number";
+            this.PartNumber.Name = "PartNumber";
+            this.PartNumber.ReadOnly = true;
+            this.PartNumber.Width = 120;
+            // 
+            // Tedad
+            // 
+            this.Tedad.DataPropertyName = "Tedad";
+            this.Tedad.HeaderText = "تعداد";
+            this.Tedad.Name = "Tedad";
+            this.Tedad.ReadOnly = true;
+            // 
+            // unit
+            // 
+            this.unit.DataPropertyName = "unit";
+            this.unit.HeaderText = "واحد";
+            this.unit.Name = "unit";
+            this.unit.ReadOnly = true;
+            this.unit.Width = 50;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "سایت";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // Agent
+            // 
+            this.Agent.DataPropertyName = "agent";
+            this.Agent.HeaderText = "تحویل دهنده";
+            this.Agent.Name = "Agent";
+            this.Agent.ReadOnly = true;
+            this.Agent.Width = 130;
+            // 
+            // ReceivedBy
+            // 
+            this.ReceivedBy.DataPropertyName = "ReceivedBy";
+            this.ReceivedBy.HeaderText = "تحویل گیرنده";
+            this.ReceivedBy.Name = "ReceivedBy";
+            this.ReceivedBy.ReadOnly = true;
+            this.ReceivedBy.Width = 130;
+            // 
+            // date
+            // 
+            this.date.DataPropertyName = "date";
+            this.date.HeaderText = "تاریخ";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            // 
+            // description
+            // 
+            this.description.DataPropertyName = "description";
+            this.description.HeaderText = "شرح";
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            this.description.Width = 150;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(140, 383);
@@ -131,6 +200,7 @@
             // 
             // cmbTypes
             // 
+            this.cmbTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTypes.FormattingEnabled = true;
             this.cmbTypes.Location = new System.Drawing.Point(26, 22);
             this.cmbTypes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -207,6 +277,7 @@
             // 
             // cmbEquipments
             // 
+            this.cmbEquipments.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEquipments.FormattingEnabled = true;
             this.cmbEquipments.Location = new System.Drawing.Point(26, 54);
             this.cmbEquipments.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -250,75 +321,6 @@
             this.btnAdd.Text = "ثبت";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // PartNumber
-            // 
-            this.PartNumber.DataPropertyName = "PartNumber";
-            this.PartNumber.HeaderText = "part number";
-            this.PartNumber.Name = "PartNumber";
-            this.PartNumber.ReadOnly = true;
-            this.PartNumber.Width = 120;
-            // 
-            // Tedad
-            // 
-            this.Tedad.DataPropertyName = "Tedad";
-            this.Tedad.HeaderText = "تعداد";
-            this.Tedad.Name = "Tedad";
-            this.Tedad.ReadOnly = true;
-            // 
-            // unit
-            // 
-            this.unit.DataPropertyName = "unit";
-            this.unit.HeaderText = "واحد";
-            this.unit.Name = "unit";
-            this.unit.ReadOnly = true;
-            this.unit.Width = 50;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "سایت";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // Agent
-            // 
-            this.Agent.DataPropertyName = "agent";
-            this.Agent.HeaderText = "تحویل دهنده";
-            this.Agent.Name = "Agent";
-            this.Agent.ReadOnly = true;
-            this.Agent.Width = 130;
-            // 
-            // ReceivedBy
-            // 
-            this.ReceivedBy.DataPropertyName = "ReceivedBy";
-            this.ReceivedBy.HeaderText = "تحویل گیرنده";
-            this.ReceivedBy.Name = "ReceivedBy";
-            this.ReceivedBy.ReadOnly = true;
-            this.ReceivedBy.Width = 130;
-            // 
-            // date
-            // 
-            this.date.DataPropertyName = "date";
-            this.date.HeaderText = "تاریخ";
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            // 
-            // description
-            // 
-            this.description.DataPropertyName = "description";
-            this.description.HeaderText = "شرح";
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
-            this.description.Width = 150;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
             // 
             // frmDeliverto
             // 

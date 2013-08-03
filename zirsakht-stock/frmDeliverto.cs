@@ -123,7 +123,7 @@ namespace zirsakht_stock
         {
 
             var sql = (from s in lq.tblDelivereds
-                       select new {unit=s.tblEquipment.tblUnit.Uint, ID=s.ID,equipid=s.EquipID,siteid=s.SiteID,partnumber = s.PartNumber, tedad = s.Tedad, agent = s.Agent, date = s.Date, receivedby = s.ReceivedBy, description = s.Description, name = s.tblSite.Name });
+                       select new {unit=s.tblEquipment.tblUnit.Unit, ID=s.ID,equipid=s.EquipID,siteid=s.SiteID,partnumber = s.PartNumber, tedad = s.Tedad, agent = s.Agent, date = s.Date, receivedby = s.ReceivedBy, description = s.Description, name = s.tblSite.Name });
             dataGridView1.DataSource = sql;
         }
 

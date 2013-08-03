@@ -33,6 +33,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtTedad = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.PartNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tedad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.source = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,13 +49,7 @@
             this.txtPartNum = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.PartNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tedad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.source = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbUints = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -69,6 +70,7 @@
             // 
             // cmbTypes
             // 
+            this.cmbTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTypes.FormattingEnabled = true;
             this.cmbTypes.Location = new System.Drawing.Point(26, 22);
             this.cmbTypes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -122,6 +124,59 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             // 
+            // PartNumber
+            // 
+            this.PartNumber.DataPropertyName = "PartNumber";
+            this.PartNumber.HeaderText = "part number";
+            this.PartNumber.Name = "PartNumber";
+            this.PartNumber.ReadOnly = true;
+            this.PartNumber.Width = 180;
+            // 
+            // Tedad
+            // 
+            this.Tedad.DataPropertyName = "Tedad";
+            this.Tedad.HeaderText = "تعداد";
+            this.Tedad.Name = "Tedad";
+            this.Tedad.ReadOnly = true;
+            // 
+            // unit
+            // 
+            this.unit.DataPropertyName = "unit";
+            this.unit.HeaderText = "واحد";
+            this.unit.Name = "unit";
+            this.unit.ReadOnly = true;
+            // 
+            // source
+            // 
+            this.source.DataPropertyName = "source";
+            this.source.HeaderText = "فرستنده";
+            this.source.Name = "source";
+            this.source.ReadOnly = true;
+            this.source.Width = 130;
+            // 
+            // date
+            // 
+            this.date.DataPropertyName = "date";
+            this.date.HeaderText = "تاریخ";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            // 
+            // description
+            // 
+            this.description.DataPropertyName = "description";
+            this.description.HeaderText = "شرح";
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            this.description.Width = 220;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
             // txtDesc
             // 
             this.txtDesc.Location = new System.Drawing.Point(26, 293);
@@ -152,6 +207,7 @@
             // 
             // cmbEquipments
             // 
+            this.cmbEquipments.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEquipments.FormattingEnabled = true;
             this.cmbEquipments.Location = new System.Drawing.Point(26, 54);
             this.cmbEquipments.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -209,6 +265,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.cmbUints);
             this.splitContainer1.Panel2.Controls.Add(this.btnDelete);
             this.splitContainer1.Panel2.Controls.Add(this.cmbTypes);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
@@ -226,58 +283,15 @@
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 2;
             // 
-            // PartNumber
+            // cmbUints
             // 
-            this.PartNumber.DataPropertyName = "PartNumber";
-            this.PartNumber.HeaderText = "part number";
-            this.PartNumber.Name = "PartNumber";
-            this.PartNumber.ReadOnly = true;
-            this.PartNumber.Width = 180;
-            // 
-            // Tedad
-            // 
-            this.Tedad.DataPropertyName = "Tedad";
-            this.Tedad.HeaderText = "تعداد";
-            this.Tedad.Name = "Tedad";
-            this.Tedad.ReadOnly = true;
-            // 
-            // unit
-            // 
-            this.unit.DataPropertyName = "unit";
-            this.unit.HeaderText = "واحد";
-            this.unit.Name = "unit";
-            this.unit.ReadOnly = true;
-            // 
-            // source
-            // 
-            this.source.DataPropertyName = "source";
-            this.source.HeaderText = "فرستنده";
-            this.source.Name = "source";
-            this.source.ReadOnly = true;
-            this.source.Width = 130;
-            // 
-            // date
-            // 
-            this.date.DataPropertyName = "date";
-            this.date.HeaderText = "تاریخ";
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            // 
-            // description
-            // 
-            this.description.DataPropertyName = "description";
-            this.description.HeaderText = "شرح";
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
-            this.description.Width = 220;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
+            this.cmbUints.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbUints.FormattingEnabled = true;
+            this.cmbUints.Location = new System.Drawing.Point(26, 128);
+            this.cmbUints.Name = "cmbUints";
+            this.cmbUints.Size = new System.Drawing.Size(161, 24);
+            this.cmbUints.TabIndex = 1002;
+            this.cmbUints.Visible = false;
             // 
             // frmImported
             // 
@@ -322,5 +336,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.ComboBox cmbUints;
     }
 }

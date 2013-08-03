@@ -27,13 +27,20 @@ namespace zirsakht_stock
             cmbTypes.DataSource = typequery.ToArray();
 
 
+            var unitquery = (from s in lq.tblUnits
+                             select s);
+            cmbUints.DisplayMember = "Unit";
+            cmbUints.ValueMember = "ID";
+            cmbUints.DataSource = unitquery;
+
+
             _cmbequipments();
         }
         private void _Fillgrid()
         {
 
             var sql = (from s in lq.tblRecieveds
-                       select new { unit = s.tblEquipment.tblUnit.Uint, ID = s.ID, equipid = s.EquipID, partnumber = s.PartNumber, tedad = s.Tedad, date = s.Date, receivedby = s.ReceivedBy, description = s.Description });
+                       select new { unit = s.tblEquipment.tblUnit.Unit, ID = s.ID, equipid = s.EquipID, partnumber = s.PartNumber, tedad = s.Tedad, date = s.Date, receivedby = s.ReceivedBy, description = s.Description });
             dataGridView1.DataSource = sql;
         }
 
@@ -55,6 +62,20 @@ namespace zirsakht_stock
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+
+            if (Convert.ToInt32(cmbEquipments.SelectedValue) == -1)
+            {
+                tblEquipment eq = new tblEquipment();
+                eq.Partnumber = txtPartNum.Text;
+                eq.Type = Convert.ToInt32(cmbTypes.SelectedValue);
+                eq.UnitID = Convert.ToInt32(cmbUints.SelectedValue);
+                lq.tblEquipments.InsertOnSubmit(eq);
+                lq.SubmitChanges();
+
+            }
+            var eqid = (from c in lq.tblEquipments
+                        select c).OrderByDescending(x => x.ID).First();
+                  
            
             tblRecieved a = new tblRecieved();
             // a.DeliverTo = 1;
@@ -64,9 +85,12 @@ namespace zirsakht_stock
             a.ReceivedBy = txtAgent.Text;
             a.Date = (new PersianDate(DateTime.Now)).ToString();
             a.Tedad = Convert.ToInt32((txtTedad.Text));
-            a.EquipID = Convert.ToInt32(cmbEquipments.SelectedValue.ToString());
+            a.EquipID = Convert.ToInt32(cmbEquipments.SelectedValue.ToString()) == -1 ? eqid.ID : Convert.ToInt32(cmbEquipments.SelectedValue.ToString());
             lq.tblRecieveds.InsertOnSubmit(a);
             lq.SubmitChanges();
+
+
+          
 
             _Fillgrid(); 
         }
@@ -123,11 +147,14 @@ namespace zirsakht_stock
             if (cmbEquipments.SelectedValue.ToString() == "-1")
             {
                 txtPartNum.Enabled = true;
+                cmbUints.Visible = true;
+
             }
             else
             {
                 txtPartNum.Text = cmbEquipments.Text;
                 txtPartNum.Enabled = false;
+                cmbUints.Visible = false;
             }
         }
 

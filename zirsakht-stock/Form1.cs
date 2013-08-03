@@ -39,6 +39,17 @@ namespace zirsakht_stock
             frmD.ShowDialog();
         }
 
+        private void کاردکسToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmkardex m = new frmkardex();
+            m.ShowDialog();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
+
        
        
     }
