@@ -106,6 +106,12 @@
     <Compile Include="frmKardexviewer.Designer.cs">
       <DependentUpon>frmKardexviewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmkharid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmkharid.Designer.cs">
+      <DependentUpon>frmkharid.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmKardexviewer.resx">
       <DependentUpon>frmKardexviewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmkharid.resx">
+      <DependentUpon>frmkharid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

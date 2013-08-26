@@ -42,19 +42,6 @@
       <Association Name="tblUnit_tblEquipment" Member="tblUnit" ThisKey="UnitID" OtherKey="ID" Type="tblUnit" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tblRecieved" Member="tblRecieveds">
-    <Type Name="tblRecieved">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="PartNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Source" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
-      <Column Name="Tedad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="EquipID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ReceivedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="tblEquipment_tblRecieved" Member="tblEquipment" ThisKey="EquipID" OtherKey="ID" Type="tblEquipment" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.tblUnits" Member="tblUnits">
     <Type Name="tblUnit">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -73,6 +60,19 @@
       <Column Name="dahande" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="receivedby" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRecieved" Member="tblRecieveds">
+    <Type Name="tblRecieved">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PartNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ersal" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="Tedad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EquipID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReceivedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblEquipment_tblRecieved" Member="tblEquipment" ThisKey="EquipID" OtherKey="ID" Type="tblEquipment" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

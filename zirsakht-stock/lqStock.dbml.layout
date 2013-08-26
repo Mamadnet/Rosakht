@@ -2,22 +2,22 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="lqStock">
   <DataContextMoniker Name="/lqStockDataContext" />
   <nestedChildShapes>
-    <classShape Id="c0ee8321-2274-4a2b-bc37-648514e37f3e" absoluteBounds="5, 0.5, 2, 1.26050048828125">
+    <classShape Id="c0ee8321-2274-4a2b-bc37-648514e37f3e" absoluteBounds="5, 0.5, 2, 1.3862939453125">
       <DataClassMoniker Name="/lqStockDataContext/tblSite" />
       <nestedChildShapes>
-        <elementListCompartment Id="c722f336-d364-4035-a6b6-9c173499c33c" absoluteBounds="5.015, 0.96, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c722f336-d364-4035-a6b6-9c173499c33c" absoluteBounds="5.015, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4ce4bace-0491-4333-838a-7f85590754dc" absoluteBounds="1.125, 3.625, 2, 1.0961531575520833">
+    <classShape Id="4ce4bace-0491-4333-838a-7f85590754dc" absoluteBounds="1.125, 3.625, 2, 1.1939925130208327">
       <DataClassMoniker Name="/lqStockDataContext/tblType" />
       <nestedChildShapes>
-        <elementListCompartment Id="606e1da2-b89c-4fbe-8837-ef447469a80f" absoluteBounds="1.1400000000000006, 4.085, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="606e1da2-b89c-4fbe-8837-ef447469a80f" absoluteBounds="1.1400000000000006, 4.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7b854278-b878-453a-b258-b65d5df32181" absoluteBounds="2.375, 0.5, 2, 2.24658447265625">
+    <classShape Id="7b854278-b878-453a-b258-b65d5df32181" absoluteBounds="2.375, 0.5, 2, 2.5401025390625">
       <DataClassMoniker Name="/lqStockDataContext/tblDelivered" />
       <nestedChildShapes>
-        <elementListCompartment Id="3c2151f4-e726-4980-886f-c24beca6ac33" absoluteBounds="2.3899999999999997, 0.96, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3c2151f4-e726-4980-886f-c24beca6ac33" absoluteBounds="2.3899999999999997, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <associationConnector edgePoints="[(5 : 1.13025024414063); (4.375 : 1.13025024414063)]" fixedFrom="NotFixed" fixedTo="NotFixed">
@@ -27,10 +27,10 @@
         <classShapeMoniker Id="7b854278-b878-453a-b258-b65d5df32181" />
       </nodes>
     </associationConnector>
-    <classShape Id="4f13a3e8-8d0f-4937-8b61-a697d6988485" absoluteBounds="5.25, 2.5, 2, 1.4248478190104168">
+    <classShape Id="4f13a3e8-8d0f-4937-8b61-a697d6988485" absoluteBounds="5.25, 2.5, 2, 1.5785953776041666">
       <DataClassMoniker Name="/lqStockDataContext/tblEquipment" />
       <nestedChildShapes>
-        <elementListCompartment Id="29ba567d-eccc-42dc-aab9-95eac0bccfea" absoluteBounds="5.265, 2.96, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="29ba567d-eccc-42dc-aab9-95eac0bccfea" absoluteBounds="5.265, 2.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <associationConnector edgePoints="[(5.25 : 3.15454273632812); (3.78125 : 3.15454273632812); (3.78125 : 2.74658447265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
@@ -47,37 +47,37 @@
         <classShapeMoniker Id="4f13a3e8-8d0f-4937-8b61-a697d6988485" />
       </nodes>
     </associationConnector>
-    <classShape Id="79128081-4850-47b8-b816-f70ac2e546cc" absoluteBounds="7.625, 1.75, 2, 2.0822371419270831">
-      <DataClassMoniker Name="/lqStockDataContext/tblRecieved" />
-      <nestedChildShapes>
-        <elementListCompartment Id="86989336-fe38-4778-a99a-22e4822b5a3f" absoluteBounds="7.6400000000000006, 2.21, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(7.25 : 3.16611857096354); (7.625 : 3.16611857096354)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/lqStockDataContext/tblEquipment/tblEquipment_tblRecieved" />
-      <nodes>
-        <classShapeMoniker Id="4f13a3e8-8d0f-4937-8b61-a697d6988485" />
-        <classShapeMoniker Id="79128081-4850-47b8-b816-f70ac2e546cc" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="e0662a5d-04bf-405d-8206-fd7de254024e" absoluteBounds="5.25, 4.5, 2, 1.26050048828125">
+    <classShape Id="e0662a5d-04bf-405d-8206-fd7de254024e" absoluteBounds="5.25, 4.5, 2, 1.3862939453124996">
       <DataClassMoniker Name="/lqStockDataContext/tblUnit" />
       <nestedChildShapes>
-        <elementListCompartment Id="bbaaa096-15a1-4222-afaa-60898703e549" absoluteBounds="5.265, 4.96, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="bbaaa096-15a1-4222-afaa-60898703e549" absoluteBounds="5.265, 4.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(6.25 : 4.5); (6.25 : 3.92484781901042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(6.25 : 4.5); (6.25 : 3.92484781901042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/lqStockDataContext/tblUnit/tblUnit_tblEquipment" />
       <nodes>
         <classShapeMoniker Id="e0662a5d-04bf-405d-8206-fd7de254024e" />
         <classShapeMoniker Id="4f13a3e8-8d0f-4937-8b61-a697d6988485" />
       </nodes>
     </associationConnector>
-    <classShape Id="dacf68eb-ed9e-4440-bddd-bce51e1d764d" absoluteBounds="0.5, 0.75, 1.375, 2.0822371419270831">
+    <classShape Id="dacf68eb-ed9e-4440-bddd-bce51e1d764d" absoluteBounds="0.5, 0.75, 1.375, 2.3478011067708335">
       <DataClassMoniker Name="/lqStockDataContext/vwKarde" />
       <nestedChildShapes>
-        <elementListCompartment Id="772cbd5f-5ba3-4b08-a87b-eac9bc81fe0d" absoluteBounds="0.515, 1.21, 1.3450000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="772cbd5f-5ba3-4b08-a87b-eac9bc81fe0d" absoluteBounds="0.515, 1.21, 1.3450000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="b7eca855-8b3e-450c-81ea-fc0421cb96be" absoluteBounds="7.75, 1.625, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/lqStockDataContext/tblRecieved" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c35b581e-e760-42d1-b57f-5a1f031c234d" absoluteBounds="7.7650000000000006, 2.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.25 : 3.23640055338542); (7.75 : 3.23640055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/lqStockDataContext/tblEquipment/tblEquipment_tblRecieved" />
+      <nodes>
+        <classShapeMoniker Id="4f13a3e8-8d0f-4937-8b61-a697d6988485" />
+        <classShapeMoniker Id="b7eca855-8b3e-450c-81ea-fc0421cb96be" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

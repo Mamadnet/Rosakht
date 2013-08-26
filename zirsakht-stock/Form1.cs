@@ -50,6 +50,13 @@ namespace zirsakht_stock
             
         }
 
+        private void ثبتخریدToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmkharid frmD = new frmkharid();
+            frmD.ShowDialog();
+
+        }
+
        
        
     }

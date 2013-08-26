@@ -35,6 +35,7 @@
             this.خروجToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.گزارشToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.کاردکسToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ثبتخریدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +54,7 @@
             // فایلToolStripMenuItem
             // 
             this.فایلToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ثبتخریدToolStripMenuItem,
             this.ورودبهانبارToolStripMenuItem,
             this.خروجازانبارToolStripMenuItem,
             this.خروجToolStripMenuItem});
@@ -64,7 +66,7 @@
             // 
             this.ورودبهانبارToolStripMenuItem.Name = "ورودبهانبارToolStripMenuItem";
             this.ورودبهانبارToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
-            this.ورودبهانبارToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.ورودبهانبارToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.ورودبهانبارToolStripMenuItem.Text = "ورود به انبار";
             this.ورودبهانبارToolStripMenuItem.Click += new System.EventHandler(this.ورودبهانبارToolStripMenuItem_Click);
             // 
@@ -72,7 +74,7 @@
             // 
             this.خروجازانبارToolStripMenuItem.Name = "خروجازانبارToolStripMenuItem";
             this.خروجازانبارToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.خروجازانبارToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.خروجازانبارToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.خروجازانبارToolStripMenuItem.Text = "خروج از انبار";
             this.خروجازانبارToolStripMenuItem.Click += new System.EventHandler(this.خروجازانبارToolStripMenuItem_Click);
             // 
@@ -80,7 +82,7 @@
             // 
             this.خروجToolStripMenuItem.Name = "خروجToolStripMenuItem";
             this.خروجToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.خروجToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.خروجToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.خروجToolStripMenuItem.Text = "خروج";
             this.خروجToolStripMenuItem.Click += new System.EventHandler(this.خروجToolStripMenuItem_Click);
             // 
@@ -98,6 +100,13 @@
             this.کاردکسToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.کاردکسToolStripMenuItem.Text = "کاردکس";
             this.کاردکسToolStripMenuItem.Click += new System.EventHandler(this.کاردکسToolStripMenuItem_Click);
+            // 
+            // ثبتخریدToolStripMenuItem
+            // 
+            this.ثبتخریدToolStripMenuItem.Name = "ثبتخریدToolStripMenuItem";
+            this.ثبتخریدToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.ثبتخریدToolStripMenuItem.Text = "ثبت خرید";
+            this.ثبتخریدToolStripMenuItem.Click += new System.EventHandler(this.ثبتخریدToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -129,6 +138,7 @@
         private System.Windows.Forms.ToolStripMenuItem خروجToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem گزارشToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem کاردکسToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ثبتخریدToolStripMenuItem;
 
     }
 }

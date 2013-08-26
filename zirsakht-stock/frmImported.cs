@@ -40,7 +40,7 @@ namespace zirsakht_stock
         {
 
             var sql = (from s in lq.tblRecieveds
-                       select new { unit = s.tblEquipment.tblUnit.Unit, ID = s.ID, equipid = s.EquipID, partnumber = s.PartNumber, tedad = s.Tedad, date = s.Date, receivedby = s.ReceivedBy, description = s.Description });
+                       select new { unit = s.tblEquipment.tblUnit.Unit, ID = s.ID, equipid = s.EquipID, partnumber = s.PartNumber, tedad = s.Tedad, date = s.Date, receivedby = s.ReceivedBy, description = s.Description,ersal=s.Ersal });
             dataGridView1.DataSource = sql;
         }
 
@@ -81,8 +81,8 @@ namespace zirsakht_stock
             // a.DeliverTo = 1;
             a.PartNumber = txtPartNum.Text;
             a.Description = txtDesc.Text;
-            a.Source = txtPerson.Text;
-            a.ReceivedBy = txtAgent.Text;
+            a.Ersal =txtersal.Text;
+            a.ReceivedBy = txtPerson.Text;
             a.Date = (new PersianDate(DateTime.Now)).ToString();
             a.Tedad = Convert.ToInt32((txtTedad.Text));
             a.EquipID = Convert.ToInt32(cmbEquipments.SelectedValue.ToString()) == -1 ? eqid.ID : Convert.ToInt32(cmbEquipments.SelectedValue.ToString());
