@@ -42,6 +42,7 @@
             this.cmbTypes = new System.Windows.Forms.ComboBox();
             this.cmbEquipments = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.txtDevice = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -62,6 +63,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.txtDevice);
             this.splitContainer1.Panel2.Controls.Add(this.btnPrint);
             this.splitContainer1.Panel2.Controls.Add(this.cmbTypes);
             this.splitContainer1.Panel2.Controls.Add(this.cmbEquipments);
@@ -192,13 +194,21 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(26, 383);
+            this.btnAdd.Location = new System.Drawing.Point(26, 143);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(87, 28);
             this.btnAdd.TabIndex = 1001;
             this.btnAdd.Text = "جستجو";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // txtDevice
+            // 
+            this.txtDevice.Location = new System.Drawing.Point(26, 97);
+            this.txtDevice.Name = "txtDevice";
+            this.txtDevice.Size = new System.Drawing.Size(161, 23);
+            this.txtDevice.TabIndex = 1003;
             // 
             // frmkardex
             // 
@@ -209,6 +219,7 @@
             this.Load += new System.EventHandler(this.frmkardex_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -232,5 +243,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dahande;
         private System.Windows.Forms.DataGridViewTextBoxColumn receivedby;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.TextBox txtDevice;
     }
 }

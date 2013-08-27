@@ -54,6 +54,7 @@ namespace zirsakht_stock
             a.Partnumber = "سایر";
             a.ID = -1;
             query.Add(a);
+            query.Reverse();
             cmbEquipments.DisplayMember = "Partnumber";
             cmbEquipments.ValueMember = "ID";
             cmbEquipments.DataSource = query.ToArray();

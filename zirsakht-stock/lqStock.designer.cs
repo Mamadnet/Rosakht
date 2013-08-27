@@ -135,6 +135,18 @@ namespace zirsakht_stock
 				return this.GetTable<tblRecieved>();
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CalculateTotal", IsComposable=true)]
+		public System.Nullable<int> CalculateTotal([global::System.Data.Linq.Mapping.ParameterAttribute(Name="DeviceID", DbType="Int")] System.Nullable<int> deviceID)
+		{
+			return ((System.Nullable<int>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), deviceID).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.getkala_inanbar", IsComposable=true)]
+		public IQueryable<getkala_inanbarResult> getkala_inanbar()
+		{
+			return this.CreateMethodCallQuery<getkala_inanbarResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblSites")]
@@ -1555,6 +1567,32 @@ namespace zirsakht_stock
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	public partial class getkala_inanbarResult
+	{
+		
+		private System.Nullable<int> _equipid;
+		
+		public getkala_inanbarResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_equipid", DbType="Int")]
+		public System.Nullable<int> equipid
+		{
+			get
+			{
+				return this._equipid;
+			}
+			set
+			{
+				if ((this._equipid != value))
+				{
+					this._equipid = value;
+				}
 			}
 		}
 	}

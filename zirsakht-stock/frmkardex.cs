@@ -123,6 +123,15 @@ namespace zirsakht_stock
 
         }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            sql = (from s in lq.vwKardes
+                   where s.partnumber.Contains(txtDevice.Text)
+                   select s);
+
+            dataGridView1.DataSource = sql;
+        }
+
        
     }
 }

@@ -72,7 +72,7 @@
         <elementListCompartment Id="c35b581e-e760-42d1-b57f-5a1f031c234d" absoluteBounds="7.7650000000000006, 2.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(7.25 : 3.23640055338542); (7.75 : 3.23640055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.25 : 3.23640055338542); (7.75 : 3.23640055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/lqStockDataContext/tblEquipment/tblEquipment_tblRecieved" />
       <nodes>
         <classShapeMoniker Id="4f13a3e8-8d0f-4937-8b61-a697d6988485" />

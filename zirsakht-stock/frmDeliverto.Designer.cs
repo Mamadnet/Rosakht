@@ -39,7 +39,11 @@
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblMojodi = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.cmbTypes = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTedad = new System.Windows.Forms.TextBox();
@@ -73,7 +77,11 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.lblMojodi);
+            this.splitContainer1.Panel2.Controls.Add(this.label7);
+            this.splitContainer1.Panel2.Controls.Add(this.label5);
             this.splitContainer1.Panel2.Controls.Add(this.btnDelete);
+            this.splitContainer1.Panel2.Controls.Add(this.label6);
             this.splitContainer1.Panel2.Controls.Add(this.cmbTypes);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
             this.splitContainer1.Panel2.Controls.Add(this.txtTedad);
@@ -187,6 +195,34 @@
             this.ID.ReadOnly = true;
             this.ID.Visible = false;
             // 
+            // lblMojodi
+            // 
+            this.lblMojodi.AutoSize = true;
+            this.lblMojodi.ForeColor = System.Drawing.Color.Maroon;
+            this.lblMojodi.Location = new System.Drawing.Point(151, 267);
+            this.lblMojodi.Name = "lblMojodi";
+            this.lblMojodi.Size = new System.Drawing.Size(0, 16);
+            this.lblMojodi.TabIndex = 1009;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(225, 263);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 16);
+            this.label7.TabIndex = 1008;
+            this.label7.Text = "موجودی";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(244, 54);
+            this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label5.Size = new System.Drawing.Size(37, 16);
+            this.label5.TabIndex = 1007;
+            this.label5.Text = "نام : ";
+            // 
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(140, 383);
@@ -197,6 +233,16 @@
             this.btnDelete.Text = "حذف";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(244, 22);
+            this.label6.Name = "label6";
+            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label6.Size = new System.Drawing.Size(39, 16);
+            this.label6.TabIndex = 1006;
+            this.label6.Text = "نوع : ";
             // 
             // cmbTypes
             // 
@@ -310,6 +356,7 @@
             this.txtPartNum.Name = "txtPartNum";
             this.txtPartNum.Size = new System.Drawing.Size(161, 23);
             this.txtPartNum.TabIndex = 3;
+            this.txtPartNum.Visible = false;
             // 
             // btnAdd
             // 
@@ -369,5 +416,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblMojodi;
+        private System.Windows.Forms.Label label7;
     }
 }

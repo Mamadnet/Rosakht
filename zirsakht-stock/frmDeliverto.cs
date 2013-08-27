@@ -24,10 +24,7 @@ namespace zirsakht_stock
                          select s).ToList();
             cmbTypes.DisplayMember = "TypeDesc";
             cmbTypes.ValueMember = "ID";
-            cmbTypes.DataSource = typequery.ToArray();         
-
-
-
+            cmbTypes.DataSource = typequery.ToArray();   
 
            // var query = (from s in lq.tblEquipments
            //              where s.tblType.ID== Convert.ToInt32( cmbTypes.SelectedValue.ToString())
@@ -91,6 +88,11 @@ namespace zirsakht_stock
                 txtPartNum.Text = cmbEquipments.Text;
                 txtPartNum.Enabled = false;
             }
+            if (cmbEquipments.Items.Count >0)
+                lblMojodi.Text = Convert.ToString(lq.CalculateTotal(Convert.ToInt32(cmbEquipments.SelectedValue.ToString())));
+            else
+                lblMojodi.Text = "";
+
         }
 
         protected override void OnKeyDown(KeyEventArgs e)
@@ -100,14 +102,19 @@ namespace zirsakht_stock
 
         private void _cmbequipments()
         {
+
+
+           // var m= lq.getkala_inanbar().
+           
             var query = (from s in lq.tblEquipments
-                         where s.tblType.ID == Convert.ToInt32(cmbTypes.SelectedValue)
+                         where s.tblType.ID == Convert.ToInt32(cmbTypes.SelectedValue)  && lq.CalculateTotal(s.ID)>0
                          select s).ToList();
 
-            tblEquipment a = new tblEquipment();
-            a.Partnumber = "سایر";
-            a.ID = -1;
-            query.Add(a);
+            
+            //tblEquipment a = new tblEquipment();
+            //a.Partnumber = "سایر";
+            //a.ID = -1;
+            //query.Add(a);
             cmbEquipments.DisplayMember = "Partnumber";
             cmbEquipments.ValueMember = "ID";
             cmbEquipments.DataSource = query.ToArray();
@@ -116,6 +123,7 @@ namespace zirsakht_stock
 
         private void cmbTypes_SelectedIndexChanged(object sender, EventArgs e)
         {
+            lblMojodi.Text = "";
             _cmbequipments();
         }
 
@@ -123,7 +131,8 @@ namespace zirsakht_stock
         {
 
             var sql = (from s in lq.tblDelivereds
-                       select new {unit=s.tblEquipment.tblUnit.Unit, ID=s.ID,equipid=s.EquipID,siteid=s.SiteID,partnumber = s.PartNumber, tedad = s.Tedad, agent = s.Agent, date = s.Date, receivedby = s.ReceivedBy, description = s.Description, name = s.tblSite.Name });
+                      select new {unit=s.tblEquipment.tblUnit.Unit, ID=s.ID,equipid=s.EquipID,siteid=s.SiteID,partnumber = s.PartNumber, tedad = s.Tedad, agent = s.Agent, date = s.Date, receivedby = s.ReceivedBy, description = s.Description, name = s.tblSite.Name }
+                      );
             dataGridView1.DataSource = sql;
         }
 

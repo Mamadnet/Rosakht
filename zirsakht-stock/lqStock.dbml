@@ -75,4 +75,13 @@
       <Association Name="tblEquipment_tblRecieved" Member="tblEquipment" ThisKey="EquipID" OtherKey="ID" Type="tblEquipment" IsForeignKey="true" />
     </Type>
   </Table>
+  <Function Name="dbo.CalculateTotal" Method="CalculateTotal" IsComposable="true">
+    <Parameter Name="DeviceID" Parameter="deviceID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.getkala_inanbar" Method="getkala_inanbar" IsComposable="true">
+    <ElementType Name="getkala_inanbarResult">
+      <Column Name="equipid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>
