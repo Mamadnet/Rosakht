@@ -30,19 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.lqStockDataContextBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rvKardex = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.lqStockDataContextBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vwKardeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.lqStockDataContextBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwKardeBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lqStockDataContextBindingSource
-            // 
-            this.lqStockDataContextBindingSource.DataSource = typeof(zirsakht_stock.lqStockDataContext);
             // 
             // rvKardex
             // 
             this.rvKardex.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "dsKardex";
+            reportDataSource1.Name = "dskardex";
             reportDataSource1.Value = this.lqStockDataContextBindingSource;
             this.rvKardex.LocalReport.DataSources.Add(reportDataSource1);
             this.rvKardex.LocalReport.ReportEmbeddedResource = "zirsakht_stock.Report1.rdlc";
@@ -50,6 +48,14 @@
             this.rvKardex.Name = "rvKardex";
             this.rvKardex.Size = new System.Drawing.Size(892, 373);
             this.rvKardex.TabIndex = 0;
+            // 
+            // lqStockDataContextBindingSource
+            // 
+            this.lqStockDataContextBindingSource.DataSource = typeof(zirsakht_stock.lqStockDataContext);
+            // 
+            // vwKardeBindingSource
+            // 
+            this.vwKardeBindingSource.DataSource = typeof(zirsakht_stock.vwKarde);
             // 
             // frmKardexviewer
             // 
@@ -61,6 +67,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmKardexviewer_FormClosing);
             this.Load += new System.EventHandler(this.frmKardexviewer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lqStockDataContextBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwKardeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -68,6 +75,7 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer rvKardex;
+        private System.Windows.Forms.BindingSource vwKardeBindingSource;
         private System.Windows.Forms.BindingSource lqStockDataContextBindingSource;
     }
 }

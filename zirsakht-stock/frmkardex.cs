@@ -82,6 +82,7 @@ namespace zirsakht_stock
         {
             sql = (from s in lq.vwKardes
                        where s.equipid==Convert.ToInt32( cmbEquipments.SelectedValue)
+                       orderby s.mj descending
                        select s);
 
             dataGridView1.DataSource = sql;

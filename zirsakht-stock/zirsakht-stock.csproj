@@ -176,6 +176,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\DataSources\lqStockDataContext.datasource" />
+    <None Include="Properties\DataSources\vwKarde.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -120,19 +120,19 @@ namespace zirsakht_stock
 			}
 		}
 		
-		public System.Data.Linq.Table<vwKarde> vwKardes
-		{
-			get
-			{
-				return this.GetTable<vwKarde>();
-			}
-		}
-		
 		public System.Data.Linq.Table<tblRecieved> tblRecieveds
 		{
 			get
 			{
 				return this.GetTable<tblRecieved>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vwKarde> vwKardes
+		{
+			get
+			{
+				return this.GetTable<vwKarde>();
 			}
 		}
 		
@@ -1147,159 +1147,6 @@ namespace zirsakht_stock
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vwKardes")]
-	public partial class vwKarde
-	{
-		
-		private int _id;
-		
-		private string _partnumber;
-		
-		private string _date;
-		
-		private System.Nullable<long> _tedad;
-		
-		private System.Nullable<int> _equipid;
-		
-		private string _dahande;
-		
-		private string _receivedby;
-		
-		private int _status;
-		
-		public vwKarde()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this._id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_partnumber", DbType="NVarChar(50)")]
-		public string partnumber
-		{
-			get
-			{
-				return this._partnumber;
-			}
-			set
-			{
-				if ((this._partnumber != value))
-				{
-					this._partnumber = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date", DbType="NVarChar(50)")]
-		public string date
-		{
-			get
-			{
-				return this._date;
-			}
-			set
-			{
-				if ((this._date != value))
-				{
-					this._date = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tedad", DbType="BigInt")]
-		public System.Nullable<long> tedad
-		{
-			get
-			{
-				return this._tedad;
-			}
-			set
-			{
-				if ((this._tedad != value))
-				{
-					this._tedad = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_equipid", DbType="Int")]
-		public System.Nullable<int> equipid
-		{
-			get
-			{
-				return this._equipid;
-			}
-			set
-			{
-				if ((this._equipid != value))
-				{
-					this._equipid = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dahande", DbType="NVarChar(50)")]
-		public string dahande
-		{
-			get
-			{
-				return this._dahande;
-			}
-			set
-			{
-				if ((this._dahande != value))
-				{
-					this._dahande = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_receivedby", DbType="NVarChar(50)")]
-		public string receivedby
-		{
-			get
-			{
-				return this._receivedby;
-			}
-			set
-			{
-				if ((this._receivedby != value))
-				{
-					this._receivedby = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Int NOT NULL")]
-		public int status
-		{
-			get
-			{
-				return this._status;
-			}
-			set
-			{
-				if ((this._status != value))
-				{
-					this._status = value;
-				}
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblRecieved")]
 	public partial class tblRecieved : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1567,6 +1414,249 @@ namespace zirsakht_stock
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vwKardes")]
+	public partial class vwKarde
+	{
+		
+		private int _id;
+		
+		private string _partnumber;
+		
+		private string _date;
+		
+		private string _sdate;
+		
+		private string _vdate;
+		
+		private System.Nullable<long> _tedad;
+		
+		private System.Nullable<long> _sadereh;
+		
+		private System.Nullable<long> _varedeh;
+		
+		private System.Nullable<int> _equipid;
+		
+		private string _dahande;
+		
+		private string _receivedby;
+		
+		private int _status;
+		
+		private System.Nullable<int> _mj;
+		
+		public vwKarde()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_partnumber", DbType="NVarChar(50)")]
+		public string partnumber
+		{
+			get
+			{
+				return this._partnumber;
+			}
+			set
+			{
+				if ((this._partnumber != value))
+				{
+					this._partnumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date", DbType="NVarChar(50)")]
+		public string date
+		{
+			get
+			{
+				return this._date;
+			}
+			set
+			{
+				if ((this._date != value))
+				{
+					this._date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sdate", DbType="NVarChar(10)")]
+		public string sdate
+		{
+			get
+			{
+				return this._sdate;
+			}
+			set
+			{
+				if ((this._sdate != value))
+				{
+					this._sdate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vdate", DbType="NVarChar(50)")]
+		public string vdate
+		{
+			get
+			{
+				return this._vdate;
+			}
+			set
+			{
+				if ((this._vdate != value))
+				{
+					this._vdate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tedad", DbType="BigInt")]
+		public System.Nullable<long> tedad
+		{
+			get
+			{
+				return this._tedad;
+			}
+			set
+			{
+				if ((this._tedad != value))
+				{
+					this._tedad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sadereh", DbType="BigInt")]
+		public System.Nullable<long> sadereh
+		{
+			get
+			{
+				return this._sadereh;
+			}
+			set
+			{
+				if ((this._sadereh != value))
+				{
+					this._sadereh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_varedeh", DbType="BigInt")]
+		public System.Nullable<long> varedeh
+		{
+			get
+			{
+				return this._varedeh;
+			}
+			set
+			{
+				if ((this._varedeh != value))
+				{
+					this._varedeh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_equipid", DbType="Int")]
+		public System.Nullable<int> equipid
+		{
+			get
+			{
+				return this._equipid;
+			}
+			set
+			{
+				if ((this._equipid != value))
+				{
+					this._equipid = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dahande", DbType="NVarChar(50)")]
+		public string dahande
+		{
+			get
+			{
+				return this._dahande;
+			}
+			set
+			{
+				if ((this._dahande != value))
+				{
+					this._dahande = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_receivedby", DbType="NVarChar(50)")]
+		public string receivedby
+		{
+			get
+			{
+				return this._receivedby;
+			}
+			set
+			{
+				if ((this._receivedby != value))
+				{
+					this._receivedby = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Int NOT NULL")]
+		public int status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this._status = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mj", DbType="Int")]
+		public System.Nullable<int> mj
+		{
+			get
+			{
+				return this._mj;
+			}
+			set
+			{
+				if ((this._mj != value))
+				{
+					this._mj = value;
+				}
 			}
 		}
 	}
