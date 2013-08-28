@@ -38,11 +38,17 @@
             this.dahande = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.receivedby = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblsadereh = new System.Windows.Forms.Label();
+            this.lblmandeh = new System.Windows.Forms.Label();
+            this.lblvaredeh = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDevice = new System.Windows.Forms.TextBox();
             this.btnPrint = new System.Windows.Forms.Button();
             this.cmbTypes = new System.Windows.Forms.ComboBox();
             this.cmbEquipments = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.txtDevice = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -63,6 +69,12 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.lblsadereh);
+            this.splitContainer1.Panel2.Controls.Add(this.lblmandeh);
+            this.splitContainer1.Panel2.Controls.Add(this.lblvaredeh);
+            this.splitContainer1.Panel2.Controls.Add(this.label3);
+            this.splitContainer1.Panel2.Controls.Add(this.label2);
+            this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.txtDevice);
             this.splitContainer1.Panel2.Controls.Add(this.btnPrint);
             this.splitContainer1.Panel2.Controls.Add(this.cmbTypes);
@@ -159,9 +171,77 @@
             this.status.Name = "status";
             this.status.ReadOnly = true;
             // 
+            // lblsadereh
+            // 
+            this.lblsadereh.AutoSize = true;
+            this.lblsadereh.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.lblsadereh.Location = new System.Drawing.Point(133, 231);
+            this.lblsadereh.Name = "lblsadereh";
+            this.lblsadereh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblsadereh.Size = new System.Drawing.Size(0, 18);
+            this.lblsadereh.TabIndex = 1009;
+            // 
+            // lblmandeh
+            // 
+            this.lblmandeh.AutoSize = true;
+            this.lblmandeh.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.lblmandeh.Location = new System.Drawing.Point(133, 271);
+            this.lblmandeh.Name = "lblmandeh";
+            this.lblmandeh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblmandeh.Size = new System.Drawing.Size(0, 18);
+            this.lblmandeh.TabIndex = 1008;
+            // 
+            // lblvaredeh
+            // 
+            this.lblvaredeh.AutoSize = true;
+            this.lblvaredeh.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.lblvaredeh.Location = new System.Drawing.Point(133, 197);
+            this.lblvaredeh.Name = "lblvaredeh";
+            this.lblvaredeh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblvaredeh.Size = new System.Drawing.Size(0, 18);
+            this.lblvaredeh.TabIndex = 1007;
+            this.lblvaredeh.Click += new System.EventHandler(this.lblvaredeh_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(170, 229);
+            this.label3.Name = "label3";
+            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label3.Size = new System.Drawing.Size(90, 16);
+            this.label3.TabIndex = 1006;
+            this.label3.Text = "مجموع صادره :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(215, 269);
+            this.label2.Name = "label2";
+            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label2.Size = new System.Drawing.Size(45, 16);
+            this.label2.TabIndex = 1005;
+            this.label2.Text = "مانده :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(176, 195);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label1.Size = new System.Drawing.Size(84, 16);
+            this.label1.TabIndex = 1004;
+            this.label1.Text = "مجموع وارده :";
+            // 
+            // txtDevice
+            // 
+            this.txtDevice.Location = new System.Drawing.Point(26, 97);
+            this.txtDevice.Name = "txtDevice";
+            this.txtDevice.Size = new System.Drawing.Size(161, 23);
+            this.txtDevice.TabIndex = 1003;
+            // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(130, 383);
+            this.btnPrint.Location = new System.Drawing.Point(176, 385);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(87, 28);
@@ -203,13 +283,6 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // txtDevice
-            // 
-            this.txtDevice.Location = new System.Drawing.Point(26, 97);
-            this.txtDevice.Name = "txtDevice";
-            this.txtDevice.Size = new System.Drawing.Size(161, 23);
-            this.txtDevice.TabIndex = 1003;
-            // 
             // frmkardex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -244,5 +317,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn receivedby;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.TextBox txtDevice;
+        private System.Windows.Forms.Label lblsadereh;
+        private System.Windows.Forms.Label lblmandeh;
+        private System.Windows.Forms.Label lblvaredeh;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

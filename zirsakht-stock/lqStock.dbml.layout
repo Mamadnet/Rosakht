@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="lqStock">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9" name="lqStock">
   <DataContextMoniker Name="/lqStockDataContext" />
   <nestedChildShapes>
     <classShape Id="c0ee8321-2274-4a2b-bc37-648514e37f3e" absoluteBounds="5, 0.5, 2, 1.3862939453125">
@@ -73,10 +73,10 @@
         <classShapeMoniker Id="b7eca855-8b3e-450c-81ea-fc0421cb96be" />
       </nodes>
     </associationConnector>
-    <classShape Id="296c4be3-f3ab-455b-acb0-293ae5f857a6" absoluteBounds="0.5, 0.625, 2, 3.3093082682291666">
+    <classShape Id="296c4be3-f3ab-455b-acb0-293ae5f857a6" absoluteBounds="2.625, 5.5, 2, 3.3093082682291666">
       <DataClassMoniker Name="/lqStockDataContext/vwKarde" />
       <nestedChildShapes>
-        <elementListCompartment Id="a4fe07bf-786d-4195-bcc5-3096eb5c3689" absoluteBounds="0.51499999999999968, 1.085, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a4fe07bf-786d-4195-bcc5-3096eb5c3689" absoluteBounds="2.6399999999999997, 5.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

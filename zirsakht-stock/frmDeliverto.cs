@@ -104,8 +104,7 @@ namespace zirsakht_stock
         {
 
 
-           // var m= lq.getkala_inanbar().
-           
+          
             var query = (from s in lq.tblEquipments
                          where s.tblType.ID == Convert.ToInt32(cmbTypes.SelectedValue)  && lq.CalculateTotal(s.ID)>0
                          select s).ToList();

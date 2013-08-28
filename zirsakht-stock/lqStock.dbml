@@ -89,4 +89,17 @@
       <Column Name="equipid" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.CalculateTotalbydate" Method="CalculateTotalbydate" IsComposable="true">
+    <Parameter Name="DeviceID" Parameter="deviceID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="date" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Calculatesadereh" Method="Calculatesadereh" IsComposable="true">
+    <Parameter Name="DeviceID" Parameter="deviceID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Calculatevadereh" Method="Calculatevadereh" IsComposable="true">
+    <Parameter Name="DeviceID" Parameter="deviceID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

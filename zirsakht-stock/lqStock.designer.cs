@@ -147,6 +147,24 @@ namespace zirsakht_stock
 		{
 			return this.CreateMethodCallQuery<getkala_inanbarResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CalculateTotalbydate", IsComposable=true)]
+		public System.Nullable<int> CalculateTotalbydate([global::System.Data.Linq.Mapping.ParameterAttribute(Name="DeviceID", DbType="Int")] System.Nullable<int> deviceID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string date)
+		{
+			return ((System.Nullable<int>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), deviceID, date).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Calculatesadereh", IsComposable=true)]
+		public System.Nullable<int> Calculatesadereh([global::System.Data.Linq.Mapping.ParameterAttribute(Name="DeviceID", DbType="Int")] System.Nullable<int> deviceID)
+		{
+			return ((System.Nullable<int>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), deviceID).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Calculatevadereh", IsComposable=true)]
+		public System.Nullable<int> Calculatevadereh([global::System.Data.Linq.Mapping.ParameterAttribute(Name="DeviceID", DbType="Int")] System.Nullable<int> deviceID)
+		{
+			return ((System.Nullable<int>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), deviceID).ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblSites")]

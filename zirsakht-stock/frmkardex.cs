@@ -86,6 +86,14 @@ namespace zirsakht_stock
                        select s);
 
             dataGridView1.DataSource = sql;
+
+            var varedeh = lq.Calculatevadereh(Convert.ToInt32(cmbEquipments.SelectedValue));
+            var sadereh = lq.Calculatesadereh(Convert.ToInt32(cmbEquipments.SelectedValue));
+
+            lblmandeh.Text = Convert.ToString(varedeh-sadereh);
+            lblsadereh.Text = Convert.ToString(sadereh);
+            lblvaredeh.Text = Convert.ToString(varedeh);
+
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -131,6 +139,11 @@ namespace zirsakht_stock
                    select s);
 
             dataGridView1.DataSource = sql;
+        }
+
+        private void lblvaredeh_Click(object sender, EventArgs e)
+        {
+
         }
 
        
