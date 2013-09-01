@@ -34,13 +34,16 @@ namespace zirsakht_stock
             cmbUints.DataSource = unitquery;
 
 
+
+
             _cmbequipments();
         }
         private void _Fillgrid()
         {
 
-            var sql = (from s in lq.tblRecieveds
-                       select new { unit = s.tblEquipment.tblUnit.Unit, ID = s.ID, equipid = s.EquipID, partnumber = s.PartNumber, tedad = s.Tedad, date = s.Date, receivedby = s.ReceivedBy, description = s.Description,ersal=s.Ersal });
+            var sql = (from s in lq.tblResids
+                       join p in lq.tblRecieveds on s.ID equals p.ResidNo
+                       select new { contractno = s.ContractNO, kharidtype = s.kharidType, unit = p.tblEquipment.tblUnit.Unit, ID = s.ID,pid=p.ID, equipid = p.EquipID, partnumber = p.PartNumber, tedad = p.Tedad, date = s.Date, receivedby = s.ReceivedBy, description = s.Description, ersal = s.Ersal });
             dataGridView1.DataSource = sql;
         }
 
@@ -78,20 +81,31 @@ namespace zirsakht_stock
                         select c).OrderByDescending(x => x.ID).First();
                   
            
-            tblRecieved a = new tblRecieved();
+            tblResid a = new tblResid();
             // a.DeliverTo = 1;
-            a.PartNumber = txtPartNum.Text;
+           
             a.Description = txtDesc.Text;
             a.Ersal =txtersal.Text;
             a.ReceivedBy = txtPerson.Text;
             a.Date = (new PersianDate(DateTime.Now)).ToString();
-            a.Tedad = Convert.ToInt32((txtTedad.Text));
-            a.EquipID = Convert.ToInt32(cmbEquipments.SelectedValue.ToString()) == -1 ? eqid.ID : Convert.ToInt32(cmbEquipments.SelectedValue.ToString());
-            lq.tblRecieveds.InsertOnSubmit(a);
+            a.AnbarID = 1;
+            lq.tblResids.InsertOnSubmit(a);
             lq.SubmitChanges();
 
+            var residno = (from c in lq.tblResids
+                        select c).OrderByDescending(x => x.ID).First();
 
-          
+
+
+            tblRecieved b = new tblRecieved();
+            // a.DeliverTo = 1;
+            b.PartNumber = txtPartNum.Text;
+            b.EquipID = Convert.ToInt32(cmbEquipments.SelectedValue.ToString()) == -1 ? eqid.ID : Convert.ToInt32(cmbEquipments.SelectedValue.ToString());
+            b.Tedad = Convert.ToInt32((txtTedad.Text));
+            b.ResidNo = residno.ID;
+            lq.tblRecieveds.InsertOnSubmit(b);
+            lq.SubmitChanges();
+
 
             _Fillgrid(); 
         }
@@ -123,7 +137,7 @@ namespace zirsakht_stock
                 //var rowview = row as DataGridViewRow;
                 //tblDelivered _row = new tblDelivered();
                 //_row = (tblDelivered)rowview.DataBoundItem;
-                int _row = Convert.ToInt32(row.Cells["ID"].Value.ToString());
+                int _row = Convert.ToInt32(row.Cells["pid"].Value.ToString());
                 var sql = (from s in lq.tblRecieveds
                            where s.ID == _row
                            select s);

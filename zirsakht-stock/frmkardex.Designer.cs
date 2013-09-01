@@ -175,7 +175,7 @@
             // 
             this.lblsadereh.AutoSize = true;
             this.lblsadereh.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lblsadereh.Location = new System.Drawing.Point(133, 231);
+            this.lblsadereh.Location = new System.Drawing.Point(133, 230);
             this.lblsadereh.Name = "lblsadereh";
             this.lblsadereh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblsadereh.Size = new System.Drawing.Size(0, 18);
@@ -185,7 +185,7 @@
             // 
             this.lblmandeh.AutoSize = true;
             this.lblmandeh.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lblmandeh.Location = new System.Drawing.Point(133, 271);
+            this.lblmandeh.Location = new System.Drawing.Point(133, 270);
             this.lblmandeh.Name = "lblmandeh";
             this.lblmandeh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblmandeh.Size = new System.Drawing.Size(0, 18);
@@ -195,7 +195,7 @@
             // 
             this.lblvaredeh.AutoSize = true;
             this.lblvaredeh.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lblvaredeh.Location = new System.Drawing.Point(133, 197);
+            this.lblvaredeh.Location = new System.Drawing.Point(133, 196);
             this.lblvaredeh.Name = "lblvaredeh";
             this.lblvaredeh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblvaredeh.Size = new System.Drawing.Size(0, 18);
