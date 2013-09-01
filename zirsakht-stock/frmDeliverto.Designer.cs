@@ -95,8 +95,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.txtPerson);
             this.splitContainer1.Panel2.Controls.Add(this.txtPartNum);
             this.splitContainer1.Panel2.Controls.Add(this.btnAdd);
-            this.splitContainer1.Size = new System.Drawing.Size(1176, 436);
-            this.splitContainer1.SplitterDistance = 872;
+            this.splitContainer1.Size = new System.Drawing.Size(1191, 508);
+            this.splitContainer1.SplitterDistance = 883;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -123,7 +123,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(872, 436);
+            this.dataGridView1.Size = new System.Drawing.Size(883, 508);
             this.dataGridView1.TabIndex = 0;
             // 
             // PartNumber
@@ -373,7 +373,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1176, 436);
+            this.ClientSize = new System.Drawing.Size(1191, 508);
             this.Controls.Add(this.splitContainer1);
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "frmDeliverto";

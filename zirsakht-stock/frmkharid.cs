@@ -83,7 +83,7 @@ namespace zirsakht_stock
 
             var sql = (from s in lq.tblResids
                        join p in lq.tblRecieveds on s.ResidNo equals p.ResidNo
-                       select new {pid=p.ID, contractno=s.ContractNO,kharidtype = s.kharidType, unit = p.tblEquipment.tblUnit.Unit, ID = s.ID, equipid = p.EquipID, partnumber = p.PartNumber, tedad = p.Tedad, date = s.Date, receivedby = s.ReceivedBy, description = s.Description, ersal = s.Ersal });
+                       select new {dateadded=p.dateadded,pid=p.ID, contractno=s.ContractNO,kharidtype = s.kharidType, unit = p.tblEquipment.tblUnit.Unit, ID = s.ID, equipid = p.EquipID, partnumber = p.PartNumber, tedad = p.Tedad, date = s.Date, receivedby = s.ReceivedBy, description = s.Description, ersal = s.Ersal });
             dataGridView1.DataSource = sql;
         }
        
@@ -112,6 +112,7 @@ namespace zirsakht_stock
                 b.ResidNo = resid;
                 b.Tedad = Convert.ToInt32((txtTedad.Text));
                 b.EquipID = Convert.ToInt32(cmbEquipments.SelectedValue.ToString()) == -1 ? eqid.ID : Convert.ToInt32(cmbEquipments.SelectedValue.ToString());
+                b.dateadded = DateTime.Now;
                 lq.tblRecieveds.InsertOnSubmit(b);
                 lq.SubmitChanges();
             }
@@ -181,7 +182,7 @@ namespace zirsakht_stock
             {
 
                 var a = (from c in lq.tblResids
-                         where c.ResidNo == 0
+                         where c.ResidNo == resid
                          select c).First();
                 // a.DeliverTo = 1;
                 a.kharid = true;
@@ -197,6 +198,7 @@ namespace zirsakht_stock
                 a.issued = true;
                 lq.SubmitChanges();
                 MessageBox.Show("رسید مورد نظر با موفقیت ثبت گردید");
+                this.Close();
 
             }
 

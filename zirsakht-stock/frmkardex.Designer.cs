@@ -38,6 +38,8 @@
             this.dahande = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.receivedby = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblsadereh = new System.Windows.Forms.Label();
             this.lblmandeh = new System.Windows.Forms.Label();
             this.lblvaredeh = new System.Windows.Forms.Label();
@@ -49,11 +51,15 @@
             this.cmbTypes = new System.Windows.Forms.ComboBox();
             this.cmbEquipments = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -69,17 +75,8 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.lblsadereh);
-            this.splitContainer1.Panel2.Controls.Add(this.lblmandeh);
-            this.splitContainer1.Panel2.Controls.Add(this.lblvaredeh);
-            this.splitContainer1.Panel2.Controls.Add(this.label3);
-            this.splitContainer1.Panel2.Controls.Add(this.label2);
-            this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Panel2.Controls.Add(this.txtDevice);
-            this.splitContainer1.Panel2.Controls.Add(this.btnPrint);
-            this.splitContainer1.Panel2.Controls.Add(this.cmbTypes);
-            this.splitContainer1.Panel2.Controls.Add(this.cmbEquipments);
-            this.splitContainer1.Panel2.Controls.Add(this.btnAdd);
+            this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
+            this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
             this.splitContainer1.Size = new System.Drawing.Size(1187, 441);
             this.splitContainer1.SplitterDistance = 878;
             this.splitContainer1.SplitterWidth = 5;
@@ -101,6 +98,7 @@
             this.receivedby,
             this.status});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.MultiSelect = false;
@@ -171,11 +169,31 @@
             this.status.Name = "status";
             this.status.ReadOnly = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(218, 47);
+            this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label5.Size = new System.Drawing.Size(37, 16);
+            this.label5.TabIndex = 1011;
+            this.label5.Text = "نام : ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(216, 19);
+            this.label4.Name = "label4";
+            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label4.Size = new System.Drawing.Size(39, 16);
+            this.label4.TabIndex = 1010;
+            this.label4.Text = "نوع : ";
+            // 
             // lblsadereh
             // 
             this.lblsadereh.AutoSize = true;
             this.lblsadereh.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lblsadereh.Location = new System.Drawing.Point(133, 230);
+            this.lblsadereh.Location = new System.Drawing.Point(64, 53);
             this.lblsadereh.Name = "lblsadereh";
             this.lblsadereh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblsadereh.Size = new System.Drawing.Size(0, 18);
@@ -185,7 +203,7 @@
             // 
             this.lblmandeh.AutoSize = true;
             this.lblmandeh.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lblmandeh.Location = new System.Drawing.Point(133, 270);
+            this.lblmandeh.Location = new System.Drawing.Point(64, 93);
             this.lblmandeh.Name = "lblmandeh";
             this.lblmandeh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblmandeh.Size = new System.Drawing.Size(0, 18);
@@ -195,7 +213,7 @@
             // 
             this.lblvaredeh.AutoSize = true;
             this.lblvaredeh.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lblvaredeh.Location = new System.Drawing.Point(133, 196);
+            this.lblvaredeh.Location = new System.Drawing.Point(64, 19);
             this.lblvaredeh.Name = "lblvaredeh";
             this.lblvaredeh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblvaredeh.Size = new System.Drawing.Size(0, 18);
@@ -205,7 +223,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(170, 229);
+            this.label3.Location = new System.Drawing.Point(134, 21);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label3.Size = new System.Drawing.Size(90, 16);
@@ -215,7 +233,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(215, 269);
+            this.label2.Location = new System.Drawing.Point(179, 93);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label2.Size = new System.Drawing.Size(45, 16);
@@ -225,7 +243,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(176, 195);
+            this.label1.Location = new System.Drawing.Point(140, 55);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label1.Size = new System.Drawing.Size(84, 16);
@@ -234,14 +252,14 @@
             // 
             // txtDevice
             // 
-            this.txtDevice.Location = new System.Drawing.Point(26, 97);
+            this.txtDevice.Location = new System.Drawing.Point(23, 96);
             this.txtDevice.Name = "txtDevice";
-            this.txtDevice.Size = new System.Drawing.Size(161, 23);
+            this.txtDevice.Size = new System.Drawing.Size(229, 23);
             this.txtDevice.TabIndex = 1003;
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(176, 385);
+            this.btnPrint.Location = new System.Drawing.Point(171, 242);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(87, 28);
@@ -254,7 +272,7 @@
             // 
             this.cmbTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTypes.FormattingEnabled = true;
-            this.cmbTypes.Location = new System.Drawing.Point(26, 22);
+            this.cmbTypes.Location = new System.Drawing.Point(23, 15);
             this.cmbTypes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbTypes.Name = "cmbTypes";
             this.cmbTypes.Size = new System.Drawing.Size(161, 24);
@@ -265,7 +283,7 @@
             // 
             this.cmbEquipments.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEquipments.FormattingEnabled = true;
-            this.cmbEquipments.Location = new System.Drawing.Point(26, 54);
+            this.cmbEquipments.Location = new System.Drawing.Point(23, 47);
             this.cmbEquipments.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbEquipments.Name = "cmbEquipments";
             this.cmbEquipments.Size = new System.Drawing.Size(161, 24);
@@ -274,7 +292,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(26, 143);
+            this.btnAdd.Location = new System.Drawing.Point(23, 242);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(87, 28);
@@ -282,6 +300,35 @@
             this.btnAdd.Text = "جستجو";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblsadereh);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lblmandeh);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lblvaredeh);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(26, 301);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(256, 128);
+            this.groupBox1.TabIndex = 1012;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.btnPrint);
+            this.groupBox2.Controls.Add(this.btnAdd);
+            this.groupBox2.Controls.Add(this.txtDevice);
+            this.groupBox2.Controls.Add(this.cmbTypes);
+            this.groupBox2.Controls.Add(this.cmbEquipments);
+            this.groupBox2.Location = new System.Drawing.Point(3, 10);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(289, 285);
+            this.groupBox2.TabIndex = 1013;
+            this.groupBox2.TabStop = false;
             // 
             // frmkardex
             // 
@@ -292,10 +339,13 @@
             this.Load += new System.EventHandler(this.frmkardex_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -303,7 +353,6 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox cmbTypes;
         private System.Windows.Forms.ComboBox cmbEquipments;
         private System.Windows.Forms.Button btnAdd;
@@ -323,5 +372,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

@@ -74,6 +74,7 @@ namespace zirsakht_stock
             
             lq.tblDelivereds.InsertOnSubmit(a);
             lq.SubmitChanges();
+            MessageBox.Show("کالای مورد نظر با موفقیت ثبت گردید");
 
             _Fillgrid(); 
         }

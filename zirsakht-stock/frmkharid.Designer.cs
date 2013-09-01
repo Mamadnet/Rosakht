@@ -53,6 +53,7 @@
             this.txtPartNum = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.PartNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateadded = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contractno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tedad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -117,6 +118,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PartNumber,
+            this.dateadded,
             this.pid,
             this.contractno,
             this.Tedad,
@@ -357,6 +359,13 @@
             this.PartNumber.ReadOnly = true;
             this.PartNumber.Width = 180;
             // 
+            // dateadded
+            // 
+            this.dateadded.DataPropertyName = "dateadded";
+            this.dateadded.HeaderText = "Column1";
+            this.dateadded.Name = "dateadded";
+            this.dateadded.ReadOnly = true;
+            // 
             // pid
             // 
             this.pid.DataPropertyName = "pid";
@@ -468,6 +477,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbTypes;
         private System.Windows.Forms.DataGridViewTextBoxColumn PartNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateadded;
         private System.Windows.Forms.DataGridViewTextBoxColumn pid;
         private System.Windows.Forms.DataGridViewTextBoxColumn contractno;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tedad;
