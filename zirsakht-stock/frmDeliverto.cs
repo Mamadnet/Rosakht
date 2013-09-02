@@ -71,6 +71,7 @@ namespace zirsakht_stock
             a.Date = (new PersianDate(DateTime.Now)).ToString();
             a.Tedad = Convert.ToInt32((txtTedad.Text));
             a.EquipID = Convert.ToInt32(cmbEquipments.SelectedValue.ToString());
+            a.Amvalno = txtAmval.Text;
             
             lq.tblDelivereds.InsertOnSubmit(a);
             lq.SubmitChanges();

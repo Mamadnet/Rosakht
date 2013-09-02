@@ -57,6 +57,11 @@ namespace zirsakht_stock
 
         }
 
+        private void رسیدToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
        
        
     }

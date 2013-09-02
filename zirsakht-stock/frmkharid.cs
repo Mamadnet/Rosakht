@@ -74,6 +74,7 @@ namespace zirsakht_stock
             // a.DeliverTo = 1;
             a.issued = false;
             a.ResidNo = resid;
+            a.kharidType = 1;
             lq.tblResids.InsertOnSubmit(a);
             lq.SubmitChanges();
             
@@ -83,7 +84,7 @@ namespace zirsakht_stock
 
             var sql = (from s in lq.tblResids
                        join p in lq.tblRecieveds on s.ResidNo equals p.ResidNo
-                       select new {dateadded=p.dateadded,pid=p.ID, contractno=s.ContractNO,kharidtype = s.kharidType, unit = p.tblEquipment.tblUnit.Unit, ID = s.ID, equipid = p.EquipID, partnumber = p.PartNumber, tedad = p.Tedad, date = s.Date, receivedby = s.ReceivedBy, description = s.Description, ersal = s.Ersal });
+                       select new {dateadded=p.dateadded,pid=p.ID, contractno=s.ContractNO,kharidtype = s.tblSubCategory.title, unit = p.tblEquipment.tblUnit.Unit, ID = s.ID, equipid = p.EquipID, partnumber = p.PartNumber, tedad = p.Tedad, date = s.Date, receivedby = s.ReceivedBy, description = s.Description, ersal = s.Ersal });
             dataGridView1.DataSource = sql;
         }
        

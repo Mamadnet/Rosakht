@@ -365,6 +365,7 @@
             this.dateadded.HeaderText = "Column1";
             this.dateadded.Name = "dateadded";
             this.dateadded.ReadOnly = true;
+            this.dateadded.Visible = false;
             // 
             // pid
             // 
@@ -377,7 +378,7 @@
             // contractno
             // 
             this.contractno.DataPropertyName = "contractno";
-            this.contractno.HeaderText = "شماره";
+            this.contractno.HeaderText = "شماره قرارداد";
             this.contractno.Name = "contractno";
             this.contractno.ReadOnly = true;
             // 
