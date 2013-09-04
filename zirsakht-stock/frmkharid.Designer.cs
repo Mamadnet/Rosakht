@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnResid = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cmbTypes = new System.Windows.Forms.ComboBox();
@@ -39,7 +40,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtGharardad = new System.Windows.Forms.TextBox();
             this.cmbKharidType = new System.Windows.Forms.ComboBox();
-            this.btnResid = new System.Windows.Forms.Button();
             this.cmbUints = new System.Windows.Forms.ComboBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,8 +53,6 @@
             this.txtPartNum = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.PartNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateadded = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contractno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tedad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +67,16 @@
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnResid
+            // 
+            this.btnResid.Location = new System.Drawing.Point(3, 555);
+            this.btnResid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnResid.Name = "btnResid";
+            this.btnResid.Size = new System.Drawing.Size(289, 28);
+            this.btnResid.TabIndex = 1003;
+            this.btnResid.Text = "ثبت رسید";
+            this.btnResid.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
             // 
@@ -118,8 +126,6 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PartNumber,
-            this.dateadded,
-            this.pid,
             this.contractno,
             this.Tedad,
             this.unit,
@@ -144,7 +150,7 @@
             this.cmbTypes.Location = new System.Drawing.Point(26, 13);
             this.cmbTypes.Name = "cmbTypes";
             this.cmbTypes.Size = new System.Drawing.Size(161, 24);
-            this.cmbTypes.TabIndex = 1;
+            this.cmbTypes.TabIndex = 1016;
             this.cmbTypes.SelectedIndexChanged += new System.EventHandler(this.cmbTypes_SelectedIndexChanged);
             // 
             // label9
@@ -213,7 +219,7 @@
             this.txtGharardad.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtGharardad.Name = "txtGharardad";
             this.txtGharardad.Size = new System.Drawing.Size(161, 23);
-            this.txtGharardad.TabIndex = 9;
+            this.txtGharardad.TabIndex = 1005;
             // 
             // cmbKharidType
             // 
@@ -222,18 +228,7 @@
             this.cmbKharidType.Location = new System.Drawing.Point(26, 292);
             this.cmbKharidType.Name = "cmbKharidType";
             this.cmbKharidType.Size = new System.Drawing.Size(161, 24);
-            this.cmbKharidType.TabIndex = 8;
-            // 
-            // btnResid
-            // 
-            this.btnResid.Location = new System.Drawing.Point(3, 555);
-            this.btnResid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnResid.Name = "btnResid";
-            this.btnResid.Size = new System.Drawing.Size(289, 28);
-            this.btnResid.TabIndex = 1003;
-            this.btnResid.Text = "ثبت رسید";
-            this.btnResid.UseVisualStyleBackColor = true;
-            this.btnResid.Click += new System.EventHandler(this.btnResid_Click);
+            this.cmbKharidType.TabIndex = 1004;
             // 
             // cmbUints
             // 
@@ -242,7 +237,7 @@
             this.cmbUints.Location = new System.Drawing.Point(26, 128);
             this.cmbUints.Name = "cmbUints";
             this.cmbUints.Size = new System.Drawing.Size(161, 24);
-            this.cmbUints.TabIndex = 4;
+            this.cmbUints.TabIndex = 1002;
             this.cmbUints.Visible = false;
             // 
             // btnDelete
@@ -254,7 +249,6 @@
             this.btnDelete.TabIndex = 13;
             this.btnDelete.Text = "حذف";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // label4
             // 
@@ -281,7 +275,7 @@
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(168, 108);
-            this.txtDesc.TabIndex = 10;
+            this.txtDesc.TabIndex = 1000;
             // 
             // label2
             // 
@@ -346,7 +340,7 @@
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(87, 28);
-            this.btnAdd.TabIndex = 11;
+            this.btnAdd.TabIndex = 1001;
             this.btnAdd.Text = "ثبت";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -359,26 +353,10 @@
             this.PartNumber.ReadOnly = true;
             this.PartNumber.Width = 180;
             // 
-            // dateadded
-            // 
-            this.dateadded.DataPropertyName = "dateadded";
-            this.dateadded.HeaderText = "Column1";
-            this.dateadded.Name = "dateadded";
-            this.dateadded.ReadOnly = true;
-            this.dateadded.Visible = false;
-            // 
-            // pid
-            // 
-            this.pid.DataPropertyName = "pid";
-            this.pid.HeaderText = "pid";
-            this.pid.Name = "pid";
-            this.pid.ReadOnly = true;
-            this.pid.Visible = false;
-            // 
             // contractno
             // 
             this.contractno.DataPropertyName = "contractno";
-            this.contractno.HeaderText = "شماره قرارداد";
+            this.contractno.HeaderText = "شماره";
             this.contractno.Name = "contractno";
             this.contractno.ReadOnly = true;
             // 
@@ -439,7 +417,6 @@
             this.ClientSize = new System.Drawing.Size(1172, 618);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmkharid";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmkharid_FormClosing);
             this.Load += new System.EventHandler(this.frmkharid_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -478,8 +455,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbTypes;
         private System.Windows.Forms.DataGridViewTextBoxColumn PartNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateadded;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pid;
         private System.Windows.Forms.DataGridViewTextBoxColumn contractno;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tedad;
         private System.Windows.Forms.DataGridViewTextBoxColumn unit;

@@ -18,13 +18,12 @@ namespace zirsakht_stock
         public frmkardex()
         {
             InitializeComponent();
-            var q = (from s in lq.vwKardes 
-                     orderby s.date
-                     orderby s.dateadded
-                             select s).ToList();
+            var
+            sql = (from s in lq.vwKardes 
+                             select s);
 
             dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.DataSource = q;
+            dataGridView1.DataSource = sql;
 
 
             var typequery = (from s in lq.tblTypes
@@ -88,7 +87,7 @@ namespace zirsakht_stock
 
             dataGridView1.DataSource = sql;
 
-            var varedeh = lq.Calculatevaredeh(Convert.ToInt32(cmbEquipments.SelectedValue));
+            var varedeh = lq.Calculatevadereh(Convert.ToInt32(cmbEquipments.SelectedValue));
             var sadereh = lq.Calculatesadereh(Convert.ToInt32(cmbEquipments.SelectedValue));
 
             lblmandeh.Text = Convert.ToString(varedeh-sadereh);
