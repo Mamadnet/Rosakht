@@ -34,6 +34,7 @@
             this.txtTedad = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.PartNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tedad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ersal = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,10 +50,10 @@
             this.txtPartNum = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnResid = new System.Windows.Forms.Button();
             this.cmbUints = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -110,6 +111,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PartNumber,
+            this.pid,
             this.Tedad,
             this.unit,
             this.ersal,
@@ -134,6 +136,14 @@
             this.PartNumber.Name = "PartNumber";
             this.PartNumber.ReadOnly = true;
             this.PartNumber.Width = 180;
+            // 
+            // pid
+            // 
+            this.pid.DataPropertyName = "pid";
+            this.pid.HeaderText = "pid";
+            this.pid.Name = "pid";
+            this.pid.ReadOnly = true;
+            this.pid.Visible = false;
             // 
             // Tedad
             // 
@@ -290,35 +300,16 @@
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 2;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(189, 57);
-            this.label5.Name = "label5";
-            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label5.Size = new System.Drawing.Size(37, 16);
-            this.label5.TabIndex = 1005;
-            this.label5.Text = "نام : ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(189, 25);
-            this.label3.Name = "label3";
-            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label3.Size = new System.Drawing.Size(39, 16);
-            this.label3.TabIndex = 1004;
-            this.label3.Text = "نوع : ";
-            // 
             // btnResid
             // 
-            this.btnResid.Location = new System.Drawing.Point(3, 436);
+            this.btnResid.Location = new System.Drawing.Point(3, 430);
             this.btnResid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnResid.Name = "btnResid";
             this.btnResid.Size = new System.Drawing.Size(289, 28);
             this.btnResid.TabIndex = 1003;
             this.btnResid.Text = "ثبت رسید";
             this.btnResid.UseVisualStyleBackColor = true;
+            this.btnResid.Click += new System.EventHandler(this.btnResid_Click);
             // 
             // cmbUints
             // 
@@ -330,6 +321,26 @@
             this.cmbUints.TabIndex = 1002;
             this.cmbUints.Visible = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(189, 25);
+            this.label3.Name = "label3";
+            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label3.Size = new System.Drawing.Size(39, 16);
+            this.label3.TabIndex = 1004;
+            this.label3.Text = "نوع : ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(189, 57);
+            this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label5.Size = new System.Drawing.Size(37, 16);
+            this.label5.TabIndex = 1005;
+            this.label5.Text = "نام : ";
+            // 
             // frmImported
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -339,6 +350,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "frmImported";
             this.Text = "ورود کالا";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmImported_FormClosing);
             this.Load += new System.EventHandler(this.frmImported_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -367,7 +379,9 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button btnResid;
+        private System.Windows.Forms.ComboBox cmbUints;
         private System.Windows.Forms.DataGridViewTextBoxColumn PartNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pid;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tedad;
         private System.Windows.Forms.DataGridViewTextBoxColumn unit;
         private System.Windows.Forms.DataGridViewTextBoxColumn ersal;
@@ -376,6 +390,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cmbUints;
     }
 }

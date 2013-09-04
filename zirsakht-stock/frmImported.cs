@@ -14,9 +14,12 @@ namespace zirsakht_stock
     public partial class frmImported : template
     {
         lqStockDataContext lq = new lqStockDataContext();
+        int resid;
         public frmImported()
         {
+
             InitializeComponent();
+            resid = (int)lq.fnGetResidNO();
             dataGridView1.AutoGenerateColumns = false;
             _Fillgrid();
 
@@ -42,7 +45,9 @@ namespace zirsakht_stock
         {
 
             var sql = (from s in lq.tblResids
-                       select new { unit = s.tblRecieved.tblEquipment.tblUnit.Unit, ID = s.ID, equipid = s.tblRecieved.EquipID, partnumber = s.PartNumber, tedad = s.Tedad, date = s.Date, receivedby = s.ReceivedBy, description = s.Description,ersal=s.Ersal });
+                       join p in lq.tblRecieveds on s.ResidNo equals p.ResidNo
+                    
+                       select new { contractno = s.ContractNO, kharidtype = s.kharidType, unit = p.tblEquipment.tblUnit.Unit, ID = s.ID,pid=p.ID, equipid = p.EquipID, partnumber = p.PartNumber, tedad = p.Tedad, date = s.Date, receivedby = s.ReceivedBy, description = s.Description, ersal = s.Ersal });
             dataGridView1.DataSource = sql;
         }
 
@@ -78,33 +83,25 @@ namespace zirsakht_stock
             }
             var eqid = (from c in lq.tblEquipments
                         select c).OrderByDescending(x => x.ID).First();
-                  
-           
-            tblResid a = new tblResid();
-            // a.DeliverTo = 1;
-            a.PartNumber = txtPartNum.Text;
-            a.Description = txtDesc.Text;
-            a.Ersal =txtersal.Text;
-            a.ReceivedBy = txtPerson.Text;
-            a.Date = (new PersianDate(DateTime.Now)).ToString();
-           
-            lq.tblResids.InsertOnSubmit(a);
-            lq.SubmitChanges();
-
-            var residno = (from c in lq.tblResids
-                        select c).OrderByDescending(x => x.ID).First();
 
 
 
-            tblRecieved b = new tblRecieved();
-            // a.DeliverTo = 1;
-            b.PartNumber = txtPartNum.Text;
-            b.EquipID = Convert.ToInt32(cmbEquipments.SelectedValue.ToString()) == -1 ? eqid.ID : Convert.ToInt32(cmbEquipments.SelectedValue.ToString());
-            b.Tedad = Convert.ToInt32((txtTedad.Text));
-            b.ResidNo = residno.ID;
+            if (int.Parse(txtTedad.Text) > 0)
+            {
 
-            lq.tblRecieveds.InsertOnSubmit(b);
-            lq.SubmitChanges();
+                tblRecieved b = new tblRecieved();
+                // a.DeliverTo = 1;
+                b.PartNumber = txtPartNum.Text;
+                b.EquipID = Convert.ToInt32(cmbEquipments.SelectedValue.ToString()) == -1 ? eqid.ID : Convert.ToInt32(cmbEquipments.SelectedValue.ToString());
+                b.Tedad = Convert.ToInt32((txtTedad.Text));
+                b.ResidNo = resid;
+                lq.tblRecieveds.InsertOnSubmit(b);
+                lq.SubmitChanges();
+            }
+            else
+            {
+                MessageBox.Show("لطفا تمام موارد را تکمیل نمایید");
+            }
 
 
             _Fillgrid(); 
@@ -113,6 +110,12 @@ namespace zirsakht_stock
         private void frmImported_Load(object sender, EventArgs e)
         {
             txtPartNum.Text = cmbEquipments.Text;
+            tblResid a = new tblResid();
+            // a.DeliverTo = 1;
+            a.issued = false;
+            a.ResidNo = resid;
+            lq.tblResids.InsertOnSubmit(a);
+            lq.SubmitChanges();
 
         }
 
@@ -137,7 +140,7 @@ namespace zirsakht_stock
                 //var rowview = row as DataGridViewRow;
                 //tblDelivered _row = new tblDelivered();
                 //_row = (tblDelivered)rowview.DataBoundItem;
-                int _row = Convert.ToInt32(row.Cells["ID"].Value.ToString());
+                int _row = Convert.ToInt32(row.Cells["pid"].Value.ToString());
                 var sql = (from s in lq.tblRecieveds
                            where s.ID == _row
                            select s);
@@ -190,9 +193,67 @@ namespace zirsakht_stock
                 e.Handled = true;
          
         }
-        
-     
 
+        private void btnResid_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+
+                var a = (from c in lq.tblResids
+                         where c.ResidNo == resid
+                         select c).First();
+                // a.DeliverTo = 1;
+                a.kharid = false;
+                
+                a.Description = txtDesc.Text;
+                a.Ersal = txtersal.Text;
+                a.ReceivedBy = txtPerson.Text;
+                a.Date = (new PersianDate(DateTime.Now)).ToString();
+                a.AnbarID = 1;
+                a.ResidNo = resid;
+                a.issued = true;
+                lq.SubmitChanges();
+                MessageBox.Show("رسید مورد نظر با موفقیت ثبت گردید");
+                this.Close();
+
+            }
+
+            else
+            {
+
+                MessageBox.Show("هیچ کالایی ثبت نشده است");
+
+            }
+        }
+
+
+        private void deleteALLZERO()
+        {
+
+            //var b = (from c in lq.tblRecieveds
+            //         where c.tblResid.issued == false
+            //         select c).ToList();
+
+            //lq.tblRecieveds.DeleteAllOnSubmit(b);
+
+            //lq.SubmitChanges();
+
+
+            //var a = (from c in lq.tblResids
+            //         where c.issued == false
+            //         select c).ToList();
+            //lq.tblResids.DeleteAllOnSubmit(a);
+
+            //lq.SubmitChanges();
+
+
+
+        }
+
+        private void frmImported_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            deleteALLZERO();
+        }
 
     }
 }

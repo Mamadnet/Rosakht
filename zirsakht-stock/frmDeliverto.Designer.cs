@@ -57,6 +57,8 @@
             this.txtPerson = new System.Windows.Forms.TextBox();
             this.txtPartNum = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtAmval = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -77,6 +79,8 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.label8);
+            this.splitContainer1.Panel2.Controls.Add(this.txtAmval);
             this.splitContainer1.Panel2.Controls.Add(this.lblMojodi);
             this.splitContainer1.Panel2.Controls.Add(this.label7);
             this.splitContainer1.Panel2.Controls.Add(this.label5);
@@ -95,8 +99,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.txtPerson);
             this.splitContainer1.Panel2.Controls.Add(this.txtPartNum);
             this.splitContainer1.Panel2.Controls.Add(this.btnAdd);
-            this.splitContainer1.Size = new System.Drawing.Size(1176, 436);
-            this.splitContainer1.SplitterDistance = 872;
+            this.splitContainer1.Size = new System.Drawing.Size(1191, 508);
+            this.splitContainer1.SplitterDistance = 883;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -123,7 +127,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(872, 436);
+            this.dataGridView1.Size = new System.Drawing.Size(883, 508);
             this.dataGridView1.TabIndex = 0;
             // 
             // PartNumber
@@ -199,7 +203,7 @@
             // 
             this.lblMojodi.AutoSize = true;
             this.lblMojodi.ForeColor = System.Drawing.Color.Maroon;
-            this.lblMojodi.Location = new System.Drawing.Point(151, 267);
+            this.lblMojodi.Location = new System.Drawing.Point(151, 312);
             this.lblMojodi.Name = "lblMojodi";
             this.lblMojodi.Size = new System.Drawing.Size(0, 16);
             this.lblMojodi.TabIndex = 1009;
@@ -207,7 +211,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(225, 263);
+            this.label7.Location = new System.Drawing.Point(225, 308);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 16);
             this.label7.TabIndex = 1008;
@@ -225,7 +229,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(140, 383);
+            this.btnDelete.Location = new System.Drawing.Point(137, 436);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(87, 28);
@@ -258,7 +262,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(233, 238);
+            this.label4.Location = new System.Drawing.Point(240, 242);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(43, 16);
@@ -295,7 +299,7 @@
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(26, 293);
+            this.txtDesc.Location = new System.Drawing.Point(24, 337);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(254, 83);
@@ -360,7 +364,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(26, 383);
+            this.btnAdd.Location = new System.Drawing.Point(26, 436);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(87, 28);
@@ -369,11 +373,29 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(199, 272);
+            this.label8.Name = "label8";
+            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label8.Size = new System.Drawing.Size(84, 16);
+            this.label8.TabIndex = 1011;
+            this.label8.Text = "شماره اموال :";
+            // 
+            // txtAmval
+            // 
+            this.txtAmval.Location = new System.Drawing.Point(26, 269);
+            this.txtAmval.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtAmval.Name = "txtAmval";
+            this.txtAmval.Size = new System.Drawing.Size(161, 23);
+            this.txtAmval.TabIndex = 1010;
+            // 
             // frmDeliverto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1176, 436);
+            this.ClientSize = new System.Drawing.Size(1191, 508);
             this.Controls.Add(this.splitContainer1);
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "frmDeliverto";
@@ -420,5 +442,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblMojodi;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtAmval;
     }
 }
