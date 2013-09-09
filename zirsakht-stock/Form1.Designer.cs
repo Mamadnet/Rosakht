@@ -34,6 +34,8 @@
             this.ورودبهانبارToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.خروجازانبارToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.خروجToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.کالایجدیدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.تعریفانبارToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.گزارشToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.کاردکسToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.رسیدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,6 +58,8 @@
             // فایلToolStripMenuItem
             // 
             this.فایلToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.کالایجدیدToolStripMenuItem,
+            this.تعریفانبارToolStripMenuItem,
             this.ثبتخریدToolStripMenuItem,
             this.ورودبهانبارToolStripMenuItem,
             this.خروجازانبارToolStripMenuItem,
@@ -95,6 +99,20 @@
             this.خروجToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.خروجToolStripMenuItem.Text = "خروج";
             this.خروجToolStripMenuItem.Click += new System.EventHandler(this.خروجToolStripMenuItem_Click);
+            // 
+            // کالایجدیدToolStripMenuItem
+            // 
+            this.کالایجدیدToolStripMenuItem.Name = "کالایجدیدToolStripMenuItem";
+            this.کالایجدیدToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.کالایجدیدToolStripMenuItem.Text = " کالای جدید";
+            this.کالایجدیدToolStripMenuItem.Click += new System.EventHandler(this.کالایجدیدToolStripMenuItem_Click);
+            // 
+            // تعریفانبارToolStripMenuItem
+            // 
+            this.تعریفانبارToolStripMenuItem.Name = "تعریفانبارToolStripMenuItem";
+            this.تعریفانبارToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.تعریفانبارToolStripMenuItem.Text = "تعریف انبار";
+            this.تعریفانبارToolStripMenuItem.Click += new System.EventHandler(this.تعریفانبارToolStripMenuItem_Click);
             // 
             // گزارشToolStripMenuItem
             // 
@@ -159,6 +177,8 @@
         private System.Windows.Forms.ToolStripMenuItem ثبتخریدToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem رسیدToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem حوالهToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem کالایجدیدToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem تعریفانبارToolStripMenuItem;
 
     }
 }

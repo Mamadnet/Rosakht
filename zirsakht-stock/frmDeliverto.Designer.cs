@@ -39,6 +39,8 @@
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtAmval = new System.Windows.Forms.TextBox();
             this.lblMojodi = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -57,8 +59,7 @@
             this.txtPerson = new System.Windows.Forms.TextBox();
             this.txtPartNum = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtAmval = new System.Windows.Forms.TextBox();
+            this.cmbTemp = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -79,6 +80,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.cmbTemp);
             this.splitContainer1.Panel2.Controls.Add(this.label8);
             this.splitContainer1.Panel2.Controls.Add(this.txtAmval);
             this.splitContainer1.Panel2.Controls.Add(this.lblMojodi);
@@ -199,6 +201,24 @@
             this.ID.ReadOnly = true;
             this.ID.Visible = false;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(199, 272);
+            this.label8.Name = "label8";
+            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label8.Size = new System.Drawing.Size(84, 16);
+            this.label8.TabIndex = 1011;
+            this.label8.Text = "شماره اموال :";
+            // 
+            // txtAmval
+            // 
+            this.txtAmval.Location = new System.Drawing.Point(26, 269);
+            this.txtAmval.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtAmval.Name = "txtAmval";
+            this.txtAmval.Size = new System.Drawing.Size(161, 23);
+            this.txtAmval.TabIndex = 1010;
+            // 
             // lblMojodi
             // 
             this.lblMojodi.AutoSize = true;
@@ -229,7 +249,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(137, 436);
+            this.btnDelete.Location = new System.Drawing.Point(191, 467);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(87, 28);
@@ -299,7 +319,7 @@
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(24, 337);
+            this.txtDesc.Location = new System.Drawing.Point(26, 366);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(254, 83);
@@ -364,7 +384,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(26, 436);
+            this.btnAdd.Location = new System.Drawing.Point(64, 467);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(87, 28);
@@ -373,23 +393,15 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // label8
+            // cmbTemp
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(199, 272);
-            this.label8.Name = "label8";
-            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label8.Size = new System.Drawing.Size(84, 16);
-            this.label8.TabIndex = 1011;
-            this.label8.Text = "شماره اموال :";
-            // 
-            // txtAmval
-            // 
-            this.txtAmval.Location = new System.Drawing.Point(26, 269);
-            this.txtAmval.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtAmval.Name = "txtAmval";
-            this.txtAmval.Size = new System.Drawing.Size(161, 23);
-            this.txtAmval.TabIndex = 1010;
+            this.cmbTemp.AutoSize = true;
+            this.cmbTemp.Location = new System.Drawing.Point(26, 308);
+            this.cmbTemp.Name = "cmbTemp";
+            this.cmbTemp.Size = new System.Drawing.Size(57, 20);
+            this.cmbTemp.TabIndex = 1012;
+            this.cmbTemp.Text = "موقت";
+            this.cmbTemp.UseVisualStyleBackColor = true;
             // 
             // frmDeliverto
             // 
@@ -444,5 +456,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtAmval;
+        private System.Windows.Forms.CheckBox cmbTemp;
     }
 }

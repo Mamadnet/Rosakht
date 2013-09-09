@@ -63,6 +63,18 @@ namespace zirsakht_stock
             frmD.ShowDialog();
         }
 
+        private void کالایجدیدToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEquipments frmD = new frmEquipments();
+            frmD.ShowDialog();
+        }
+
+        private void تعریفانبارToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAnbar a = new frmAnbar();
+            a.ShowDialog();
+        }
+
        
        
     }

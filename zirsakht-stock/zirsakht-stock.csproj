@@ -76,6 +76,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAnbar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAnbar.Designer.cs">
+      <DependentUpon>frmAnbar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEquipments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEquipments.Designer.cs">
+      <DependentUpon>frmEquipments.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmImported.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +136,12 @@
     <Compile Include="frmResid.Designer.cs">
       <DependentUpon>frmResid.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmResidItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmResidItems.Designer.cs">
+      <DependentUpon>frmResidItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="lqStock.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -137,6 +155,12 @@
     <Compile Include="template.Designer.cs">
       <DependentUpon>template.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmAnbar.resx">
+      <DependentUpon>frmAnbar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEquipments.resx">
+      <DependentUpon>frmEquipments.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmImported.resx">
       <DependentUpon>frmImported.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmResid.resx">
       <DependentUpon>frmResid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmResidItems.resx">
+      <DependentUpon>frmResidItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="template.resx">

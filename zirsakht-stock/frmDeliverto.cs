@@ -72,6 +72,7 @@ namespace zirsakht_stock
             a.Tedad = Convert.ToInt32((txtTedad.Text));
             a.EquipID = Convert.ToInt32(cmbEquipments.SelectedValue.ToString());
             a.Amvalno = txtAmval.Text;
+            a.Temp = cmbTemp.Checked;
             
             lq.tblDelivereds.InsertOnSubmit(a);
             lq.SubmitChanges();

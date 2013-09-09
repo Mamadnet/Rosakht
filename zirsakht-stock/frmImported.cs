@@ -19,6 +19,7 @@ namespace zirsakht_stock
         {
 
             InitializeComponent();
+            
             resid = (int)lq.fnGetResidNO();
             dataGridView1.AutoGenerateColumns = false;
             _Fillgrid();
@@ -35,6 +36,20 @@ namespace zirsakht_stock
             cmbUints.DisplayMember = "Unit";
             cmbUints.ValueMember = "ID";
             cmbUints.DataSource = unitquery;
+
+            var anbarquery = (from s in lq.tblAnbars
+                              where s.ID>1
+                             select s);
+            cmbAnbar.DisplayMember = "title";
+            cmbAnbar.ValueMember = "ID";
+            cmbAnbar.DataSource = anbarquery;
+
+            var kharidquery = (from s in lq.tblSubCategories
+                               where s.catID == 2
+                               select s).ToList();
+            cmbKharidType.DisplayMember = "Title";
+            cmbKharidType.ValueMember = "ID";
+            cmbKharidType.DataSource = kharidquery.ToArray();
 
 
 
@@ -84,6 +99,13 @@ namespace zirsakht_stock
             var eqid = (from c in lq.tblEquipments
                         select c).OrderByDescending(x => x.ID).First();
 
+            var a = (from c in lq.tblResids
+                     where c.ResidNo.Equals(resid.ToString())
+                     select c).First();
+            a.ResidNo = txtResid.Text;
+            if(a.ID!=null)
+            lq.SubmitChanges();
+
 
 
             if (int.Parse(txtTedad.Text) > 0)
@@ -94,7 +116,7 @@ namespace zirsakht_stock
                 b.PartNumber = txtPartNum.Text;
                 b.EquipID = Convert.ToInt32(cmbEquipments.SelectedValue.ToString()) == -1 ? eqid.ID : Convert.ToInt32(cmbEquipments.SelectedValue.ToString());
                 b.Tedad = Convert.ToInt32((txtTedad.Text));
-                b.ResidNo = resid;
+                b.ResidNo = txtResid.Text;
                 lq.tblRecieveds.InsertOnSubmit(b);
                 lq.SubmitChanges();
             }
@@ -113,7 +135,10 @@ namespace zirsakht_stock
             tblResid a = new tblResid();
             // a.DeliverTo = 1;
             a.issued = false;
-            a.ResidNo = resid;
+            a.ResidNo = resid.ToString();
+            a.kharidType = 4;   //   4 یعنی ورورد از انبار    
+            a.kharid = false;
+            a.AnbarID = 2;
             lq.tblResids.InsertOnSubmit(a);
             lq.SubmitChanges();
 
@@ -200,17 +225,23 @@ namespace zirsakht_stock
             {
 
                 var a = (from c in lq.tblResids
-                         where c.ResidNo == resid
+                         where c.ResidNo.Equals(txtResid.Text)
                          select c).First();
                 // a.DeliverTo = 1;
                 a.kharid = false;
-                
+                a.kharidType = int.Parse(cmbKharidType.SelectedValue.ToString());
+                if (int.Parse(cmbKharidType.SelectedValue.ToString()) == 5)  //  5 عودتی
+                    a.Returned = true;
+                else
+                    a.Returned = false;
+
                 a.Description = txtDesc.Text;
                 a.Ersal = txtersal.Text;
                 a.ReceivedBy = txtPerson.Text;
                 a.Date = (new PersianDate(DateTime.Now)).ToString();
-                a.AnbarID = 1;
-                a.ResidNo = resid;
+                a.AnbarID = Convert.ToInt32(cmbAnbar.SelectedValue.ToString());
+                
+                a.ResidNo = txtResid.Text;
                 a.issued = true;
                 lq.SubmitChanges();
                 MessageBox.Show("رسید مورد نظر با موفقیت ثبت گردید");
@@ -253,6 +284,28 @@ namespace zirsakht_stock
         private void frmImported_FormClosing(object sender, FormClosingEventArgs e)
         {
             deleteALLZERO();
+        }
+
+        private void cmbKharidType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (int.Parse(cmbKharidType.SelectedValue.ToString()) == 4)
+            {
+                cmbAnbar.Visible = true;
+                lblanbar.Visible = true;
+                txtResid.Enabled = true;
+                txtResid.Text = "";
+
+            }
+            else
+            {
+                cmbAnbar.Visible = false;
+                lblanbar.Visible = false;
+
+                txtResid.Enabled = false;
+                txtResid.Text = resid.ToString();
+
+            }
+
         }
 
     }

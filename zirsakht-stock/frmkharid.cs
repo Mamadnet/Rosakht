@@ -73,7 +73,8 @@ namespace zirsakht_stock
             tblResid a = new tblResid();
             // a.DeliverTo = 1;
             a.issued = false;
-            a.ResidNo = resid;
+            a.ResidNo = resid.ToString();
+            a.kharid = true;
             a.kharidType = 1;
             lq.tblResids.InsertOnSubmit(a);
             lq.SubmitChanges();
@@ -110,7 +111,7 @@ namespace zirsakht_stock
 
                 tblRecieved b = new tblRecieved();
                 b.PartNumber = txtPartNum.Text;
-                b.ResidNo = resid;
+                b.ResidNo = resid.ToString();
                 b.Tedad = Convert.ToInt32((txtTedad.Text));
                 b.EquipID = Convert.ToInt32(cmbEquipments.SelectedValue.ToString()) == -1 ? eqid.ID : Convert.ToInt32(cmbEquipments.SelectedValue.ToString());
                 b.dateadded = DateTime.Now;
@@ -183,7 +184,7 @@ namespace zirsakht_stock
             {
 
                 var a = (from c in lq.tblResids
-                         where c.ResidNo == resid
+                         where c.ResidNo.Equals(resid.ToString())
                          select c).First();
                 // a.DeliverTo = 1;
                 a.kharid = true;
@@ -194,7 +195,7 @@ namespace zirsakht_stock
                 a.ReceivedBy = txtgirandeh.Text;
                 a.Date = (new PersianDate(DateTime.Now)).ToString();
                 a.AnbarID = 1;
-                a.ResidNo = resid;
+                a.ResidNo = resid.ToString();
 
                 a.issued = true;
                 lq.SubmitChanges();

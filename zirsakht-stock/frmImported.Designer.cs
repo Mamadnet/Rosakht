@@ -50,10 +50,16 @@
             this.txtPartNum = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cmbKharidType = new System.Windows.Forms.ComboBox();
+            this.lblanbar = new System.Windows.Forms.Label();
+            this.cmbAnbar = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtResid = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnResid = new System.Windows.Forms.Button();
             this.cmbUints = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -63,7 +69,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(119, 381);
+            this.btnDelete.Location = new System.Drawing.Point(115, 492);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(87, 28);
@@ -192,7 +198,7 @@
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(19, 279);
+            this.txtDesc.Location = new System.Drawing.Point(14, 402);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(254, 83);
@@ -257,7 +263,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(26, 381);
+            this.btnAdd.Location = new System.Drawing.Point(22, 492);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(87, 28);
@@ -279,6 +285,12 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.label8);
+            this.splitContainer1.Panel2.Controls.Add(this.cmbKharidType);
+            this.splitContainer1.Panel2.Controls.Add(this.lblanbar);
+            this.splitContainer1.Panel2.Controls.Add(this.cmbAnbar);
+            this.splitContainer1.Panel2.Controls.Add(this.label6);
+            this.splitContainer1.Panel2.Controls.Add(this.txtResid);
             this.splitContainer1.Panel2.Controls.Add(this.label5);
             this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.btnResid);
@@ -300,9 +312,87 @@
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 2;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(210, 280);
+            this.label8.Name = "label8";
+            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label8.Size = new System.Drawing.Size(64, 16);
+            this.label8.TabIndex = 1011;
+            this.label8.Text = "نوع خرید :";
+            // 
+            // cmbKharidType
+            // 
+            this.cmbKharidType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbKharidType.FormattingEnabled = true;
+            this.cmbKharidType.Location = new System.Drawing.Point(14, 280);
+            this.cmbKharidType.Name = "cmbKharidType";
+            this.cmbKharidType.Size = new System.Drawing.Size(161, 24);
+            this.cmbKharidType.TabIndex = 1010;
+            this.cmbKharidType.SelectedIndexChanged += new System.EventHandler(this.cmbKharidType_SelectedIndexChanged);
+            // 
+            // lblanbar
+            // 
+            this.lblanbar.AutoSize = true;
+            this.lblanbar.Location = new System.Drawing.Point(181, 366);
+            this.lblanbar.Name = "lblanbar";
+            this.lblanbar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblanbar.Size = new System.Drawing.Size(38, 16);
+            this.lblanbar.TabIndex = 1009;
+            this.lblanbar.Text = "انبار :";
+            // 
+            // cmbAnbar
+            // 
+            this.cmbAnbar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAnbar.FormattingEnabled = true;
+            this.cmbAnbar.Location = new System.Drawing.Point(18, 366);
+            this.cmbAnbar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbAnbar.Name = "cmbAnbar";
+            this.cmbAnbar.Size = new System.Drawing.Size(161, 24);
+            this.cmbAnbar.TabIndex = 1008;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(181, 334);
+            this.label6.Name = "label6";
+            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label6.Size = new System.Drawing.Size(86, 16);
+            this.label6.TabIndex = 1006;
+            this.label6.Text = "شماره حواله :";
+            // 
+            // txtResid
+            // 
+            this.txtResid.Location = new System.Drawing.Point(14, 327);
+            this.txtResid.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtResid.Name = "txtResid";
+            this.txtResid.Size = new System.Drawing.Size(161, 23);
+            this.txtResid.TabIndex = 1007;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(189, 57);
+            this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label5.Size = new System.Drawing.Size(37, 16);
+            this.label5.TabIndex = 1005;
+            this.label5.Text = "نام : ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(189, 25);
+            this.label3.Name = "label3";
+            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label3.Size = new System.Drawing.Size(39, 16);
+            this.label3.TabIndex = 1004;
+            this.label3.Text = "نوع : ";
+            // 
             // btnResid
             // 
-            this.btnResid.Location = new System.Drawing.Point(3, 430);
+            this.btnResid.Location = new System.Drawing.Point(3, 528);
             this.btnResid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnResid.Name = "btnResid";
             this.btnResid.Size = new System.Drawing.Size(289, 28);
@@ -320,26 +410,6 @@
             this.cmbUints.Size = new System.Drawing.Size(161, 24);
             this.cmbUints.TabIndex = 1002;
             this.cmbUints.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(189, 25);
-            this.label3.Name = "label3";
-            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label3.Size = new System.Drawing.Size(39, 16);
-            this.label3.TabIndex = 1004;
-            this.label3.Text = "نوع : ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(189, 57);
-            this.label5.Name = "label5";
-            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label5.Size = new System.Drawing.Size(37, 16);
-            this.label5.TabIndex = 1005;
-            this.label5.Text = "نام : ";
             // 
             // frmImported
             // 
@@ -390,5 +460,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblanbar;
+        private System.Windows.Forms.ComboBox cmbAnbar;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtResid;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cmbKharidType;
     }
 }

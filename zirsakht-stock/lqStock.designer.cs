@@ -48,15 +48,18 @@ namespace zirsakht_stock
     partial void InserttblSubCategory(tblSubCategory instance);
     partial void UpdatetblSubCategory(tblSubCategory instance);
     partial void DeletetblSubCategory(tblSubCategory instance);
+    partial void InserttblAnbar(tblAnbar instance);
+    partial void UpdatetblAnbar(tblAnbar instance);
+    partial void DeletetblAnbar(tblAnbar instance);
     partial void InserttblRecieved(tblRecieved instance);
     partial void UpdatetblRecieved(tblRecieved instance);
     partial void DeletetblRecieved(tblRecieved instance);
-    partial void InserttblResid(tblResid instance);
-    partial void UpdatetblResid(tblResid instance);
-    partial void DeletetblResid(tblResid instance);
     partial void InserttblDelivered(tblDelivered instance);
     partial void UpdatetblDelivered(tblDelivered instance);
     partial void DeletetblDelivered(tblDelivered instance);
+    partial void InserttblResid(tblResid instance);
+    partial void UpdatetblResid(tblResid instance);
+    partial void DeletetblResid(tblResid instance);
     #endregion
 		
 		public lqStockDataContext() : 
@@ -137,14 +140,6 @@ namespace zirsakht_stock
 			}
 		}
 		
-		public System.Data.Linq.Table<tblRecieved> tblRecieveds
-		{
-			get
-			{
-				return this.GetTable<tblRecieved>();
-			}
-		}
-		
 		public System.Data.Linq.Table<vwKarde> vwKardes
 		{
 			get
@@ -161,11 +156,19 @@ namespace zirsakht_stock
 			}
 		}
 		
-		public System.Data.Linq.Table<tblResid> tblResids
+		public System.Data.Linq.Table<tblAnbar> tblAnbars
 		{
 			get
 			{
-				return this.GetTable<tblResid>();
+				return this.GetTable<tblAnbar>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblRecieved> tblRecieveds
+		{
+			get
+			{
+				return this.GetTable<tblRecieved>();
 			}
 		}
 		
@@ -174,6 +177,14 @@ namespace zirsakht_stock
 			get
 			{
 				return this.GetTable<tblDelivered>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblResid> tblResids
+		{
+			get
+			{
+				return this.GetTable<tblResid>();
 			}
 		}
 		
@@ -1169,294 +1180,6 @@ namespace zirsakht_stock
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblRecieved")]
-	public partial class tblRecieved : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _PartNumber;
-		
-		private System.Nullable<int> _Tedad;
-		
-		private System.Nullable<int> _EquipID;
-		
-		private string _EndofGarranty;
-		
-		private System.Nullable<long> _ResidNo;
-		
-		private System.Nullable<System.DateTime> _dateadded;
-		
-		private EntityRef<tblEquipment> _tblEquipment;
-		
-		private EntityRef<tblResid> _tblResid;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnPartNumberChanging(string value);
-    partial void OnPartNumberChanged();
-    partial void OnTedadChanging(System.Nullable<int> value);
-    partial void OnTedadChanged();
-    partial void OnEquipIDChanging(System.Nullable<int> value);
-    partial void OnEquipIDChanged();
-    partial void OnEndofGarrantyChanging(string value);
-    partial void OnEndofGarrantyChanged();
-    partial void OnResidNoChanging(System.Nullable<long> value);
-    partial void OnResidNoChanged();
-    partial void OndateaddedChanging(System.Nullable<System.DateTime> value);
-    partial void OndateaddedChanged();
-    #endregion
-		
-		public tblRecieved()
-		{
-			this._tblEquipment = default(EntityRef<tblEquipment>);
-			this._tblResid = default(EntityRef<tblResid>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartNumber", DbType="NVarChar(50)")]
-		public string PartNumber
-		{
-			get
-			{
-				return this._PartNumber;
-			}
-			set
-			{
-				if ((this._PartNumber != value))
-				{
-					this.OnPartNumberChanging(value);
-					this.SendPropertyChanging();
-					this._PartNumber = value;
-					this.SendPropertyChanged("PartNumber");
-					this.OnPartNumberChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tedad", DbType="Int")]
-		public System.Nullable<int> Tedad
-		{
-			get
-			{
-				return this._Tedad;
-			}
-			set
-			{
-				if ((this._Tedad != value))
-				{
-					this.OnTedadChanging(value);
-					this.SendPropertyChanging();
-					this._Tedad = value;
-					this.SendPropertyChanged("Tedad");
-					this.OnTedadChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EquipID", DbType="Int")]
-		public System.Nullable<int> EquipID
-		{
-			get
-			{
-				return this._EquipID;
-			}
-			set
-			{
-				if ((this._EquipID != value))
-				{
-					if (this._tblEquipment.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnEquipIDChanging(value);
-					this.SendPropertyChanging();
-					this._EquipID = value;
-					this.SendPropertyChanged("EquipID");
-					this.OnEquipIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndofGarranty", DbType="NVarChar(50)")]
-		public string EndofGarranty
-		{
-			get
-			{
-				return this._EndofGarranty;
-			}
-			set
-			{
-				if ((this._EndofGarranty != value))
-				{
-					this.OnEndofGarrantyChanging(value);
-					this.SendPropertyChanging();
-					this._EndofGarranty = value;
-					this.SendPropertyChanged("EndofGarranty");
-					this.OnEndofGarrantyChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResidNo", DbType="BigInt")]
-		public System.Nullable<long> ResidNo
-		{
-			get
-			{
-				return this._ResidNo;
-			}
-			set
-			{
-				if ((this._ResidNo != value))
-				{
-					if (this._tblResid.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnResidNoChanging(value);
-					this.SendPropertyChanging();
-					this._ResidNo = value;
-					this.SendPropertyChanged("ResidNo");
-					this.OnResidNoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dateadded", DbType="DateTime")]
-		public System.Nullable<System.DateTime> dateadded
-		{
-			get
-			{
-				return this._dateadded;
-			}
-			set
-			{
-				if ((this._dateadded != value))
-				{
-					this.OndateaddedChanging(value);
-					this.SendPropertyChanging();
-					this._dateadded = value;
-					this.SendPropertyChanged("dateadded");
-					this.OndateaddedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblEquipment_tblRecieved", Storage="_tblEquipment", ThisKey="EquipID", OtherKey="ID", IsForeignKey=true)]
-		public tblEquipment tblEquipment
-		{
-			get
-			{
-				return this._tblEquipment.Entity;
-			}
-			set
-			{
-				tblEquipment previousValue = this._tblEquipment.Entity;
-				if (((previousValue != value) 
-							|| (this._tblEquipment.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tblEquipment.Entity = null;
-						previousValue.tblRecieveds.Remove(this);
-					}
-					this._tblEquipment.Entity = value;
-					if ((value != null))
-					{
-						value.tblRecieveds.Add(this);
-						this._EquipID = value.ID;
-					}
-					else
-					{
-						this._EquipID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("tblEquipment");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblResid_tblRecieved", Storage="_tblResid", ThisKey="ResidNo", OtherKey="ResidNo", IsForeignKey=true)]
-		public tblResid tblResid
-		{
-			get
-			{
-				return this._tblResid.Entity;
-			}
-			set
-			{
-				tblResid previousValue = this._tblResid.Entity;
-				if (((previousValue != value) 
-							|| (this._tblResid.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tblResid.Entity = null;
-						previousValue.tblRecieveds.Remove(this);
-					}
-					this._tblResid.Entity = value;
-					if ((value != null))
-					{
-						value.tblRecieveds.Add(this);
-						this._ResidNo = value.ResidNo;
-					}
-					else
-					{
-						this._ResidNo = default(Nullable<long>);
-					}
-					this.SendPropertyChanged("tblResid");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vwKardes")]
 	public partial class vwKarde
 	{
@@ -1961,83 +1684,40 @@ namespace zirsakht_stock
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblResid")]
-	public partial class tblResid : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblAnbar")]
+	public partial class tblAnbar : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private long _ID;
+		private int _ID;
 		
-		private string _Date;
+		private string _Title;
 		
-		private string _Ersal;
+		private string _Address;
 		
-		private string _Description;
-		
-		private string _ReceivedBy;
-		
-		private bool _kharid;
-		
-		private int _kharidType;
-		
-		private string _ContractNO;
-		
-		private string _RequestNo;
-		
-		private System.Nullable<int> _AnbarID;
-		
-		private System.Nullable<long> _ResidNo;
-		
-		private bool _issued;
-		
-		private System.Nullable<System.DateTime> _dateadded;
-		
-		private EntitySet<tblRecieved> _tblRecieveds;
-		
-		private EntityRef<tblSubCategory> _tblSubCategory;
+		private EntitySet<tblResid> _tblResids;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnIDChanging(long value);
+    partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnDateChanging(string value);
-    partial void OnDateChanged();
-    partial void OnErsalChanging(string value);
-    partial void OnErsalChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    partial void OnReceivedByChanging(string value);
-    partial void OnReceivedByChanged();
-    partial void OnkharidChanging(bool value);
-    partial void OnkharidChanged();
-    partial void OnkharidTypeChanging(int value);
-    partial void OnkharidTypeChanged();
-    partial void OnContractNOChanging(string value);
-    partial void OnContractNOChanged();
-    partial void OnRequestNoChanging(string value);
-    partial void OnRequestNoChanged();
-    partial void OnAnbarIDChanging(System.Nullable<int> value);
-    partial void OnAnbarIDChanged();
-    partial void OnResidNoChanging(System.Nullable<long> value);
-    partial void OnResidNoChanged();
-    partial void OnissuedChanging(bool value);
-    partial void OnissuedChanged();
-    partial void OndateaddedChanging(System.Nullable<System.DateTime> value);
-    partial void OndateaddedChanged();
+    partial void OnTitleChanging(string value);
+    partial void OnTitleChanged();
+    partial void OnAddressChanging(string value);
+    partial void OnAddressChanged();
     #endregion
 		
-		public tblResid()
+		public tblAnbar()
 		{
-			this._tblRecieveds = new EntitySet<tblRecieved>(new Action<tblRecieved>(this.attach_tblRecieveds), new Action<tblRecieved>(this.detach_tblRecieveds));
-			this._tblSubCategory = default(EntityRef<tblSubCategory>);
+			this._tblResids = new EntitySet<tblResid>(new Action<tblResid>(this.attach_tblResids), new Action<tblResid>(this.detach_tblResids));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
 		{
 			get
 			{
@@ -2056,192 +1736,249 @@ namespace zirsakht_stock
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="NVarChar(50)")]
-		public string Date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="NVarChar(50)")]
+		public string Title
 		{
 			get
 			{
-				return this._Date;
+				return this._Title;
 			}
 			set
 			{
-				if ((this._Date != value))
+				if ((this._Title != value))
 				{
-					this.OnDateChanging(value);
+					this.OnTitleChanging(value);
 					this.SendPropertyChanging();
-					this._Date = value;
-					this.SendPropertyChanged("Date");
-					this.OnDateChanged();
+					this._Title = value;
+					this.SendPropertyChanged("Title");
+					this.OnTitleChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ersal", DbType="NVarChar(50)")]
-		public string Ersal
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(50)")]
+		public string Address
 		{
 			get
 			{
-				return this._Ersal;
+				return this._Address;
 			}
 			set
 			{
-				if ((this._Ersal != value))
+				if ((this._Address != value))
 				{
-					this.OnErsalChanging(value);
+					this.OnAddressChanging(value);
 					this.SendPropertyChanging();
-					this._Ersal = value;
-					this.SendPropertyChanged("Ersal");
-					this.OnErsalChanged();
+					this._Address = value;
+					this.SendPropertyChanged("Address");
+					this.OnAddressChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(300)")]
-		public string Description
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblAnbar_tblResid", Storage="_tblResids", ThisKey="ID", OtherKey="AnbarID")]
+		public EntitySet<tblResid> tblResids
 		{
 			get
 			{
-				return this._Description;
+				return this._tblResids;
 			}
 			set
 			{
-				if ((this._Description != value))
+				this._tblResids.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tblResids(tblResid entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblAnbar = this;
+		}
+		
+		private void detach_tblResids(tblResid entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblAnbar = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblRecieved")]
+	public partial class tblRecieved : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _PartNumber;
+		
+		private System.Nullable<int> _Tedad;
+		
+		private System.Nullable<int> _EquipID;
+		
+		private string _EndofGarranty;
+		
+		private string _ResidNo;
+		
+		private System.Nullable<System.DateTime> _dateadded;
+		
+		private EntityRef<tblEquipment> _tblEquipment;
+		
+		private EntityRef<tblResid> _tblResid;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnPartNumberChanging(string value);
+    partial void OnPartNumberChanged();
+    partial void OnTedadChanging(System.Nullable<int> value);
+    partial void OnTedadChanged();
+    partial void OnEquipIDChanging(System.Nullable<int> value);
+    partial void OnEquipIDChanged();
+    partial void OnEndofGarrantyChanging(string value);
+    partial void OnEndofGarrantyChanged();
+    partial void OnResidNoChanging(string value);
+    partial void OnResidNoChanged();
+    partial void OndateaddedChanging(System.Nullable<System.DateTime> value);
+    partial void OndateaddedChanged();
+    #endregion
+		
+		public tblRecieved()
+		{
+			this._tblEquipment = default(EntityRef<tblEquipment>);
+			this._tblResid = default(EntityRef<tblResid>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
 				{
-					this.OnDescriptionChanging(value);
+					this.OnIDChanging(value);
 					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceivedBy", DbType="NVarChar(50)")]
-		public string ReceivedBy
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartNumber", DbType="NVarChar(50)")]
+		public string PartNumber
 		{
 			get
 			{
-				return this._ReceivedBy;
+				return this._PartNumber;
 			}
 			set
 			{
-				if ((this._ReceivedBy != value))
+				if ((this._PartNumber != value))
 				{
-					this.OnReceivedByChanging(value);
+					this.OnPartNumberChanging(value);
 					this.SendPropertyChanging();
-					this._ReceivedBy = value;
-					this.SendPropertyChanged("ReceivedBy");
-					this.OnReceivedByChanged();
+					this._PartNumber = value;
+					this.SendPropertyChanged("PartNumber");
+					this.OnPartNumberChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kharid", DbType="Bit NOT NULL")]
-		public bool kharid
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tedad", DbType="Int")]
+		public System.Nullable<int> Tedad
 		{
 			get
 			{
-				return this._kharid;
+				return this._Tedad;
 			}
 			set
 			{
-				if ((this._kharid != value))
+				if ((this._Tedad != value))
 				{
-					this.OnkharidChanging(value);
+					this.OnTedadChanging(value);
 					this.SendPropertyChanging();
-					this._kharid = value;
-					this.SendPropertyChanged("kharid");
-					this.OnkharidChanged();
+					this._Tedad = value;
+					this.SendPropertyChanged("Tedad");
+					this.OnTedadChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kharidType", DbType="Int NOT NULL")]
-		public int kharidType
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EquipID", DbType="Int")]
+		public System.Nullable<int> EquipID
 		{
 			get
 			{
-				return this._kharidType;
+				return this._EquipID;
 			}
 			set
 			{
-				if ((this._kharidType != value))
+				if ((this._EquipID != value))
 				{
-					if (this._tblSubCategory.HasLoadedOrAssignedValue)
+					if (this._tblEquipment.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnkharidTypeChanging(value);
+					this.OnEquipIDChanging(value);
 					this.SendPropertyChanging();
-					this._kharidType = value;
-					this.SendPropertyChanged("kharidType");
-					this.OnkharidTypeChanged();
+					this._EquipID = value;
+					this.SendPropertyChanged("EquipID");
+					this.OnEquipIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContractNO", DbType="NVarChar(50)")]
-		public string ContractNO
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndofGarranty", DbType="NVarChar(50)")]
+		public string EndofGarranty
 		{
 			get
 			{
-				return this._ContractNO;
+				return this._EndofGarranty;
 			}
 			set
 			{
-				if ((this._ContractNO != value))
+				if ((this._EndofGarranty != value))
 				{
-					this.OnContractNOChanging(value);
+					this.OnEndofGarrantyChanging(value);
 					this.SendPropertyChanging();
-					this._ContractNO = value;
-					this.SendPropertyChanged("ContractNO");
-					this.OnContractNOChanged();
+					this._EndofGarranty = value;
+					this.SendPropertyChanged("EndofGarranty");
+					this.OnEndofGarrantyChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestNo", DbType="NVarChar(50)")]
-		public string RequestNo
-		{
-			get
-			{
-				return this._RequestNo;
-			}
-			set
-			{
-				if ((this._RequestNo != value))
-				{
-					this.OnRequestNoChanging(value);
-					this.SendPropertyChanging();
-					this._RequestNo = value;
-					this.SendPropertyChanged("RequestNo");
-					this.OnRequestNoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnbarID", DbType="Int")]
-		public System.Nullable<int> AnbarID
-		{
-			get
-			{
-				return this._AnbarID;
-			}
-			set
-			{
-				if ((this._AnbarID != value))
-				{
-					this.OnAnbarIDChanging(value);
-					this.SendPropertyChanging();
-					this._AnbarID = value;
-					this.SendPropertyChanged("AnbarID");
-					this.OnAnbarIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResidNo", DbType="BigInt")]
-		public System.Nullable<long> ResidNo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResidNo", DbType="NVarChar(50)")]
+		public string ResidNo
 		{
 			get
 			{
@@ -2251,31 +1988,15 @@ namespace zirsakht_stock
 			{
 				if ((this._ResidNo != value))
 				{
+					if (this._tblResid.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnResidNoChanging(value);
 					this.SendPropertyChanging();
 					this._ResidNo = value;
 					this.SendPropertyChanged("ResidNo");
 					this.OnResidNoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_issued", DbType="Bit NOT NULL")]
-		public bool issued
-		{
-			get
-			{
-				return this._issued;
-			}
-			set
-			{
-				if ((this._issued != value))
-				{
-					this.OnissuedChanging(value);
-					this.SendPropertyChanging();
-					this._issued = value;
-					this.SendPropertyChanged("issued");
-					this.OnissuedChanged();
 				}
 			}
 		}
@@ -2300,49 +2021,70 @@ namespace zirsakht_stock
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblResid_tblRecieved", Storage="_tblRecieveds", ThisKey="ResidNo", OtherKey="ResidNo")]
-		public EntitySet<tblRecieved> tblRecieveds
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblEquipment_tblRecieved", Storage="_tblEquipment", ThisKey="EquipID", OtherKey="ID", IsForeignKey=true)]
+		public tblEquipment tblEquipment
 		{
 			get
 			{
-				return this._tblRecieveds;
+				return this._tblEquipment.Entity;
 			}
 			set
 			{
-				this._tblRecieveds.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblSubCategory_tblResid", Storage="_tblSubCategory", ThisKey="kharidType", OtherKey="ID", IsForeignKey=true)]
-		public tblSubCategory tblSubCategory
-		{
-			get
-			{
-				return this._tblSubCategory.Entity;
-			}
-			set
-			{
-				tblSubCategory previousValue = this._tblSubCategory.Entity;
+				tblEquipment previousValue = this._tblEquipment.Entity;
 				if (((previousValue != value) 
-							|| (this._tblSubCategory.HasLoadedOrAssignedValue == false)))
+							|| (this._tblEquipment.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._tblSubCategory.Entity = null;
-						previousValue.tblResids.Remove(this);
+						this._tblEquipment.Entity = null;
+						previousValue.tblRecieveds.Remove(this);
 					}
-					this._tblSubCategory.Entity = value;
+					this._tblEquipment.Entity = value;
 					if ((value != null))
 					{
-						value.tblResids.Add(this);
-						this._kharidType = value.ID;
+						value.tblRecieveds.Add(this);
+						this._EquipID = value.ID;
 					}
 					else
 					{
-						this._kharidType = default(int);
+						this._EquipID = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("tblSubCategory");
+					this.SendPropertyChanged("tblEquipment");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblResid_tblRecieved", Storage="_tblResid", ThisKey="ResidNo", OtherKey="ResidNo", IsForeignKey=true)]
+		public tblResid tblResid
+		{
+			get
+			{
+				return this._tblResid.Entity;
+			}
+			set
+			{
+				tblResid previousValue = this._tblResid.Entity;
+				if (((previousValue != value) 
+							|| (this._tblResid.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblResid.Entity = null;
+						previousValue.tblRecieveds.Remove(this);
+					}
+					this._tblResid.Entity = value;
+					if ((value != null))
+					{
+						value.tblRecieveds.Add(this);
+						this._ResidNo = value.ResidNo;
+					}
+					else
+					{
+						this._ResidNo = default(string);
+					}
+					this.SendPropertyChanged("tblResid");
 				}
 			}
 		}
@@ -2365,18 +2107,6 @@ namespace zirsakht_stock
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_tblRecieveds(tblRecieved entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblResid = this;
-		}
-		
-		private void detach_tblRecieveds(tblRecieved entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblResid = null;
 		}
 	}
 	
@@ -2412,6 +2142,8 @@ namespace zirsakht_stock
 		
 		private string _Amvalno;
 		
+		private bool _Temp;
+		
 		private EntityRef<tblEquipment> _tblEquipment;
 		
 		private EntityRef<tblSite> _tblSite;
@@ -2446,6 +2178,8 @@ namespace zirsakht_stock
     partial void OndateaddedChanged();
     partial void OnAmvalnoChanging(string value);
     partial void OnAmvalnoChanged();
+    partial void OnTempChanging(bool value);
+    partial void OnTempChanged();
     #endregion
 		
 		public tblDelivered()
@@ -2723,6 +2457,26 @@ namespace zirsakht_stock
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Temp", DbType="Bit NOT NULL")]
+		public bool Temp
+		{
+			get
+			{
+				return this._Temp;
+			}
+			set
+			{
+				if ((this._Temp != value))
+				{
+					this.OnTempChanging(value);
+					this.SendPropertyChanging();
+					this._Temp = value;
+					this.SendPropertyChanged("Temp");
+					this.OnTempChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblEquipment_tblDelivered", Storage="_tblEquipment", ThisKey="EquipID", OtherKey="ID", IsForeignKey=true)]
 		public tblEquipment tblEquipment
 		{
@@ -2809,6 +2563,490 @@ namespace zirsakht_stock
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblResid")]
+	public partial class tblResid : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _ID;
+		
+		private string _Date;
+		
+		private string _Ersal;
+		
+		private string _Description;
+		
+		private string _ReceivedBy;
+		
+		private bool _kharid;
+		
+		private int _kharidType;
+		
+		private string _ContractNO;
+		
+		private string _RequestNo;
+		
+		private System.Nullable<int> _AnbarID;
+		
+		private string _ResidNo;
+		
+		private bool _issued;
+		
+		private System.Nullable<System.DateTime> _dateadded;
+		
+		private bool _Returned;
+		
+		private EntitySet<tblRecieved> _tblRecieveds;
+		
+		private EntityRef<tblAnbar> _tblAnbar;
+		
+		private EntityRef<tblSubCategory> _tblSubCategory;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(long value);
+    partial void OnIDChanged();
+    partial void OnDateChanging(string value);
+    partial void OnDateChanged();
+    partial void OnErsalChanging(string value);
+    partial void OnErsalChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnReceivedByChanging(string value);
+    partial void OnReceivedByChanged();
+    partial void OnkharidChanging(bool value);
+    partial void OnkharidChanged();
+    partial void OnkharidTypeChanging(int value);
+    partial void OnkharidTypeChanged();
+    partial void OnContractNOChanging(string value);
+    partial void OnContractNOChanged();
+    partial void OnRequestNoChanging(string value);
+    partial void OnRequestNoChanged();
+    partial void OnAnbarIDChanging(System.Nullable<int> value);
+    partial void OnAnbarIDChanged();
+    partial void OnResidNoChanging(string value);
+    partial void OnResidNoChanged();
+    partial void OnissuedChanging(bool value);
+    partial void OnissuedChanged();
+    partial void OndateaddedChanging(System.Nullable<System.DateTime> value);
+    partial void OndateaddedChanged();
+    partial void OnReturnedChanging(bool value);
+    partial void OnReturnedChanged();
+    #endregion
+		
+		public tblResid()
+		{
+			this._tblRecieveds = new EntitySet<tblRecieved>(new Action<tblRecieved>(this.attach_tblRecieveds), new Action<tblRecieved>(this.detach_tblRecieveds));
+			this._tblAnbar = default(EntityRef<tblAnbar>);
+			this._tblSubCategory = default(EntityRef<tblSubCategory>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="NVarChar(50)")]
+		public string Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ersal", DbType="NVarChar(50)")]
+		public string Ersal
+		{
+			get
+			{
+				return this._Ersal;
+			}
+			set
+			{
+				if ((this._Ersal != value))
+				{
+					this.OnErsalChanging(value);
+					this.SendPropertyChanging();
+					this._Ersal = value;
+					this.SendPropertyChanged("Ersal");
+					this.OnErsalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(300)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceivedBy", DbType="NVarChar(50)")]
+		public string ReceivedBy
+		{
+			get
+			{
+				return this._ReceivedBy;
+			}
+			set
+			{
+				if ((this._ReceivedBy != value))
+				{
+					this.OnReceivedByChanging(value);
+					this.SendPropertyChanging();
+					this._ReceivedBy = value;
+					this.SendPropertyChanged("ReceivedBy");
+					this.OnReceivedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kharid", DbType="Bit NOT NULL")]
+		public bool kharid
+		{
+			get
+			{
+				return this._kharid;
+			}
+			set
+			{
+				if ((this._kharid != value))
+				{
+					this.OnkharidChanging(value);
+					this.SendPropertyChanging();
+					this._kharid = value;
+					this.SendPropertyChanged("kharid");
+					this.OnkharidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kharidType", DbType="Int NOT NULL")]
+		public int kharidType
+		{
+			get
+			{
+				return this._kharidType;
+			}
+			set
+			{
+				if ((this._kharidType != value))
+				{
+					if (this._tblSubCategory.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnkharidTypeChanging(value);
+					this.SendPropertyChanging();
+					this._kharidType = value;
+					this.SendPropertyChanged("kharidType");
+					this.OnkharidTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContractNO", DbType="NVarChar(50)")]
+		public string ContractNO
+		{
+			get
+			{
+				return this._ContractNO;
+			}
+			set
+			{
+				if ((this._ContractNO != value))
+				{
+					this.OnContractNOChanging(value);
+					this.SendPropertyChanging();
+					this._ContractNO = value;
+					this.SendPropertyChanged("ContractNO");
+					this.OnContractNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestNo", DbType="NVarChar(50)")]
+		public string RequestNo
+		{
+			get
+			{
+				return this._RequestNo;
+			}
+			set
+			{
+				if ((this._RequestNo != value))
+				{
+					this.OnRequestNoChanging(value);
+					this.SendPropertyChanging();
+					this._RequestNo = value;
+					this.SendPropertyChanged("RequestNo");
+					this.OnRequestNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnbarID", DbType="Int")]
+		public System.Nullable<int> AnbarID
+		{
+			get
+			{
+				return this._AnbarID;
+			}
+			set
+			{
+				if ((this._AnbarID != value))
+				{
+					if (this._tblAnbar.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnAnbarIDChanging(value);
+					this.SendPropertyChanging();
+					this._AnbarID = value;
+					this.SendPropertyChanged("AnbarID");
+					this.OnAnbarIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResidNo", DbType="NVarChar(50)")]
+		public string ResidNo
+		{
+			get
+			{
+				return this._ResidNo;
+			}
+			set
+			{
+				if ((this._ResidNo != value))
+				{
+					this.OnResidNoChanging(value);
+					this.SendPropertyChanging();
+					this._ResidNo = value;
+					this.SendPropertyChanged("ResidNo");
+					this.OnResidNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_issued", DbType="Bit NOT NULL")]
+		public bool issued
+		{
+			get
+			{
+				return this._issued;
+			}
+			set
+			{
+				if ((this._issued != value))
+				{
+					this.OnissuedChanging(value);
+					this.SendPropertyChanging();
+					this._issued = value;
+					this.SendPropertyChanged("issued");
+					this.OnissuedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dateadded", DbType="DateTime")]
+		public System.Nullable<System.DateTime> dateadded
+		{
+			get
+			{
+				return this._dateadded;
+			}
+			set
+			{
+				if ((this._dateadded != value))
+				{
+					this.OndateaddedChanging(value);
+					this.SendPropertyChanging();
+					this._dateadded = value;
+					this.SendPropertyChanged("dateadded");
+					this.OndateaddedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Returned", DbType="Bit NOT NULL")]
+		public bool Returned
+		{
+			get
+			{
+				return this._Returned;
+			}
+			set
+			{
+				if ((this._Returned != value))
+				{
+					this.OnReturnedChanging(value);
+					this.SendPropertyChanging();
+					this._Returned = value;
+					this.SendPropertyChanged("Returned");
+					this.OnReturnedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblResid_tblRecieved", Storage="_tblRecieveds", ThisKey="ResidNo", OtherKey="ResidNo")]
+		public EntitySet<tblRecieved> tblRecieveds
+		{
+			get
+			{
+				return this._tblRecieveds;
+			}
+			set
+			{
+				this._tblRecieveds.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblAnbar_tblResid", Storage="_tblAnbar", ThisKey="AnbarID", OtherKey="ID", IsForeignKey=true)]
+		public tblAnbar tblAnbar
+		{
+			get
+			{
+				return this._tblAnbar.Entity;
+			}
+			set
+			{
+				tblAnbar previousValue = this._tblAnbar.Entity;
+				if (((previousValue != value) 
+							|| (this._tblAnbar.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblAnbar.Entity = null;
+						previousValue.tblResids.Remove(this);
+					}
+					this._tblAnbar.Entity = value;
+					if ((value != null))
+					{
+						value.tblResids.Add(this);
+						this._AnbarID = value.ID;
+					}
+					else
+					{
+						this._AnbarID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("tblAnbar");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblSubCategory_tblResid", Storage="_tblSubCategory", ThisKey="kharidType", OtherKey="ID", IsForeignKey=true)]
+		public tblSubCategory tblSubCategory
+		{
+			get
+			{
+				return this._tblSubCategory.Entity;
+			}
+			set
+			{
+				tblSubCategory previousValue = this._tblSubCategory.Entity;
+				if (((previousValue != value) 
+							|| (this._tblSubCategory.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblSubCategory.Entity = null;
+						previousValue.tblResids.Remove(this);
+					}
+					this._tblSubCategory.Entity = value;
+					if ((value != null))
+					{
+						value.tblResids.Add(this);
+						this._kharidType = value.ID;
+					}
+					else
+					{
+						this._kharidType = default(int);
+					}
+					this.SendPropertyChanged("tblSubCategory");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tblRecieveds(tblRecieved entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblResid = this;
+		}
+		
+		private void detach_tblRecieveds(tblRecieved entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblResid = null;
 		}
 	}
 	

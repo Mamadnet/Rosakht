@@ -51,19 +51,6 @@
       <Association Name="tblcategory_tblSubCategory" Member="tblcategory" ThisKey="catID" OtherKey="ID" Type="tblcategory" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tblRecieved" Member="tblRecieveds">
-    <Type Name="tblRecieved">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="PartNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Tedad" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="EquipID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="EndofGarranty" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ResidNo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="dateadded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="tblEquipment_tblRecieved" Member="tblEquipment" ThisKey="EquipID" OtherKey="ID" Type="tblEquipment" IsForeignKey="true" />
-      <Association Name="tblResid_tblRecieved" Member="tblResid" ThisKey="ResidNo" OtherKey="ResidNo" Type="tblResid" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.vwKardes" Member="vwKardes">
     <Type Name="vwKarde">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -99,23 +86,25 @@
       <Column Name="dateadded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tblResid" Member="tblResids">
-    <Type Name="tblResid">
-      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Ersal" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
-      <Column Name="ReceivedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="kharid" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="kharidType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ContractNO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="RequestNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="AnbarID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ResidNo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="issued" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+  <Table Name="dbo.tblAnbar" Member="tblAnbars">
+    <Type Name="tblAnbar">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblAnbar_tblResid" Member="tblResids" ThisKey="ID" OtherKey="AnbarID" Type="tblResid" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRecieved" Member="tblRecieveds">
+    <Type Name="tblRecieved">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PartNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tedad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EquipID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EndofGarranty" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ResidNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="dateadded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="tblResid_tblRecieved" Member="tblRecieveds" ThisKey="ResidNo" OtherKey="ResidNo" Type="tblRecieved" />
-      <Association Name="tblSubCategory_tblResid" Member="tblSubCategory" ThisKey="kharidType" OtherKey="ID" Type="tblSubCategory" IsForeignKey="true" />
+      <Association Name="tblEquipment_tblRecieved" Member="tblEquipment" ThisKey="EquipID" OtherKey="ID" Type="tblEquipment" IsForeignKey="true" />
+      <Association Name="tblResid_tblRecieved" Member="tblResid" ThisKey="ResidNo" OtherKey="ResidNo" Type="tblResid" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblDelivered" Member="tblDelivereds">
@@ -133,8 +122,30 @@
       <Column Name="RequestedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="dateadded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Amvalno" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Temp" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="tblEquipment_tblDelivered" Member="tblEquipment" ThisKey="EquipID" OtherKey="ID" Type="tblEquipment" IsForeignKey="true" />
       <Association Name="tblSite_tblDelivered" Member="tblSite" ThisKey="SiteID" OtherKey="ID" Type="tblSite" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblResid" Member="tblResids">
+    <Type Name="tblResid">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ersal" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="ReceivedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="kharid" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="kharidType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ContractNO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RequestNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AnbarID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResidNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="issued" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="dateadded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Returned" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tblResid_tblRecieved" Member="tblRecieveds" ThisKey="ResidNo" OtherKey="ResidNo" Type="tblRecieved" />
+      <Association Name="tblAnbar_tblResid" Member="tblAnbar" ThisKey="AnbarID" OtherKey="ID" Type="tblAnbar" IsForeignKey="true" />
+      <Association Name="tblSubCategory_tblResid" Member="tblSubCategory" ThisKey="kharidType" OtherKey="ID" Type="tblSubCategory" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.CalculateTotal" Method="CalculateTotal" IsComposable="true">

@@ -13,30 +13,22 @@ using System.Data.SqlClient;
 
 namespace zirsakht_stock
 {
-    public partial class frmResid : zirsakht_stock.template
+    public partial class frmResidItems : zirsakht_stock.template
     {
         lqStockDataContext lq = new lqStockDataContext();
-
-        public frmResid()
+        public frmResidItems(int residno)
         {
             InitializeComponent();
-            var sql = (from s in lq.tblResids
+            var sql = (from s in lq.tblRecieveds
+                       where s.ResidNo.Equals(residno.ToString())
                        select s
-                    );
+                   );
             dataGridView1.DataSource = sql;
         }
 
-        private void frmResid_Load(object sender, EventArgs e)
+        private void frmResidItems_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
-        {
-            int _row = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["residno"].Value.ToString());
-
-            frmResidItems m = new frmResidItems(_row);
-            m.ShowDialog();
         }
     }
 }
