@@ -60,8 +60,8 @@ namespace zirsakht_stock
         {
 
             var sql = (from s in lq.tblResids
-                       join p in lq.tblRecieveds on s.ResidNo equals p.ResidNo
-                    
+                       join p in lq.tblRecieveds on s.ResidNo equals p.ResidNo                    
+                       where s.issued==false
                        select new { contractno = s.ContractNO, kharidtype = s.kharidType, unit = p.tblEquipment.tblUnit.Unit, ID = s.ID,pid=p.ID, equipid = p.EquipID, partnumber = p.PartNumber, tedad = p.Tedad, date = s.Date, receivedby = s.ReceivedBy, description = s.Description, ersal = s.Ersal });
             dataGridView1.DataSource = sql;
         }
@@ -101,10 +101,13 @@ namespace zirsakht_stock
 
             var a = (from c in lq.tblResids
                      where c.ResidNo.Equals(resid.ToString())
-                     select c).First();
-            a.ResidNo = txtResid.Text;
-            if(a.ID!=null)
-            lq.SubmitChanges();
+                     select c);
+            if (a.Count() > 0)
+            {
+                a.First().ResidNo = txtResid.Text;
+                if (a.First().ID != null)
+                    lq.SubmitChanges();
+            }
 
 
 
@@ -117,6 +120,7 @@ namespace zirsakht_stock
                 b.EquipID = Convert.ToInt32(cmbEquipments.SelectedValue.ToString()) == -1 ? eqid.ID : Convert.ToInt32(cmbEquipments.SelectedValue.ToString());
                 b.Tedad = Convert.ToInt32((txtTedad.Text));
                 b.ResidNo = txtResid.Text;
+                b.dateadded = DateTime.Now;
                 lq.tblRecieveds.InsertOnSubmit(b);
                 lq.SubmitChanges();
             }
@@ -240,7 +244,7 @@ namespace zirsakht_stock
                 a.ReceivedBy = txtPerson.Text;
                 a.Date = (new PersianDate(DateTime.Now)).ToString();
                 a.AnbarID = Convert.ToInt32(cmbAnbar.SelectedValue.ToString());
-                
+                a.dateadded = DateTime.Now;
                 a.ResidNo = txtResid.Text;
                 a.issued = true;
                 lq.SubmitChanges();

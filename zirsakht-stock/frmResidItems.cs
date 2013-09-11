@@ -30,5 +30,10 @@ namespace zirsakht_stock
         {
 
         }
+
+        private void dataGridView1_CellDoubleClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

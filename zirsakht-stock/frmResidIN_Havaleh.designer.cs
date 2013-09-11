@@ -1,6 +1,6 @@
 ﻿namespace zirsakht_stock
 {
-    partial class frmResidItems
+    partial class frmResidIN_Havaleh
     {
         /// <summary>
         /// Required designer variable.
@@ -42,17 +42,18 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(892, 373);
+            this.dataGridView1.Size = new System.Drawing.Size(646, 370);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // frmResidItems
+            // frmResidIN_Havaleh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
-            this.ClientSize = new System.Drawing.Size(892, 373);
+            this.ClientSize = new System.Drawing.Size(646, 370);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "frmResidItems";
-            this.Load += new System.EventHandler(this.frmResidItems_Load);
+            this.Name = "frmResidIN_Havaleh";
+            this.Text = "رسید";
+            this.Load += new System.EventHandler(this.frmResidIN_Havaleh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

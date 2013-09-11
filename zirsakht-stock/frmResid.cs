@@ -20,6 +20,7 @@ namespace zirsakht_stock
         public frmResid()
         {
             InitializeComponent();
+            dataGridView1.AutoGenerateColumns = false;
             var sql = (from s in lq.tblResids
                        select s
                     );

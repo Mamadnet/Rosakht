@@ -13,6 +13,7 @@ namespace zirsakht_stock
 {
     public partial class frmDeliverto : template
     {
+        
         lqStockDataContext lq = new lqStockDataContext();
         public frmDeliverto()
         {
@@ -55,6 +56,8 @@ namespace zirsakht_stock
         private void frmDeliverto_Load(object sender, EventArgs e)
         {
             txtPartNum.Text = cmbEquipments.Text;
+            this.ActiveControl = txtResid;
+            txtResid.Focus();
 
         }
 
@@ -71,14 +74,20 @@ namespace zirsakht_stock
             a.Date = (new PersianDate(DateTime.Now)).ToString();
             a.Tedad = Convert.ToInt32((txtTedad.Text));
             a.EquipID = Convert.ToInt32(cmbEquipments.SelectedValue.ToString());
-            a.Amvalno = txtAmval.Text;
+            a.Amvalno = txtIdent.Text;
             a.Temp = cmbTemp.Checked;
-            
+            a.ResidNo = txtResid.Text;
+            a.dateadded = DateTime.Now;
+            a.IdentificationNO = txtIdent.Text;
             lq.tblDelivereds.InsertOnSubmit(a);
             lq.SubmitChanges();
             MessageBox.Show("کالای مورد نظر با موفقیت ثبت گردید");
 
-            _Fillgrid(); 
+            _Fillgrid();
+            if (cmbEquipments.Items.Count > 0)
+                lblMojodi.Text = Convert.ToString(lq.fnCalculateTotal(Convert.ToInt32(cmbEquipments.SelectedValue.ToString())));
+            else
+                lblMojodi.Text = "";
         }
 
         private void cmbEquipments_SelectedIndexChanged(object sender, EventArgs e)
@@ -88,11 +97,16 @@ namespace zirsakht_stock
                  }
             else
             {
+                var sql = (from s in lq.tblRecieveds
+                           where s.EquipID==int.Parse(cmbEquipments.SelectedValue.ToString())
+                           select s
+                     );
+                txtResid.Text = sql.First().ResidNo;
                 txtPartNum.Text = cmbEquipments.Text;
                 txtPartNum.Enabled = false;
             }
             if (cmbEquipments.Items.Count >0)
-                lblMojodi.Text = Convert.ToString(lq.CalculateTotal(Convert.ToInt32(cmbEquipments.SelectedValue.ToString())));
+                lblMojodi.Text = Convert.ToString(lq.fnCalculateTotal(Convert.ToInt32(cmbEquipments.SelectedValue.ToString())));
             else
                 lblMojodi.Text = "";
 
@@ -109,7 +123,7 @@ namespace zirsakht_stock
 
           
             var query = (from s in lq.tblEquipments
-                         where s.tblType.ID == Convert.ToInt32(cmbTypes.SelectedValue)  && lq.CalculateTotal(s.ID)>0
+                         where s.tblType.ID == Convert.ToInt32(cmbTypes.SelectedValue)  && lq.fnCalculateTotal(s.ID)>0
                          select s).ToList();
 
             
@@ -164,6 +178,44 @@ namespace zirsakht_stock
                 }
             }
         }
-    
+
+        private void txtTedad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) != true && e.KeyChar != '\b')
+                e.Handled = true;
+
+           
+
+        }
+
+        
+
+        private void txtResid_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) != true && e.KeyChar != '\b')
+                e.Handled = true;
+
+            if (e.KeyChar == '\r')
+            {
+
+
+                var sql = (from s in lq.tblRecieveds
+                           where s.ResidNo.Contains(txtResid.Text) && lq.fnCalculateTotal(s.EquipID)>0
+                           select s
+                     );
+
+                if (sql.Count() > 0)
+                {
+
+                    frmResidIN_Havaleh m = new frmResidIN_Havaleh(sql);
+                    m.ShowDialog();
+                    txtResid.Text = m._residnoHavaleh;
+                    cmbTypes.SelectedIndex =cmbTypes.FindStringExact(m._typeidHavaleh);
+                    cmbEquipments.SelectedIndex =cmbEquipments.FindStringExact( m._EquipidHavaleh);
+                }
+            }
+        }
+
+       
     }
 }

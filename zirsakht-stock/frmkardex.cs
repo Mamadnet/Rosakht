@@ -88,8 +88,8 @@ namespace zirsakht_stock
 
             dataGridView1.DataSource = sql;
 
-            var varedeh = lq.Calculatevaredeh(Convert.ToInt32(cmbEquipments.SelectedValue));
-            var sadereh = lq.Calculatesadereh(Convert.ToInt32(cmbEquipments.SelectedValue));
+            var varedeh = lq.fnCalculatevaredeh(Convert.ToInt32(cmbEquipments.SelectedValue));
+            var sadereh = lq.fnCalculatesadereh(Convert.ToInt32(cmbEquipments.SelectedValue));
 
             lblmandeh.Text = Convert.ToString(varedeh-sadereh);
             lblsadereh.Text = Convert.ToString(sadereh);

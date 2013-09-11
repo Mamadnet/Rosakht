@@ -107,26 +107,6 @@
       <Association Name="tblResid_tblRecieved" Member="tblResid" ThisKey="ResidNo" OtherKey="ResidNo" Type="tblResid" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tblDelivered" Member="tblDelivereds">
-    <Type Name="tblDelivered">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="PartNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="Agent" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Date" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="ReceivedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SiteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Tedad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="EquipID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="HavalehNO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="RequestedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="dateadded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Amvalno" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Temp" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="tblEquipment_tblDelivered" Member="tblEquipment" ThisKey="EquipID" OtherKey="ID" Type="tblEquipment" IsForeignKey="true" />
-      <Association Name="tblSite_tblDelivered" Member="tblSite" ThisKey="SiteID" OtherKey="ID" Type="tblSite" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.tblResid" Member="tblResids">
     <Type Name="tblResid">
       <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -144,33 +124,57 @@
       <Column Name="dateadded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Returned" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="tblResid_tblRecieved" Member="tblRecieveds" ThisKey="ResidNo" OtherKey="ResidNo" Type="tblRecieved" />
+      <Association Name="tblResid_tblDelivered" Member="tblDelivereds" ThisKey="ResidNo" OtherKey="ResidNo" Type="tblDelivered" />
       <Association Name="tblAnbar_tblResid" Member="tblAnbar" ThisKey="AnbarID" OtherKey="ID" Type="tblAnbar" IsForeignKey="true" />
       <Association Name="tblSubCategory_tblResid" Member="tblSubCategory" ThisKey="kharidType" OtherKey="ID" Type="tblSubCategory" IsForeignKey="true" />
     </Type>
   </Table>
-  <Function Name="dbo.CalculateTotal" Method="CalculateTotal" IsComposable="true">
+  <Table Name="dbo.tblDelivered" Member="tblDelivereds">
+    <Type Name="tblDelivered">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PartNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Agent" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="ReceivedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SiteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tedad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EquipID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HavalehNO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RequestedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="dateadded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Amvalno" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Temp" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IdentificationNO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ResidNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblEquipment_tblDelivered" Member="tblEquipment" ThisKey="EquipID" OtherKey="ID" Type="tblEquipment" IsForeignKey="true" />
+      <Association Name="tblResid_tblDelivered" Member="tblResid" ThisKey="ResidNo" OtherKey="ResidNo" Type="tblResid" IsForeignKey="true" />
+      <Association Name="tblSite_tblDelivered" Member="tblSite" ThisKey="SiteID" OtherKey="ID" Type="tblSite" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.fnCalculatesadereh" Method="fnCalculatesadereh" IsComposable="true">
     <Parameter Name="DeviceID" Parameter="deviceID" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.getkala_inanbar" Method="getkala_inanbar" IsComposable="true">
-    <ElementType Name="getkala_inanbarResult">
+  <Function Name="dbo.fnCalculateTotal" Method="fnCalculateTotal" IsComposable="true">
+    <Parameter Name="DeviceID" Parameter="deviceID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.fnCalculateTotalbydate" Method="fnCalculateTotalbydate" IsComposable="true">
+    <Parameter Name="DeviceID" Parameter="deviceID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="date" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.fnCalculatevaredeh" Method="fnCalculatevaredeh" IsComposable="true">
+    <Parameter Name="DeviceID" Parameter="deviceID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.fngetkala_inanbar" Method="fngetkala_inanbar" IsComposable="true">
+    <ElementType Name="fngetkala_inanbarResult">
       <Column Name="equipid" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.CalculateTotalbydate" Method="CalculateTotalbydate" IsComposable="true">
-    <Parameter Name="DeviceID" Parameter="deviceID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="date" Type="System.String" DbType="NVarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.Calculatesadereh" Method="Calculatesadereh" IsComposable="true">
-    <Parameter Name="DeviceID" Parameter="deviceID" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.fnGetResidNO" Method="fnGetResidNO" IsComposable="true">
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.Calculatevaredeh" Method="Calculatevaredeh" IsComposable="true">
-    <Parameter Name="DeviceID" Parameter="deviceID" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

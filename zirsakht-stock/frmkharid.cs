@@ -196,7 +196,7 @@ namespace zirsakht_stock
                 a.Date = (new PersianDate(DateTime.Now)).ToString();
                 a.AnbarID = 1;
                 a.ResidNo = resid.ToString();
-
+                a.dateadded = DateTime.Now;
                 a.issued = true;
                 lq.SubmitChanges();
                 MessageBox.Show("رسید مورد نظر با موفقیت ثبت گردید");

@@ -315,12 +315,12 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(210, 280);
+            this.label8.Location = new System.Drawing.Point(202, 283);
             this.label8.Name = "label8";
             this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label8.Size = new System.Drawing.Size(64, 16);
+            this.label8.Size = new System.Drawing.Size(69, 16);
             this.label8.TabIndex = 1011;
-            this.label8.Text = "نوع خرید :";
+            this.label8.Text = "نوع رسید :";
             // 
             // cmbKharidType
             // 
@@ -329,7 +329,7 @@
             this.cmbKharidType.Location = new System.Drawing.Point(14, 280);
             this.cmbKharidType.Name = "cmbKharidType";
             this.cmbKharidType.Size = new System.Drawing.Size(161, 24);
-            this.cmbKharidType.TabIndex = 1010;
+            this.cmbKharidType.TabIndex = 8;
             this.cmbKharidType.SelectedIndexChanged += new System.EventHandler(this.cmbKharidType_SelectedIndexChanged);
             // 
             // lblanbar
@@ -350,7 +350,7 @@
             this.cmbAnbar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbAnbar.Name = "cmbAnbar";
             this.cmbAnbar.Size = new System.Drawing.Size(161, 24);
-            this.cmbAnbar.TabIndex = 1008;
+            this.cmbAnbar.TabIndex = 10;
             // 
             // label6
             // 
@@ -368,7 +368,7 @@
             this.txtResid.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtResid.Name = "txtResid";
             this.txtResid.Size = new System.Drawing.Size(161, 23);
-            this.txtResid.TabIndex = 1007;
+            this.txtResid.TabIndex = 9;
             // 
             // label5
             // 
@@ -408,7 +408,7 @@
             this.cmbUints.Location = new System.Drawing.Point(26, 128);
             this.cmbUints.Name = "cmbUints";
             this.cmbUints.Size = new System.Drawing.Size(161, 24);
-            this.cmbUints.TabIndex = 1002;
+            this.cmbUints.TabIndex = 4;
             this.cmbUints.Visible = false;
             // 
             // frmImported
