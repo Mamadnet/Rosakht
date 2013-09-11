@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.فایلToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.کالایجدیدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,6 +74,7 @@
             // 
             // کالایجدیدToolStripMenuItem
             // 
+            this.کالایجدیدToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("کالایجدیدToolStripMenuItem.Image")));
             this.کالایجدیدToolStripMenuItem.Name = "کالایجدیدToolStripMenuItem";
             this.کالایجدیدToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.کالایجدیدToolStripMenuItem.Text = " کالای جدید";
@@ -130,22 +132,23 @@
             // 
             // کاردکسToolStripMenuItem
             // 
+            this.کاردکسToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("کاردکسToolStripMenuItem.Image")));
             this.کاردکسToolStripMenuItem.Name = "کاردکسToolStripMenuItem";
-            this.کاردکسToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.کاردکسToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.کاردکسToolStripMenuItem.Text = "کاردکس";
             this.کاردکسToolStripMenuItem.Click += new System.EventHandler(this.کاردکسToolStripMenuItem_Click);
             // 
             // رسیدToolStripMenuItem
             // 
             this.رسیدToolStripMenuItem.Name = "رسیدToolStripMenuItem";
-            this.رسیدToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.رسیدToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.رسیدToolStripMenuItem.Text = "رسید";
             this.رسیدToolStripMenuItem.Click += new System.EventHandler(this.رسیدToolStripMenuItem_Click);
             // 
             // حوالهToolStripMenuItem
             // 
             this.حوالهToolStripMenuItem.Name = "حوالهToolStripMenuItem";
-            this.حوالهToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.حوالهToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.حوالهToolStripMenuItem.Text = "حواله";
             this.حوالهToolStripMenuItem.Click += new System.EventHandler(this.حوالهToolStripMenuItem_Click);
             // 
@@ -159,6 +162,7 @@
             // 
             // دربارهToolStripMenuItem
             // 
+            this.دربارهToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("دربارهToolStripMenuItem.Image")));
             this.دربارهToolStripMenuItem.Name = "دربارهToolStripMenuItem";
             this.دربارهToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.دربارهToolStripMenuItem.Text = "درباره ...";
@@ -175,7 +179,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "سیستم انبار";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.menuStrip1.ResumeLayout(false);
