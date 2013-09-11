@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Deployment.Application;
+
 
 
 namespace zirsakht_stock
@@ -73,6 +75,24 @@ namespace zirsakht_stock
         {
             frmAnbar a = new frmAnbar();
             a.ShowDialog();
+        }
+
+        private void گزارشToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void حوالهToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHavalehGrid m = new frmHavalehGrid();
+            m.ShowDialog();
+        }
+
+        private void دربارهToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+             ApplicationDeployment deploy =   ApplicationDeployment.CurrentDeployment;
+             UpdateCheckInfo update = deploy.CheckForDetailedUpdate();
+             MessageBox.Show("نسخه : " + deploy.CurrentVersion);
         }
 
        

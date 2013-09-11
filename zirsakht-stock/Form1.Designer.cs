@@ -40,6 +40,8 @@
             this.کاردکسToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.رسیدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.حوالهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.راهنماToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.دربارهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +49,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.فایلToolStripMenuItem,
-            this.گزارشToolStripMenuItem});
+            this.گزارشToolStripMenuItem,
+            this.راهنماToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -123,6 +126,7 @@
             this.گزارشToolStripMenuItem.Name = "گزارشToolStripMenuItem";
             this.گزارشToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.گزارشToolStripMenuItem.Text = "گزارش";
+            this.گزارشToolStripMenuItem.Click += new System.EventHandler(this.گزارشToolStripMenuItem_Click);
             // 
             // کاردکسToolStripMenuItem
             // 
@@ -143,6 +147,22 @@
             this.حوالهToolStripMenuItem.Name = "حوالهToolStripMenuItem";
             this.حوالهToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.حوالهToolStripMenuItem.Text = "حواله";
+            this.حوالهToolStripMenuItem.Click += new System.EventHandler(this.حوالهToolStripMenuItem_Click);
+            // 
+            // راهنماToolStripMenuItem
+            // 
+            this.راهنماToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.دربارهToolStripMenuItem});
+            this.راهنماToolStripMenuItem.Name = "راهنماToolStripMenuItem";
+            this.راهنماToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.راهنماToolStripMenuItem.Text = "راهنما";
+            // 
+            // دربارهToolStripMenuItem
+            // 
+            this.دربارهToolStripMenuItem.Name = "دربارهToolStripMenuItem";
+            this.دربارهToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.دربارهToolStripMenuItem.Text = "درباره ...";
+            this.دربارهToolStripMenuItem.Click += new System.EventHandler(this.دربارهToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -179,6 +199,8 @@
         private System.Windows.Forms.ToolStripMenuItem حوالهToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem کالایجدیدToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem تعریفانبارToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem راهنماToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem دربارهToolStripMenuItem;
 
     }
 }

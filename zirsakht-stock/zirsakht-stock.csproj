@@ -14,7 +14,7 @@
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>ftp://192.168.150.30/app/</PublishUrl>
+    <PublishUrl>\\192.168.150.30\install\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -25,8 +25,10 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\192.168.150.30\install\</InstallUrl>
-    <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>27</ApplicationRevision>
+    <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -102,6 +104,12 @@
     </Compile>
     <Compile Include="frmEquipments.Designer.cs">
       <DependentUpon>frmEquipments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHavalehGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHavalehGrid.Designer.cs">
+      <DependentUpon>frmHavalehGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="frmImported.cs">
       <SubType>Form</SubType>
@@ -181,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEquipments.resx">
       <DependentUpon>frmEquipments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHavalehGrid.resx">
+      <DependentUpon>frmHavalehGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmImported.resx">
       <DependentUpon>frmImported.cs</DependentUpon>
@@ -279,6 +290,11 @@
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.ReportViewer.10.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Studio 2010 Report Viewer</ProductName>
+      <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Sql.Server.Express.10.0">
       <Visible>False</Visible>
