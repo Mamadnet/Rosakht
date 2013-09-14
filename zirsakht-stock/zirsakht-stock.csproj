@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>zirsakht_stock</RootNamespace>
     <AssemblyName>zirsakht-stock</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>\\192.168.150.30\install\</PublishUrl>
@@ -27,7 +28,7 @@
     <InstallUrl>\\192.168.150.30\install\</InstallUrl>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>28</ApplicationRevision>
+    <ApplicationRevision>29</ApplicationRevision>
     <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -69,16 +70,18 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FarsiLibrary">
+      <HintPath>..\packages\Farsi.Library.2.5.1.5\lib\net35\FarsiLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="FarsiLibrary.Resources, Version=2.5.0.0, Culture=neutral, PublicKeyToken=def7c46cace23f8f, processorArchitecture=MSIL" />
+    <Reference Include="FarsiLibrary.Utils, Version=2.5.0.0, Culture=neutral, PublicKeyToken=def7c46cace23f8f, processorArchitecture=MSIL" />
+    <Reference Include="FarsiLibrary.Web, Version=2.5.0.0, Culture=neutral, PublicKeyToken=def7c46cace23f8f, processorArchitecture=MSIL" />
+    <Reference Include="FarsiLibrary.Win, Version=2.5.0.0, Culture=neutral, PublicKeyToken=def7c46cace23f8f, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="PersianDate, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\PersianDate.dll</HintPath>
-    </Reference>
-    <Reference Include="PersianDateControls, Version=1.2.4495.22344, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\PersianDateControls.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
@@ -159,6 +162,12 @@
     <Compile Include="frmResid.Designer.cs">
       <DependentUpon>frmResid.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmResidEquipselection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmResidEquipselection.Designer.cs">
+      <DependentUpon>frmResidEquipselection.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmResidIN_Havaleh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +187,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="template.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +224,9 @@
     <EmbeddedResource Include="frmResid.resx">
       <DependentUpon>frmResid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmResidEquipselection.resx">
+      <DependentUpon>frmResidEquipselection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmResidIN_Havaleh.resx">
       <DependentUpon>frmResidIN_Havaleh.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +259,7 @@
       <LastGenOutput>lqStock.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\lqStockDataContext.datasource" />
     <None Include="Properties\DataSources\vwKarde.datasource" />
     <None Include="Properties\Settings.settings">

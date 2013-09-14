@@ -59,26 +59,5 @@ namespace zirsakht_stock.Properties {
                 resourceCulture = value;
             }
         }
-        
-        internal static System.Drawing.Bitmap es_shift6250_img1 {
-            get {
-                object obj = ResourceManager.GetObject("es_shift6250_img1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap images {
-            get {
-                object obj = ResourceManager.GetObject("images", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Optical_Fiber {
-            get {
-                object obj = ResourceManager.GetObject("Optical-Fiber", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

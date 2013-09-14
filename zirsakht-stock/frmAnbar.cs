@@ -15,6 +15,12 @@ namespace zirsakht_stock
         public frmAnbar()
         {
             InitializeComponent();
+            dataGridView1.AutoGenerateColumns = false;
+            var sql = (from s in lq.tblAnbars
+                       where s.ID>1
+                        select s);
+            dataGridView1.DataSource = sql;
+
         }
 
         private void frmAnbar_Load(object sender, EventArgs e)
@@ -26,6 +32,7 @@ namespace zirsakht_stock
         {
             tblAnbar eq = new tblAnbar();
             eq.Title = txtPartNum.Text;
+            eq.Address = txtaddress.Text;
             lq.tblAnbars.InsertOnSubmit(eq);
             lq.SubmitChanges();
             MessageBox.Show("کالای مورد نظر با موفقیت ثبت گردید");

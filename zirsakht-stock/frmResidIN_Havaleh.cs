@@ -31,9 +31,9 @@ namespace zirsakht_stock
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-             _residnoHavaleh = dataGridView1.SelectedRows[e.RowIndex].Cells["residno"].Value.ToString();
-             _EquipidHavaleh = dataGridView1.SelectedRows[e.RowIndex].Cells["partnumber"].Value.ToString();
-             string equipid = dataGridView1.SelectedRows[e.RowIndex].Cells["equipid"].Value.ToString();
+             _residnoHavaleh = dataGridView1.SelectedRows[0].Cells["residno"].Value.ToString();
+             _EquipidHavaleh = dataGridView1.SelectedRows[0].Cells["partnumber"].Value.ToString();
+             string equipid = dataGridView1.SelectedRows[0].Cells["equipid"].Value.ToString();
 
              var sql = (from s in lq.tblEquipments
                         where s.ID == int.Parse(equipid)

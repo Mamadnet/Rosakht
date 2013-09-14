@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Arash;
 using System.Data.SqlClient;
 
 namespace zirsakht_stock
@@ -71,7 +70,7 @@ namespace zirsakht_stock
             a.ReceivedBy = txtPerson.Text;
             a.Agent = txtAgent.Text;
             a.SiteID =Convert.ToInt32( cmbSites.SelectedValue.ToString() );
-            a.Date = (new PersianDate(DateTime.Now)).ToString();
+            a.Date = "";//(new PersianDate(DateTime.Now)).ToString();
             a.Tedad = Convert.ToInt32((txtTedad.Text));
             a.EquipID = Convert.ToInt32(cmbEquipments.SelectedValue.ToString());
             a.Amvalno = txtIdent.Text;

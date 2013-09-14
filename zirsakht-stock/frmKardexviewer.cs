@@ -5,7 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Arash;
+
+using FarsiLibrary.Utils;
 
 using Microsoft.Reporting.WinForms;namespace zirsakht_stock
 {
@@ -21,7 +22,7 @@ using Microsoft.Reporting.WinForms;namespace zirsakht_stock
         private void frmKardexviewer_Load(object sender, EventArgs e)
         {
             lqStockDataContextBindingSource.DataSource = datasrc;
-            ReportParameter printdate = new ReportParameter("PrintDate",new Arash.PersianDate( DateTime.Now).ToString() );
+            ReportParameter printdate = new ReportParameter("PrintDate",new  PersianDate( DateTime.Now).ToString() );
             this.rvKardex.LocalReport.SetParameters(new ReportParameter[] { printdate });
             
             this.rvKardex.RefreshReport();

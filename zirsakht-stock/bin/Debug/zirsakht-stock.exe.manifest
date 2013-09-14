@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1">
-  <asmv1:assemblyIdentity name="zirsakht-stock.exe" version="1.0.1.28" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
+  <asmv1:assemblyIdentity name="zirsakht-stock.exe" version="1.0.1.29" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="zirsakht-stock" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
@@ -38,7 +38,7 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
-      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="2.0.50727.0" />
     </dependentAssembly>
   </dependency>
   <dependency>
@@ -62,38 +62,96 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PersianDate.dll" size="11776">
-      <assemblyIdentity name="PersianDate" version="1.1.0.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Core" version="3.5.0.0" publicKeyToken="b77a5c561934e089" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="WindowsBase" version="3.0.0.0" publicKeyToken="31bf3856ad364e35" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FarsiLibrary.dll" size="69632">
+      <assemblyIdentity name="FarsiLibrary" version="2.5.1.5" publicKeyToken="D1BCBD1937C9D5A3" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>0JZfoZO6YfTyxWaHWDVZ1ToVCa0=</dsig:DigestValue>
+        <dsig:DigestValue>n0POCVYSoQVrSpEaYTlNhOOmw+Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PersianDateControls.dll" size="28672">
-      <assemblyIdentity name="PersianDateControls" version="1.2.4495.22344" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FarsiLibrary.Resources.dll" size="18944">
+      <assemblyIdentity name="FarsiLibrary.Resources" version="2.5.0.0" publicKeyToken="DEF7C46CACE23F8F" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>VUQtuU13PNB9Byj+ElNRWm9o2xI=</dsig:DigestValue>
+        <dsig:DigestValue>mbenQO+Ya3U7JkKYQXtFlRD+R4Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="zirsakht-stock.exe" size="1803776">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FarsiLibrary.Utils.dll" size="45568">
+      <assemblyIdentity name="FarsiLibrary.Utils" version="2.5.0.0" publicKeyToken="DEF7C46CACE23F8F" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>GOUaV84m/3TZZ75t5IzNy3DHbOg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FarsiLibrary.Web.dll" size="54784">
+      <assemblyIdentity name="FarsiLibrary.Web" version="2.5.0.0" publicKeyToken="DEF7C46CACE23F8F" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>+OWUEeA5Aj11TApVSzcNTyhdDfw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FarsiLibrary.Win.dll" size="225792">
+      <assemblyIdentity name="FarsiLibrary.Win" version="2.5.0.0" publicKeyToken="DEF7C46CACE23F8F" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>jYai2bWtkmX/6bOogjed89hFX88=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.Office.Interop.Excel.dll" size="1550200">
+      <assemblyIdentity name="Microsoft.Office.Interop.Excel" version="14.0.0.0" publicKeyToken="71E9BCE111E9429C" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>3u14W4CLcBMBsKw4NeXONbtmmw4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="zirsakht-stock.exe" size="977408">
       <assemblyIdentity name="zirsakht-stock" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>6g2fa1Ubcjg5uQ634Ed8hSzhPPs=</dsig:DigestValue>
+        <dsig:DigestValue>DyOCNjs2VxiOqMOAR7gxUmd57zk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -103,7 +161,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>R4uGxoVxTi1Kw+XK2VfhLTB4hqk=</dsig:DigestValue>
+      <dsig:DigestValue>eyIZr1E3Akct2BXJmrh8NvmGbJ8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="stock_log.ldf" size="786432" writeableType="applicationData">
@@ -112,16 +170,16 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>wgTgqkhPKiC2nH24rSaXd7+Rlow=</dsig:DigestValue>
+      <dsig:DigestValue>v5Y9Ka3k67eWuls0IfKaeCMABV4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="zirsakht-stock.exe.config" size="716">
+  <file name="zirsakht-stock.exe.config" size="938">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>dsBc/3eKEHIMA2dqY+Yhe282cfQ=</dsig:DigestValue>
+      <dsig:DigestValue>+yCbTG5orq5sQ7AZz9cht8ukhF4=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

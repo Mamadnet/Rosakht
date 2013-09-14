@@ -33,8 +33,8 @@
             this.rvKardex = new Microsoft.Reporting.WinForms.ReportViewer();
             this.lqStockDataContextBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vwKardeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.lqStockDataContextBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vwKardeBindingSource)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.lqStockDataContextBindingSource)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.vwKardeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // rvKardex
@@ -66,8 +66,8 @@
             this.Text = "کاردکس";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmKardexviewer_FormClosing);
             this.Load += new System.EventHandler(this.frmKardexviewer_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.lqStockDataContextBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vwKardeBindingSource)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.lqStockDataContextBindingSource)).EndInit();
+           // ((System.ComponentModel.ISupportInitialize)(this.vwKardeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

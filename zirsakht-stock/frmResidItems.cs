@@ -8,7 +8,6 @@ using System.Windows.Forms;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Arash;
 using System.Data.SqlClient;
 
 namespace zirsakht_stock
@@ -23,6 +22,7 @@ namespace zirsakht_stock
                        where s.ResidNo.Equals(residno.ToString())
                        select s
                    );
+            dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = sql;
         }
 

@@ -30,6 +30,17 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.PartNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateadded = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contractno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tedad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ersal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kharidtype = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbTypes = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -52,22 +63,11 @@
             this.txtgirandeh = new System.Windows.Forms.TextBox();
             this.txtPartNum = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.PartNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateadded = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contractno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tedad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ersal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kharidtype = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+         //   ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -137,6 +137,88 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(866, 618);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // PartNumber
+            // 
+            this.PartNumber.DataPropertyName = "PartNumber";
+            this.PartNumber.HeaderText = "part number";
+            this.PartNumber.Name = "PartNumber";
+            this.PartNumber.ReadOnly = true;
+            this.PartNumber.Width = 180;
+            // 
+            // dateadded
+            // 
+            this.dateadded.DataPropertyName = "dateadded";
+            this.dateadded.HeaderText = "Column1";
+            this.dateadded.Name = "dateadded";
+            this.dateadded.ReadOnly = true;
+            this.dateadded.Visible = false;
+            // 
+            // pid
+            // 
+            this.pid.DataPropertyName = "pid";
+            this.pid.HeaderText = "pid";
+            this.pid.Name = "pid";
+            this.pid.ReadOnly = true;
+            this.pid.Visible = false;
+            // 
+            // contractno
+            // 
+            this.contractno.DataPropertyName = "contractno";
+            this.contractno.HeaderText = "شماره قرارداد";
+            this.contractno.Name = "contractno";
+            this.contractno.ReadOnly = true;
+            // 
+            // Tedad
+            // 
+            this.Tedad.DataPropertyName = "Tedad";
+            this.Tedad.HeaderText = "تعداد";
+            this.Tedad.Name = "Tedad";
+            this.Tedad.ReadOnly = true;
+            // 
+            // unit
+            // 
+            this.unit.DataPropertyName = "unit";
+            this.unit.HeaderText = "واحد";
+            this.unit.Name = "unit";
+            this.unit.ReadOnly = true;
+            // 
+            // ersal
+            // 
+            this.ersal.DataPropertyName = "ersal";
+            this.ersal.HeaderText = "فرستنده";
+            this.ersal.Name = "ersal";
+            this.ersal.ReadOnly = true;
+            // 
+            // date
+            // 
+            this.date.DataPropertyName = "date";
+            this.date.HeaderText = "تاریخ";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            // 
+            // kharidtype
+            // 
+            this.kharidtype.DataPropertyName = "kharidtype";
+            this.kharidtype.HeaderText = "خرید";
+            this.kharidtype.Name = "kharidtype";
+            this.kharidtype.ReadOnly = true;
+            // 
+            // description
+            // 
+            this.description.DataPropertyName = "description";
+            this.description.HeaderText = "شرح";
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            this.description.Width = 220;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
             // 
             // cmbTypes
             // 
@@ -339,6 +421,7 @@
             this.txtPartNum.Name = "txtPartNum";
             this.txtPartNum.Size = new System.Drawing.Size(161, 23);
             this.txtPartNum.TabIndex = 3;
+            this.txtPartNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPartNum_KeyPress);
             // 
             // btnAdd
             // 
@@ -351,88 +434,6 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // PartNumber
-            // 
-            this.PartNumber.DataPropertyName = "PartNumber";
-            this.PartNumber.HeaderText = "part number";
-            this.PartNumber.Name = "PartNumber";
-            this.PartNumber.ReadOnly = true;
-            this.PartNumber.Width = 180;
-            // 
-            // dateadded
-            // 
-            this.dateadded.DataPropertyName = "dateadded";
-            this.dateadded.HeaderText = "Column1";
-            this.dateadded.Name = "dateadded";
-            this.dateadded.ReadOnly = true;
-            this.dateadded.Visible = false;
-            // 
-            // pid
-            // 
-            this.pid.DataPropertyName = "pid";
-            this.pid.HeaderText = "pid";
-            this.pid.Name = "pid";
-            this.pid.ReadOnly = true;
-            this.pid.Visible = false;
-            // 
-            // contractno
-            // 
-            this.contractno.DataPropertyName = "contractno";
-            this.contractno.HeaderText = "شماره قرارداد";
-            this.contractno.Name = "contractno";
-            this.contractno.ReadOnly = true;
-            // 
-            // Tedad
-            // 
-            this.Tedad.DataPropertyName = "Tedad";
-            this.Tedad.HeaderText = "تعداد";
-            this.Tedad.Name = "Tedad";
-            this.Tedad.ReadOnly = true;
-            // 
-            // unit
-            // 
-            this.unit.DataPropertyName = "unit";
-            this.unit.HeaderText = "واحد";
-            this.unit.Name = "unit";
-            this.unit.ReadOnly = true;
-            // 
-            // ersal
-            // 
-            this.ersal.DataPropertyName = "ersal";
-            this.ersal.HeaderText = "فرستنده";
-            this.ersal.Name = "ersal";
-            this.ersal.ReadOnly = true;
-            // 
-            // date
-            // 
-            this.date.DataPropertyName = "date";
-            this.date.HeaderText = "تاریخ";
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            // 
-            // kharidtype
-            // 
-            this.kharidtype.DataPropertyName = "kharidtype";
-            this.kharidtype.HeaderText = "خرید";
-            this.kharidtype.Name = "kharidtype";
-            this.kharidtype.ReadOnly = true;
-            // 
-            // description
-            // 
-            this.description.DataPropertyName = "description";
-            this.description.HeaderText = "شرح";
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
-            this.description.Width = 220;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
             // frmkharid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -444,9 +445,9 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+           // ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="stock" Class="lqStockDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\stock.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="zirsakht_stock.Properties.Settings" SettingsPropertyName="stockConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.150.33;Initial Catalog=stock;Persist Security Info=True;User ID=sa" SettingsObjectName="zirsakht_stock.Properties.Settings" SettingsPropertyName="stockConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tblSites" Member="tblSites">
     <Type Name="tblSite">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

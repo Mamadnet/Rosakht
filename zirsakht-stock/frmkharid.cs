@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Arash;
 using System.Data.SqlClient;
 
 namespace zirsakht_stock
@@ -139,6 +138,8 @@ namespace zirsakht_stock
 
         private void cmbEquipments_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cmbEquipments.SelectedValue!=null)
+            {
             if (cmbEquipments.SelectedValue.ToString() == "-1")
             {
                 txtPartNum.Enabled = true;
@@ -150,6 +151,7 @@ namespace zirsakht_stock
                 txtPartNum.Text = cmbEquipments.Text;
                 txtPartNum.Enabled = false;
                 cmbUints.Visible = false;
+            }
             }
         }
 
@@ -193,7 +195,7 @@ namespace zirsakht_stock
                 a.Description = txtDesc.Text;
                 a.Ersal = txtdahandeh.Text;
                 a.ReceivedBy = txtgirandeh.Text;
-                a.Date = (new PersianDate(DateTime.Now)).ToString();
+                a.Date = "";// (new PersianDate(DateTime.Now)).ToString();
                 a.AnbarID = 1;
                 a.ResidNo = resid.ToString();
                 a.dateadded = DateTime.Now;
@@ -241,6 +243,31 @@ namespace zirsakht_stock
 
 
 
+        }
+
+        private void txtPartNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r')
+            {
+
+
+                var sql = (from s in lq.tblEquipments
+                           where s.Partnumber.Contains(txtPartNum.Text)
+                           select s
+                     );
+
+                if (sql.Count() > 0)
+                {
+
+                    frmResidEquipselection m = new frmResidEquipselection(sql);
+                    m.ShowDialog();
+                    if (m._EquipidHavaleh != null)
+                    {
+                        cmbTypes.SelectedIndex = cmbTypes.FindStringExact(m._typeidHavaleh);
+                        cmbEquipments.SelectedIndex = cmbEquipments.FindStringExact(m._EquipidHavaleh);
+                    }
+                }
+            }
         }
     }
 }

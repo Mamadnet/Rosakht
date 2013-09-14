@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Arash;
 using System.Data.SqlClient;
 
 namespace zirsakht_stock
@@ -200,7 +199,7 @@ namespace zirsakht_stock
             else
             {
                 txtPartNum.Text = cmbEquipments.Text;
-                txtPartNum.Enabled = false;
+              //  txtPartNum.Enabled = false;
                 cmbUints.Visible = false;
             }
         }
@@ -242,7 +241,7 @@ namespace zirsakht_stock
                 a.Description = txtDesc.Text;
                 a.Ersal = txtersal.Text;
                 a.ReceivedBy = txtPerson.Text;
-                a.Date = (new PersianDate(DateTime.Now)).ToString();
+                a.Date = "";// (new PersianDate(DateTime.Now)).ToString();
                 a.AnbarID = Convert.ToInt32(cmbAnbar.SelectedValue.ToString());
                 a.dateadded = DateTime.Now;
                 a.ResidNo = txtResid.Text;
@@ -310,6 +309,31 @@ namespace zirsakht_stock
 
             }
 
+        }
+
+        private void txtPartNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r')
+            {
+
+
+                var sql = (from s in lq.tblEquipments
+                           where s.Partnumber.Contains(txtPartNum.Text) 
+                           select s
+                     );
+
+                if (sql.Count() > 0)
+                {
+
+                    frmResidEquipselection m = new frmResidEquipselection(sql);
+                    m.ShowDialog();
+                    if (m._EquipidHavaleh != null)
+                    {
+                        cmbTypes.SelectedIndex = cmbTypes.FindStringExact(m._typeidHavaleh);
+                        cmbEquipments.SelectedIndex = cmbEquipments.FindStringExact(m._EquipidHavaleh);
+                    }
+                }
+            }
         }
 
     }

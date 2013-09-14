@@ -60,8 +60,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnResid = new System.Windows.Forms.Button();
             this.cmbUints = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+         //   ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+           // ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -260,6 +260,7 @@
             this.txtPartNum.Name = "txtPartNum";
             this.txtPartNum.Size = new System.Drawing.Size(161, 23);
             this.txtPartNum.TabIndex = 3;
+            this.txtPartNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPartNum_KeyPress);
             // 
             // btnAdd
             // 
@@ -422,11 +423,11 @@
             this.Text = "ورود کالا";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmImported_FormClosing);
             this.Load += new System.EventHandler(this.frmImported_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
