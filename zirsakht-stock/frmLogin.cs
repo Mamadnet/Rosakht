@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Linq;
 
 
 namespace zirsakht_stock
@@ -22,10 +23,11 @@ namespace zirsakht_stock
         /// Initialization vector for the crypto provider
         /// </summary>
         private static readonly byte[] _initVector = { 0xE1, 0xF1, 0xA6, 0xBB, 0xA9, 0x5B, 0x31, 0x2F, 0x81, 0x2E, 0x17, 0x4C, 0xA2, 0x81, 0x53, 0x61 };
-
+        lqStockDataContext lq = new lqStockDataContext();
         public frmLogin()
         {
             InitializeComponent();
+            
         }
 
 
@@ -88,6 +90,7 @@ namespace zirsakht_stock
         /// <returns></returns>
         private static string Encrypt(string Password)
         {
+            
             if (string.IsNullOrEmpty(Password))
                 return string.Empty;
 
@@ -115,29 +118,29 @@ namespace zirsakht_stock
         /// </summary>
         /// <param name="Username"></param>
         /// <returns></returns>
-        private static DataTable LookupUser(string Username)
+        public  bool LookupUser(string username, string password)
         {
-            /*
-              * The reason I return a datatable here is so you can also bring back the user's full
-              * name, email address, security rights in the application, etc. I have a "User" class
-              * where I defined meta information for users.
-              */
-            const string connStr = "Data Source=apex2006sql;Initial Catalog=Leather;Integrated Security=True;";
-            const string query = "Select Password From UserTable (NOLOCK) Where UserName = @UserName";
-            DataTable result = new DataTable();
-            using (SqlConnection conn = new SqlConnection(connStr))
+            // I don't validate password here (see TODO below)
+          
+            var user =lq.tblUsers.FirstOrDefault(u => u.Username.Equals(username) && u.Password.Equals(password) && u.Status==true);
+
+            if (user != null)
             {
-                conn.Open();
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+             //   var rehash = Hashing.Hash(password, user.PasswordSalt); // PasswordSalt is a byte array
+              //  if (rehash.SequenceEqual(user.Password))
+                if(user.Password.Equals("123456"))
                 {
-                    cmd.Parameters.Add("@UserName", SqlDbType.VarChar).Value = Username;
-                    using (SqlDataReader dr = cmd.ExecuteReader())
-                    {
-                        result.Load(dr);
-                    }
+                    return true;
+                }
+                else
+                {
+                    //Logger.LogUnsuccessfulAuthentication(user);
+
+                    // TODO: Increase user-login failure count and system-wide failure count
                 }
             }
-            return result;
+
+            return false;
         }
 
         /// <summary>
@@ -164,15 +167,15 @@ namespace zirsakht_stock
                 return;
             }
 
-            if (textBoxPassword.Text == "123456")
-            {
-                Form1 m = new Form1();
-                this.Visible = false;
+            //if (textBoxPassword.Text == "123456")
+            //{
+            //    //Form1 m = new Form1();
+            //    //this.Visible = false;
 
-                m.ShowDialog();
-                this.Close();
+            //    //m.ShowDialog();
+            //    //this.Close();
 
-            }
+            //}
 
             //OK they enter a user and pass, lets see if they can authenticate
             //using (DataTable dt = LookupUser(textBoxUsername.Text))
@@ -193,18 +196,22 @@ namespace zirsakht_stock
 
             //        string dbPassword = Convert.ToString(dt.Rows[0]["Password"]);
             //        string appPassword = Encrypt(textBoxPassword.Text); //we store the password as encrypted in the DB
-            //        if (string.Compare(dbPassword, appPassword) == 0)
-            //        {
-            //            //Logged in
-            //        }
-            //        else
-            //        {
-            //            //You may want to use the same error message so they can't tell which field they got wrong
-            //            textBoxPassword.Focus();
-            //            MessageBox.Show("Invalid Password", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //            textBoxPassword.Focus();
-            //            return;
-            //        }
+            if (LookupUser(textBoxUsername.Text,textBoxPassword.Text)==true)
+            {
+                Form1 mn = new Form1();
+                this.Visible = false;
+
+                mn.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                //You may want to use the same error message so they can't tell which field they got wrong
+                textBoxPassword.Focus();
+                MessageBox.Show("Invalid Password", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                textBoxPassword.Focus();
+                return;
+            }
             //    }
             //}
         }
@@ -244,6 +251,11 @@ namespace zirsakht_stock
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = textBoxUsername;
         }
 
         

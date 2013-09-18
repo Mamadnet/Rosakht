@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using FarsiLibrary.Utils;
 
 namespace zirsakht_stock
 {
@@ -70,10 +71,10 @@ namespace zirsakht_stock
             a.ReceivedBy = txtPerson.Text;
             a.Agent = txtAgent.Text;
             a.SiteID =Convert.ToInt32( cmbSites.SelectedValue.ToString() );
-            a.Date = "";//(new PersianDate(DateTime.Now)).ToString();
+            a.Date =DateTime.Now.ToPersianDate().ToString("d");
             a.Tedad = Convert.ToInt32((txtTedad.Text));
             a.EquipID = Convert.ToInt32(cmbEquipments.SelectedValue.ToString());
-            a.Amvalno = txtIdent.Text;
+            a.Amvalno = txtAmval.Text;
             a.Temp = cmbTemp.Checked;
             a.ResidNo = txtResid.Text;
             a.dateadded = DateTime.Now;
@@ -81,7 +82,7 @@ namespace zirsakht_stock
             lq.tblDelivereds.InsertOnSubmit(a);
             lq.SubmitChanges();
             MessageBox.Show("کالای مورد نظر با موفقیت ثبت گردید");
-
+            btnAdd.Enabled = false;
             _Fillgrid();
             if (cmbEquipments.Items.Count > 0)
                 lblMojodi.Text = Convert.ToString(lq.fnCalculateTotal(Convert.ToInt32(cmbEquipments.SelectedValue.ToString())));
@@ -208,11 +209,33 @@ namespace zirsakht_stock
 
                     frmResidIN_Havaleh m = new frmResidIN_Havaleh(sql);
                     m.ShowDialog();
-                    txtResid.Text = m._residnoHavaleh;
-                    cmbTypes.SelectedIndex =cmbTypes.FindStringExact(m._typeidHavaleh);
-                    cmbEquipments.SelectedIndex =cmbEquipments.FindStringExact( m._EquipidHavaleh);
+                    if (m._residnoHavaleh != null)
+                    {
+                        txtResid.Text = m._residnoHavaleh;
+                        cmbTypes.SelectedIndex = cmbTypes.FindStringExact(m._typeidHavaleh);
+                        cmbEquipments.SelectedIndex = cmbEquipments.FindStringExact(m._EquipidHavaleh);
+                    }
                 }
             }
+        }
+
+        private void txtTedad_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox m=(TextBox)sender;
+            if (int.Parse(m.Text) > int.Parse(lblMojodi.Text))
+            {
+                errorProvider1.SetError(m, "تعداد تحویل کالا از موجودی بیشتر است");
+                btnAdd.Enabled = false;
+            }
+
+            else
+            {
+                errorProvider1.SetError(m, "");
+                btnAdd.Enabled = true;
+
+            }
+
+
         }
 
        

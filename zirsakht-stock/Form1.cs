@@ -90,9 +90,21 @@ namespace zirsakht_stock
 
         private void دربارهToolStripMenuItem_Click(object sender, EventArgs e)
         {
-             ApplicationDeployment deploy =   ApplicationDeployment.CurrentDeployment;
-             UpdateCheckInfo update = deploy.CheckForDetailedUpdate();
-             MessageBox.Show("نسخه : " + deploy.CurrentVersion);
+           try
+            {
+                ApplicationDeployment deploy = ApplicationDeployment.CurrentDeployment;
+                UpdateCheckInfo update = deploy.CheckForDetailedUpdate();
+                MessageBox.Show("نسخه : " + deploy.CurrentVersion);
+            }
+            catch
+            {
+            }
+
+        }
+
+        private void فایلToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
 
        

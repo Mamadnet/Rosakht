@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1">
-  <asmv1:assemblyIdentity name="zirsakht-stock.exe" version="1.0.1.29" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
+  <asmv1:assemblyIdentity name="zirsakht-stock.exe" version="1.0.1.37" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="zirsakht-stock" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
@@ -144,14 +144,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="zirsakht-stock.exe" size="977408">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SMDiagnostics.dll" size="68952">
+      <assemblyIdentity name="SMDiagnostics" version="4.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>De5uHEwMAV+bheCmu3IgrQrX3/s=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="zirsakht-stock.exe" size="1755648">
       <assemblyIdentity name="zirsakht-stock" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>DyOCNjs2VxiOqMOAR7gxUmd57zk=</dsig:DigestValue>
+        <dsig:DigestValue>DMNKGAgcU9kZ53D+TmLS39IG9So=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -161,7 +173,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>eyIZr1E3Akct2BXJmrh8NvmGbJ8=</dsig:DigestValue>
+      <dsig:DigestValue>zl+3WGgL3520ttgmqBcco/olAMo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="stock_log.ldf" size="786432" writeableType="applicationData">
@@ -170,16 +182,16 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>v5Y9Ka3k67eWuls0IfKaeCMABV4=</dsig:DigestValue>
+      <dsig:DigestValue>IwV8b2Dh06CdPkHbQJVN1DrdMYU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="zirsakht-stock.exe.config" size="938">
+  <file name="zirsakht-stock.exe.config" size="983">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>+yCbTG5orq5sQ7AZz9cht8ukhF4=</dsig:DigestValue>
+      <dsig:DigestValue>H3xJ24gM9Ckfpl/2yFWFtOZnNLk=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

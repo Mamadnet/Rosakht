@@ -63,11 +63,10 @@
             this.txtgirandeh = new System.Windows.Forms.TextBox();
             this.txtPartNum = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
-         //   ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -222,6 +221,7 @@
             // 
             // cmbTypes
             // 
+            this.cmbTypes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbTypes.FormattingEnabled = true;
             this.cmbTypes.Location = new System.Drawing.Point(26, 13);
             this.cmbTypes.Name = "cmbTypes";
@@ -231,6 +231,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(249, 90);
             this.label9.Name = "label9";
@@ -241,6 +242,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(247, 57);
             this.label7.Name = "label7";
@@ -251,6 +253,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(247, 25);
             this.label8.Name = "label8";
@@ -261,6 +264,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(193, 380);
             this.label6.Name = "label6";
@@ -271,6 +275,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(196, 338);
             this.label5.Name = "label5";
@@ -281,6 +286,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(222, 292);
             this.label3.Name = "label3";
@@ -291,6 +297,7 @@
             // 
             // txtGharardad
             // 
+            this.txtGharardad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtGharardad.Location = new System.Drawing.Point(26, 335);
             this.txtGharardad.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtGharardad.Name = "txtGharardad";
@@ -299,6 +306,7 @@
             // 
             // cmbKharidType
             // 
+            this.cmbKharidType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbKharidType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbKharidType.FormattingEnabled = true;
             this.cmbKharidType.Location = new System.Drawing.Point(26, 292);
@@ -308,6 +316,7 @@
             // 
             // btnResid
             // 
+            this.btnResid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnResid.Location = new System.Drawing.Point(3, 555);
             this.btnResid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnResid.Name = "btnResid";
@@ -319,6 +328,7 @@
             // 
             // cmbUints
             // 
+            this.cmbUints.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbUints.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUints.FormattingEnabled = true;
             this.cmbUints.Location = new System.Drawing.Point(26, 128);
@@ -329,6 +339,7 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.Location = new System.Drawing.Point(155, 492);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
@@ -340,6 +351,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(243, 242);
             this.label4.Name = "label4";
@@ -350,6 +362,7 @@
             // 
             // txtTedad
             // 
+            this.txtTedad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTedad.Location = new System.Drawing.Point(26, 235);
             this.txtTedad.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtTedad.Name = "txtTedad";
@@ -359,6 +372,7 @@
             // 
             // txtDesc
             // 
+            this.txtDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDesc.Location = new System.Drawing.Point(19, 377);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
@@ -367,6 +381,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(200, 176);
             this.label2.Name = "label2";
@@ -377,6 +392,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(196, 205);
             this.label1.Name = "label1";
@@ -387,6 +403,7 @@
             // 
             // cmbEquipments
             // 
+            this.cmbEquipments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbEquipments.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEquipments.FormattingEnabled = true;
             this.cmbEquipments.Location = new System.Drawing.Point(26, 54);
@@ -398,6 +415,7 @@
             // 
             // txtdahandeh
             // 
+            this.txtdahandeh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtdahandeh.Location = new System.Drawing.Point(26, 202);
             this.txtdahandeh.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtdahandeh.Name = "txtdahandeh";
@@ -406,6 +424,7 @@
             // 
             // txtgirandeh
             // 
+            this.txtgirandeh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtgirandeh.Location = new System.Drawing.Point(26, 169);
             this.txtgirandeh.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtgirandeh.Name = "txtgirandeh";
@@ -415,6 +434,7 @@
             // 
             // txtPartNum
             // 
+            this.txtPartNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPartNum.Enabled = false;
             this.txtPartNum.Location = new System.Drawing.Point(26, 87);
             this.txtPartNum.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -425,6 +445,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.Location = new System.Drawing.Point(26, 492);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
@@ -440,14 +461,14 @@
             this.ClientSize = new System.Drawing.Size(1172, 618);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmkharid";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmkharid_FormClosing);
             this.Load += new System.EventHandler(this.frmkharid_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
-           // ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            //((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

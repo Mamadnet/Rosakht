@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.PartNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,6 +40,7 @@
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtResid = new System.Windows.Forms.TextBox();
             this.cmbTemp = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -69,12 +71,12 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            //((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -121,8 +123,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.label16);
             this.splitContainer1.Panel2.Controls.Add(this.label17);
             this.splitContainer1.Panel2.Controls.Add(this.button2);
-            this.splitContainer1.Size = new System.Drawing.Size(1189, 555);
-            this.splitContainer1.SplitterDistance = 880;
+            this.splitContainer1.Size = new System.Drawing.Size(1174, 555);
+            this.splitContainer1.SplitterDistance = 868;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -149,7 +151,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(880, 555);
+            this.dataGridView1.Size = new System.Drawing.Size(868, 555);
             this.dataGridView1.TabIndex = 0;
             // 
             // PartNumber
@@ -221,8 +223,20 @@
             this.ID.ReadOnly = true;
             this.ID.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(196, 17);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label1.Size = new System.Drawing.Size(87, 16);
+            this.label1.TabIndex = 1015;
+            this.label1.Text = "شماره رسید :";
+            // 
             // txtResid
             // 
+            this.txtResid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtResid.Location = new System.Drawing.Point(14, 14);
             this.txtResid.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtResid.Name = "txtResid";
@@ -232,16 +246,18 @@
             // 
             // cmbTemp
             // 
+            this.cmbTemp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbTemp.AutoSize = true;
             this.cmbTemp.Location = new System.Drawing.Point(24, 371);
             this.cmbTemp.Name = "cmbTemp";
             this.cmbTemp.Size = new System.Drawing.Size(57, 20);
-            this.cmbTemp.TabIndex = 9;
+            this.cmbTemp.TabIndex = 10;
             this.cmbTemp.Text = "موقت";
             this.cmbTemp.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(181, 343);
             this.label8.Name = "label8";
@@ -252,14 +268,16 @@
             // 
             // txtIdent
             // 
+            this.txtIdent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtIdent.Location = new System.Drawing.Point(14, 340);
             this.txtIdent.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtIdent.Name = "txtIdent";
             this.txtIdent.Size = new System.Drawing.Size(161, 23);
-            this.txtIdent.TabIndex = 8;
+            this.txtIdent.TabIndex = 9;
             // 
             // lblMojodi
             // 
+            this.lblMojodi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMojodi.AutoSize = true;
             this.lblMojodi.ForeColor = System.Drawing.Color.Maroon;
             this.lblMojodi.Location = new System.Drawing.Point(149, 375);
@@ -269,6 +287,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(223, 371);
             this.label7.Name = "label7";
@@ -278,6 +297,7 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.Location = new System.Drawing.Point(189, 514);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
@@ -289,6 +309,7 @@
             // 
             // cmbTypes
             // 
+            this.cmbTypes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTypes.FormattingEnabled = true;
             this.cmbTypes.Location = new System.Drawing.Point(14, 57);
@@ -300,15 +321,18 @@
             // 
             // txtTedad
             // 
+            this.txtTedad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTedad.Location = new System.Drawing.Point(14, 270);
             this.txtTedad.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtTedad.Name = "txtTedad";
             this.txtTedad.Size = new System.Drawing.Size(161, 23);
             this.txtTedad.TabIndex = 7;
             this.txtTedad.Text = "0";
+            this.txtTedad.Validating += new System.ComponentModel.CancelEventHandler(this.txtTedad_Validating);
             // 
             // cmbSites
             // 
+            this.cmbSites.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbSites.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSites.FormattingEnabled = true;
             this.cmbSites.Location = new System.Drawing.Point(14, 153);
@@ -318,14 +342,16 @@
             // 
             // txtDesc
             // 
+            this.txtDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDesc.Location = new System.Drawing.Point(24, 413);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(254, 83);
-            this.txtDesc.TabIndex = 10;
+            this.txtDesc.TabIndex = 11;
             // 
             // cmbEquipments
             // 
+            this.cmbEquipments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbEquipments.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEquipments.FormattingEnabled = true;
             this.cmbEquipments.Location = new System.Drawing.Point(14, 89);
@@ -337,6 +363,7 @@
             // 
             // txtAgent
             // 
+            this.txtAgent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAgent.Location = new System.Drawing.Point(14, 237);
             this.txtAgent.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtAgent.Name = "txtAgent";
@@ -345,6 +372,7 @@
             // 
             // txtPerson
             // 
+            this.txtPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPerson.Location = new System.Drawing.Point(14, 204);
             this.txtPerson.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtPerson.Name = "txtPerson";
@@ -353,6 +381,7 @@
             // 
             // txtPartNum
             // 
+            this.txtPartNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPartNum.Enabled = false;
             this.txtPartNum.Location = new System.Drawing.Point(14, 122);
             this.txtPartNum.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -363,17 +392,20 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.Enabled = false;
             this.btnAdd.Location = new System.Drawing.Point(62, 514);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(87, 28);
-            this.btnAdd.TabIndex = 11;
+            this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "ثبت";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // checkBox1
             // 
+            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(24, 371);
             this.checkBox1.Name = "checkBox1";
@@ -384,6 +416,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(199, 307);
             this.label9.Name = "label9";
@@ -394,6 +427,7 @@
             // 
             // txtAmval
             // 
+            this.txtAmval.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAmval.Location = new System.Drawing.Point(14, 303);
             this.txtAmval.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtAmval.Name = "txtAmval";
@@ -402,6 +436,7 @@
             // 
             // label10
             // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.Maroon;
             this.label10.Location = new System.Drawing.Point(149, 375);
@@ -411,6 +446,7 @@
             // 
             // label11
             // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(223, 371);
             this.label11.Name = "label11";
@@ -420,6 +456,7 @@
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(244, 89);
             this.label12.Name = "label12";
@@ -430,6 +467,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(189, 514);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
@@ -440,6 +478,7 @@
             // 
             // label13
             // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(244, 57);
             this.label13.Name = "label13";
@@ -450,6 +489,7 @@
             // 
             // label14
             // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(240, 277);
             this.label14.Name = "label14";
@@ -460,6 +500,7 @@
             // 
             // label15
             // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(204, 161);
             this.label15.Name = "label15";
@@ -470,6 +511,7 @@
             // 
             // textBox3
             // 
+            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox3.Location = new System.Drawing.Point(24, 413);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
@@ -478,6 +520,7 @@
             // 
             // label16
             // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(193, 211);
             this.label16.Name = "label16";
@@ -488,6 +531,7 @@
             // 
             // label17
             // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(193, 244);
             this.label17.Name = "label17";
@@ -498,6 +542,7 @@
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Location = new System.Drawing.Point(62, 514);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
@@ -506,32 +551,27 @@
             this.button2.Text = "ثبت";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // errorProvider1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(196, 17);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(87, 16);
-            this.label1.TabIndex = 1015;
-            this.label1.Text = "شماره رسید :";
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmDeliverto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1189, 555);
+            this.ClientSize = new System.Drawing.Size(1174, 555);
             this.Controls.Add(this.splitContainer1);
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "frmDeliverto";
             this.Text = "تحویل کالا";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmDeliverto_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            //((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -580,5 +620,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtResid;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

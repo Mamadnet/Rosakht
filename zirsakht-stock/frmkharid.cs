@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using FarsiLibrary.Utils;
 
 namespace zirsakht_stock
 {
@@ -84,6 +85,7 @@ namespace zirsakht_stock
 
             var sql = (from s in lq.tblResids
                        join p in lq.tblRecieveds on s.ResidNo equals p.ResidNo
+                       where s.issued == false
                        select new {dateadded=p.dateadded,pid=p.ID, contractno=s.ContractNO,kharidtype = s.tblSubCategory.title, unit = p.tblEquipment.tblUnit.Unit, ID = s.ID, equipid = p.EquipID, partnumber = p.PartNumber, tedad = p.Tedad, date = s.Date, receivedby = s.ReceivedBy, description = s.Description, ersal = s.Ersal });
             dataGridView1.DataSource = sql;
         }
@@ -195,7 +197,7 @@ namespace zirsakht_stock
                 a.Description = txtDesc.Text;
                 a.Ersal = txtdahandeh.Text;
                 a.ReceivedBy = txtgirandeh.Text;
-                a.Date = "";// (new PersianDate(DateTime.Now)).ToString();
+                a.Date = DateTime.Now.ToPersianDate().ToString("d");
                 a.AnbarID = 1;
                 a.ResidNo = resid.ToString();
                 a.dateadded = DateTime.Now;

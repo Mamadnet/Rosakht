@@ -26,7 +26,7 @@ namespace zirsakht_stock
             InitializeComponent();
            dataGridView1.AutoGenerateColumns = false;
             var sql = (from s in lq.tblDelivereds
-                       select s
+                       select new { partnumber = s.PartNumber, site = s.tblSite.Name, tedad = s.Tedad, date = s.Date, agent = s.Agent, description = s.Description, amvalno = s.Amvalno, temp = s.Temp, residno = s.ResidNo }
                     );
             if (sql.Count() > 0)
             {
@@ -85,17 +85,17 @@ namespace zirsakht_stock
                        && (s.SiteID == int.Parse(cmbSites.SelectedValue.ToString()) || int.Parse(cmbSites.SelectedValue.ToString()) == -1) 
                        && (faStart.SelectedDateTime == null || faStart.SelectedDateTime < s.dateadded) 
                        && (faEnd.SelectedDateTime > s.dateadded || faEnd.SelectedDateTime == null)
-                       select s
+                       select new { partnumber = s.PartNumber, site = s.tblSite.Name, tedad = s.Tedad, date = s.Date, agent = s.Agent, description = s.Description, amvalno = s.Amvalno, temp = s.Temp, residno = s.ResidNo }
                        );
             else
                 sql = (from s in lq.tblDelivereds
                        // join rs in lq.tblRecieveds on s.ResidNo.Contains("kk") 
-                       where s.ResidNo.Contains(txtresidno.Text) && s.ReceivedBy.Contains(txtErsal.Text) 
-                       && s.PartNumber.Contains(txtPart.Text) 
-                       && (s.SiteID == int.Parse(cmbSites.SelectedValue.ToString()) || int.Parse(cmbSites.SelectedValue.ToString()) == -1) 
-                       && (faStart.SelectedDateTime == null || faStart.SelectedDateTime < s.dateadded) 
-                       && (faEnd.SelectedDateTime > s.dateadded || faEnd.SelectedDateTime==null)
-                       select s
+                       where s.ResidNo.Contains(txtresidno.Text) && s.ReceivedBy.Contains(txtErsal.Text)
+                       && s.PartNumber.Contains(txtPart.Text)
+                       && (s.SiteID == int.Parse(cmbSites.SelectedValue.ToString()) || int.Parse(cmbSites.SelectedValue.ToString()) == -1)
+                       && (faStart.SelectedDateTime == null || faStart.SelectedDateTime < s.dateadded)
+                       && (faEnd.SelectedDateTime > s.dateadded || faEnd.SelectedDateTime == null)
+                       select new {partnumber=s.PartNumber,site=s.tblSite.Name,tedad=s.Tedad,date=s.Date,agent=s.Agent,description=s.Description,amvalno=s.Amvalno,temp=s.Temp,residno=s.ResidNo }
                    );
 
 

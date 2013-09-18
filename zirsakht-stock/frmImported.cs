@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using FarsiLibrary.Utils;
+
 
 namespace zirsakht_stock
 {
@@ -241,7 +243,7 @@ namespace zirsakht_stock
                 a.Description = txtDesc.Text;
                 a.Ersal = txtersal.Text;
                 a.ReceivedBy = txtPerson.Text;
-                a.Date = "";// (new PersianDate(DateTime.Now)).ToString();
+                a.Date = DateTime.Now.ToPersianDate().ToString("d");
                 a.AnbarID = Convert.ToInt32(cmbAnbar.SelectedValue.ToString());
                 a.dateadded = DateTime.Now;
                 a.ResidNo = txtResid.Text;
@@ -264,21 +266,21 @@ namespace zirsakht_stock
         private void deleteALLZERO()
         {
 
-            //var b = (from c in lq.tblRecieveds
-            //         where c.tblResid.issued == false
-            //         select c).ToList();
+            var b = (from c in lq.tblRecieveds
+                     where c.tblResid.issued == false
+                     select c).ToList();
 
-            //lq.tblRecieveds.DeleteAllOnSubmit(b);
+            lq.tblRecieveds.DeleteAllOnSubmit(b);
 
-            //lq.SubmitChanges();
+            lq.SubmitChanges();
 
 
-            //var a = (from c in lq.tblResids
-            //         where c.issued == false
-            //         select c).ToList();
-            //lq.tblResids.DeleteAllOnSubmit(a);
+            var a = (from c in lq.tblResids
+                     where c.issued == false
+                     select c).ToList();
+            lq.tblResids.DeleteAllOnSubmit(a);
 
-            //lq.SubmitChanges();
+            lq.SubmitChanges();
 
 
 

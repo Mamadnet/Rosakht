@@ -27,23 +27,30 @@ namespace zirsakht_stock
             cmbUints.DisplayMember = "Unit";
             cmbUints.ValueMember = "ID";
             cmbUints.DataSource = unitquery;
+
+
+            dataGridView1.AutoGenerateColumns = false;
+            var sql = (from s in lq.tblEquipments
+                       select new {title=s.Partnumber,type=s.tblType.TypeDesc,unit=s.tblUnit.Unit });
+            dataGridView1.DataSource = sql;
         }
 
         private void frmEquipments_Load(object sender, EventArgs e)
         {
-
+            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(txtPartNum, "فشردن دکمه اینتر برای لیست تجهیزات ");
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             tblEquipment eq = new tblEquipment();
-            eq.Partnumber = txtPartNum.Text+"***";
+            eq.Partnumber = txtPartNum.Text;
             eq.Type = Convert.ToInt32(cmbTypes.SelectedValue);
             eq.UnitID = Convert.ToInt32(cmbUints.SelectedValue);
             lq.tblEquipments.InsertOnSubmit(eq);
             lq.SubmitChanges();
             MessageBox.Show("کالای مورد نظر با موفقیت ثبت گردید");
-            this.Close();
+            //this.Close();
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -53,7 +60,40 @@ namespace zirsakht_stock
 
         private void txtPartNum_TextChanged(object sender, EventArgs e)
         {
+          
+        }
 
+        private void cmbTypes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var sql = (from s in lq.tblEquipments
+                       where s.Type==int.Parse( cmbTypes.SelectedValue.ToString())
+                       select new {partnumber=s.Partnumber, title = s.Partnumber, type = s.tblType.TypeDesc, unit = s.tblUnit.Unit });
+            dataGridView1.DataSource = sql;
+        }
+
+        private void txtPartNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r')
+            {
+
+
+                var sql = (from s in lq.tblEquipments
+                           where s.Partnumber.Contains(txtPartNum.Text)
+                           select s
+                     );
+
+                if (sql.Count() > 0)
+                {
+
+                    frmResidEquipselection m = new frmResidEquipselection(sql);
+                    m.ShowDialog();
+                    if (m._EquipidHavaleh != null)
+                    {
+                        cmbTypes.SelectedIndex = cmbTypes.FindStringExact(m._typeidHavaleh);
+                        //  cmbEquipments.SelectedIndex = cmbEquipments.FindStringExact(m._EquipidHavaleh);
+                    }
+                }
+            }
         }
     }
 }

@@ -17,11 +17,13 @@ namespace zirsakht_stock
         public frmResidEquipselection(object sql)
         {
             InitializeComponent();
+            dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = sql;
         }
 
         private void frmResidEquipselection_Load(object sender, EventArgs e)
         {
+            MessageBox.Show("");
 
         }
 
