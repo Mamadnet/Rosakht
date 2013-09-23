@@ -145,14 +145,14 @@ namespace zirsakht_stock
             if (cmbEquipments.SelectedValue.ToString() == "-1")
             {
                 txtPartNum.Enabled = true;
-                cmbUints.Visible = true;
+              //  cmbUints.Visible = true;
 
             }
             else
             {
                 txtPartNum.Text = cmbEquipments.Text;
                 txtPartNum.Enabled = false;
-                cmbUints.Visible = false;
+               // cmbUints.Visible = false;
             }
             }
         }
@@ -202,9 +202,11 @@ namespace zirsakht_stock
                 a.ResidNo = resid.ToString();
                 a.dateadded = DateTime.Now;
                 a.issued = true;
+                a.UserID = int.Parse(frmLogin._usercode);
                 lq.SubmitChanges();
                 MessageBox.Show("رسید مورد نظر با موفقیت ثبت گردید");
                 this.Close();
+                logEvents.RegEvent((int)logEvents.Actions.Register_Kharid, int.Parse(frmLogin._usercode), "ثبت خرید");
 
             }
 
@@ -271,5 +273,7 @@ namespace zirsakht_stock
                 }
             }
         }
+
+      
     }
 }

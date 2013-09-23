@@ -49,7 +49,7 @@ namespace zirsakht_stock
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+            logEvents.RegEvent((int)logEvents.Actions.Logout, int.Parse(frmLogin._usercode), "خروج");
         }
 
         private void ثبتخریدToolStripMenuItem_Click(object sender, EventArgs e)

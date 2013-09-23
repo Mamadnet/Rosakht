@@ -13,8 +13,13 @@ using System.Linq;
 
 namespace zirsakht_stock
 {
+  
+
     public partial class frmLogin : Form
     {
+
+        public static string _username { get; private set; }
+        public static string _usercode { get; private set; }
         /// <summary>
         /// Key for the crypto provider
         /// </summary>
@@ -130,6 +135,8 @@ namespace zirsakht_stock
               //  if (rehash.SequenceEqual(user.Password))
                 if(user.Password.Equals("123456"))
                 {
+                    _usercode = user.ID.ToString();
+                    _username = user.Username;
                     return true;
                 }
                 else
@@ -200,7 +207,7 @@ namespace zirsakht_stock
             {
                 Form1 mn = new Form1();
                 this.Visible = false;
-
+                logEvents.RegEvent((int)logEvents.Actions.Login, int.Parse(_usercode), "ورود");
                 mn.ShowDialog();
                 this.Close();
             }
@@ -215,6 +222,8 @@ namespace zirsakht_stock
             //    }
             //}
         }
+
+       
 
         protected void RePaint()
         {

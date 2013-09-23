@@ -47,6 +47,7 @@ namespace zirsakht_stock
             eq.Partnumber = txtPartNum.Text;
             eq.Type = Convert.ToInt32(cmbTypes.SelectedValue);
             eq.UnitID = Convert.ToInt32(cmbUints.SelectedValue);
+            eq.UserID = int.Parse(frmLogin._usercode);
             lq.tblEquipments.InsertOnSubmit(eq);
             lq.SubmitChanges();
             MessageBox.Show("کالای مورد نظر با موفقیت ثبت گردید");

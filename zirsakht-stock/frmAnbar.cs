@@ -33,6 +33,7 @@ namespace zirsakht_stock
             tblAnbar eq = new tblAnbar();
             eq.Title = txtPartNum.Text;
             eq.Address = txtaddress.Text;
+            eq.UserID = int.Parse(frmLogin._usercode);
             lq.tblAnbars.InsertOnSubmit(eq);
             lq.SubmitChanges();
             MessageBox.Show("کالای مورد نظر با موفقیت ثبت گردید");

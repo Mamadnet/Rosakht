@@ -23,7 +23,7 @@ namespace zirsakht_stock
 
         private void frmResidEquipselection_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("");
+         //   MessageBox.Show("");
 
         }
 

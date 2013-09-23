@@ -81,8 +81,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer1.Size = new System.Drawing.Size(1187, 441);
-            this.splitContainer1.SplitterDistance = 878;
+            this.splitContainer1.Size = new System.Drawing.Size(1011, 441);
+            this.splitContainer1.SplitterDistance = 747;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 3;
             // 
@@ -113,7 +113,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(878, 441);
+            this.dataGridView1.Size = new System.Drawing.Size(747, 441);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
@@ -217,7 +217,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(26, 301);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(256, 128);
+            this.groupBox1.Size = new System.Drawing.Size(229, 128);
             this.groupBox1.TabIndex = 1012;
             this.groupBox1.TabStop = false;
             // 
@@ -294,7 +294,7 @@
             this.groupBox2.Controls.Add(this.cmbEquipments);
             this.groupBox2.Location = new System.Drawing.Point(3, 10);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(289, 285);
+            this.groupBox2.Size = new System.Drawing.Size(252, 285);
             this.groupBox2.TabIndex = 1013;
             this.groupBox2.TabStop = false;
             // 
@@ -311,7 +311,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(216, 19);
+            this.label4.Location = new System.Drawing.Point(196, 18);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(39, 16);
@@ -321,7 +321,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(218, 47);
+            this.label5.Location = new System.Drawing.Point(196, 47);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label5.Size = new System.Drawing.Size(37, 16);
@@ -330,7 +330,7 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(177, 242);
+            this.btnPrint.Location = new System.Drawing.Point(117, 244);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(87, 28);
@@ -352,9 +352,9 @@
             // 
             // txtDevice
             // 
-            this.txtDevice.Location = new System.Drawing.Point(23, 96);
+            this.txtDevice.Location = new System.Drawing.Point(15, 87);
             this.txtDevice.Name = "txtDevice";
-            this.txtDevice.Size = new System.Drawing.Size(229, 23);
+            this.txtDevice.Size = new System.Drawing.Size(169, 23);
             this.txtDevice.TabIndex = 1003;
             // 
             // cmbTypes
@@ -382,7 +382,7 @@
             // frmkardex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
-            this.ClientSize = new System.Drawing.Size(1187, 441);
+            this.ClientSize = new System.Drawing.Size(1011, 441);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmkardex";
             this.Load += new System.EventHandler(this.frmkardex_Load);

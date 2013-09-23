@@ -28,9 +28,10 @@
     <InstallUrl>\\192.168.214.169\install\</InstallUrl>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>37</ApplicationRevision>
+    <ApplicationRevision>48</ApplicationRevision>
     <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
@@ -66,6 +67,9 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>storehouse.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -97,6 +101,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="logEvents.cs" />
+    <Compile Include="frHavalehreport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frHavalehreport.Designer.cs">
+      <DependentUpon>frHavalehreport.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAnbar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +206,9 @@
     <Compile Include="template.Designer.cs">
       <DependentUpon>template.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frHavalehreport.resx">
+      <DependentUpon>frHavalehreport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAnbar.resx">
       <DependentUpon>frmAnbar.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +249,7 @@
       <DependentUpon>frmResidItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="rpHavaleh.rdlc" />
     <EmbeddedResource Include="template.resx">
       <DependentUpon>template.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,6 +290,7 @@
     <None Include="zirsakht-stock_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="storehouse.ico" />
     <None Include="Resources\images.jpg" />
     <None Include="Resources\es_shift6250_img1.jpg" />
     <None Include="Resources\Optical-Fiber.jpg" />

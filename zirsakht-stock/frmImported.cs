@@ -52,6 +52,12 @@ namespace zirsakht_stock
             cmbKharidType.ValueMember = "ID";
             cmbKharidType.DataSource = kharidquery.ToArray();
 
+            var querysites = (from s in lq.tblSites
+                              orderby s.Ostan
+                              select new { NM = s.Ostan + " " + s.Name, s.ID }).ToList();
+            cmbSites.DisplayMember = "NM";
+            cmbSites.ValueMember = "ID";
+            cmbSites.DataSource = querysites.ToArray();
 
 
 
@@ -63,7 +69,7 @@ namespace zirsakht_stock
             var sql = (from s in lq.tblResids
                        join p in lq.tblRecieveds on s.ResidNo equals p.ResidNo                    
                        where s.issued==false
-                       select new { contractno = s.ContractNO, kharidtype = s.kharidType, unit = p.tblEquipment.tblUnit.Unit, ID = s.ID,pid=p.ID, equipid = p.EquipID, partnumber = p.PartNumber, tedad = p.Tedad, date = s.Date, receivedby = s.ReceivedBy, description = s.Description, ersal = s.Ersal });
+                       select new { residno=s.ResidNo,contractno = s.ContractNO, kharidtype = s.kharidType, unit = p.tblEquipment.tblUnit.Unit, ID = s.ID,pid=p.ID, equipid = p.EquipID, partnumber = p.PartNumber, tedad = p.Tedad, date = s.Date, receivedby = s.ReceivedBy, description = s.Description, ersal = s.Ersal });
             dataGridView1.DataSource = sql;
         }
 
@@ -86,7 +92,8 @@ namespace zirsakht_stock
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            cmbKharidType.Enabled = false;
+            btnResid.Enabled = true;
             if (Convert.ToInt32(cmbEquipments.SelectedValue) == -1)
             {
                 tblEquipment eq = new tblEquipment();
@@ -124,19 +131,44 @@ namespace zirsakht_stock
                 b.dateadded = DateTime.Now;
                 lq.tblRecieveds.InsertOnSubmit(b);
                 lq.SubmitChanges();
+
+                if (int.Parse(cmbKharidType.SelectedValue.ToString()) == 6)  // تحویل مستقیم 6
+                {
+                    tblDelivered w = new tblDelivered();
+                    // a.DeliverTo = 1;
+                    w.PartNumber = txtPartNum.Text;
+                    w.Description = txtDesc.Text;
+                    w.ReceivedBy = txtmostaghim.Text;
+                    w.Agent = txtPerson.Text;
+                    w.SiteID = Convert.ToInt32(cmbSites.SelectedValue.ToString());
+                    w.Date = DateTime.Now.ToPersianDate().ToString("d");
+                    w.Tedad = Convert.ToInt32((txtTedad.Text));
+                    w.EquipID = Convert.ToInt32(cmbEquipments.SelectedValue.ToString());
+                    w.Amvalno = "";
+                    w.Temp = false;
+                    w.ResidNo = txtResid.Text;
+                    w.dateadded = DateTime.Now;
+                    w.IdentificationNO = "";
+                    w.HavalehNO = txtResid.Text; //havalehno.ToString();
+                    w.UserID = int.Parse(frmLogin._usercode);
+                    lq.tblDelivereds.InsertOnSubmit(w);
+                    lq.SubmitChanges();
+
+                }
+              
+
+                txtPartNum.Text = "";
             }
             else
             {
                 MessageBox.Show("لطفا تمام موارد را تکمیل نمایید");
             }
-
-
             _Fillgrid(); 
         }
 
         private void frmImported_Load(object sender, EventArgs e)
         {
-            txtPartNum.Text = cmbEquipments.Text;
+           // txtPartNum.Text = cmbEquipments.Text;
             tblResid a = new tblResid();
             // a.DeliverTo = 1;
             a.issued = false;
@@ -170,10 +202,30 @@ namespace zirsakht_stock
                 //var rowview = row as DataGridViewRow;
                 //tblDelivered _row = new tblDelivered();
                 //_row = (tblDelivered)rowview.DataBoundItem;
+              
                 int _row = Convert.ToInt32(row.Cells["pid"].Value.ToString());
+                string _residno = row.Cells["residno"].Value.ToString();
                 var sql = (from s in lq.tblRecieveds
                            where s.ID == _row
                            select s);
+
+
+
+                var havalehs = lq.tblDelivereds.Where(x => x.ResidNo == _residno);
+
+                foreach (var havaleh in havalehs)
+                {
+                    try
+                    {
+                        lq.tblDelivereds.DeleteOnSubmit(havaleh);
+                        lq.SubmitChanges();
+                    }
+                    catch (Exception ex)
+                    {
+                        
+                    }
+                }
+
                 if (_row > 0)
                 {
                     try
@@ -188,6 +240,8 @@ namespace zirsakht_stock
                     }
                 }
             }
+            if (dataGridView1.Rows.Count == 0)
+                cmbKharidType.Enabled = true;
         }
 
         private void cmbEquipments_SelectedIndexChanged(object sender, EventArgs e)
@@ -195,14 +249,14 @@ namespace zirsakht_stock
             if (cmbEquipments.SelectedValue.ToString() == "-1")
             {
                 txtPartNum.Enabled = true;
-                cmbUints.Visible = true;
+            //    cmbUints.Visible = true;
 
             }
             else
             {
                 txtPartNum.Text = cmbEquipments.Text;
               //  txtPartNum.Enabled = false;
-                cmbUints.Visible = false;
+              //  cmbUints.Visible = false;
             }
         }
 
@@ -238,7 +292,8 @@ namespace zirsakht_stock
                 if (int.Parse(cmbKharidType.SelectedValue.ToString()) == 5)  //  5 عودتی
                     a.Returned = true;
                 else
-                    a.Returned = false;
+                    a.Returned = false;                  
+
 
                 a.Description = txtDesc.Text;
                 a.Ersal = txtersal.Text;
@@ -248,11 +303,16 @@ namespace zirsakht_stock
                 a.dateadded = DateTime.Now;
                 a.ResidNo = txtResid.Text;
                 a.issued = true;
+                a.UserID = int.Parse(frmLogin._usercode);
                 lq.SubmitChanges();
-                MessageBox.Show("رسید مورد نظر با موفقیت ثبت گردید");
-                this.Close();
 
-            }
+
+              
+                MessageBox.Show("رسید مورد نظر با موفقیت ثبت گردید");
+                logEvents.RegEvent((int)logEvents.Actions.Use_Kardex, int.Parse(frmLogin._usercode), txtResid.Text + "--" + "ثبت کالا در انبار");
+
+                this.Close();
+                          }
 
             else
             {
@@ -337,6 +397,24 @@ namespace zirsakht_stock
                 }
             }
         }
+
+        private void cmbKharidType_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (int.Parse(cmbKharidType.SelectedValue.ToString()) == 6)  // تحویل مستقیم 6
+            {
+                gbhavaleh.Visible = true;
+               
+            }
+            else {
+                gbhavaleh.Visible = false;
+               
+            }
+                    
+        }
+
+      
+
+       
 
     }
 }

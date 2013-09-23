@@ -33,27 +33,5 @@ namespace zirsakht_stock.Properties {
                 return ((string)(this["stockConnectionString"]));
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.150.33;Initial Catalog=stock;Persist Security Info=True;User " +
-            "ID=sa;Password=Abc12345678")]
-        public string stockConnectionStringbackup {
-            get {
-                return ((string)(this["stockConnectionStringbackup"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.150.33;Initial Catalog=stock;Persist Security Info=True;User " +
-            "ID=sa;Password=Abc12345678")]
-        public string stockConnectionString1 {
-            get {
-                return ((string)(this["stockConnectionString1"]));
-            }
-        }
     }
 }

@@ -15,9 +15,12 @@ namespace zirsakht_stock
     {
         
         lqStockDataContext lq = new lqStockDataContext();
+        int havalehno;
         public frmDeliverto()
         {
             InitializeComponent();
+
+            havalehno =(int) lq.fnGetHavalehNO();
             dataGridView1.AutoGenerateColumns = false;
             _Fillgrid();
 
@@ -63,7 +66,7 @@ namespace zirsakht_stock
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            lqStockDataContext lq = new lqStockDataContext();
+           lqStockDataContext lq = new lqStockDataContext();
             tblDelivered a = new tblDelivered();
             // a.DeliverTo = 1;
             a.PartNumber = txtPartNum.Text;
@@ -79,6 +82,8 @@ namespace zirsakht_stock
             a.ResidNo = txtResid.Text;
             a.dateadded = DateTime.Now;
             a.IdentificationNO = txtIdent.Text;
+            a.HavalehNO = havalehno.ToString();
+            a.UserID =int.Parse( frmLogin._usercode);
             lq.tblDelivereds.InsertOnSubmit(a);
             lq.SubmitChanges();
             MessageBox.Show("کالای مورد نظر با موفقیت ثبت گردید");
@@ -88,7 +93,22 @@ namespace zirsakht_stock
                 lblMojodi.Text = Convert.ToString(lq.fnCalculateTotal(Convert.ToInt32(cmbEquipments.SelectedValue.ToString())));
             else
                 lblMojodi.Text = "";
+            btnReport.Enabled = true;
+
+            reset_controls();
+            txtResid.Focus();
+            logEvents.RegEvent((int)logEvents.Actions.Issued_Havale, int.Parse(frmLogin._usercode), "ثبت حواله");
         }
+
+        private void reset_controls()
+        {
+            txtAmval.Text = "";
+            txtDesc.Text = "";
+            txtIdent.Text = "";
+            txtTedad.Text = "0";
+            
+        }
+
 
         private void cmbEquipments_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -236,6 +256,24 @@ namespace zirsakht_stock
             }
 
 
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            var sql = (from s in lq.vwHavalehs
+                       where s.HavalehNO.Equals(havalehno)
+                       select s
+                   ).ToList();
+            vwHavaleh f = new vwHavaleh();
+
+            if (sql.Count() < 9)
+            {
+                for (int i = sql.Count(); i < 9; i++)
+                    sql.Add(f);
+
+            }
+            frHavalehreport m = new frHavalehreport(sql);
+            m.ShowDialog();
         }
 
        

@@ -26,7 +26,7 @@ namespace zirsakht_stock
             InitializeComponent();
            dataGridView1.AutoGenerateColumns = false;
             var sql = (from s in lq.tblDelivereds
-                       select new { partnumber = s.PartNumber, site = s.tblSite.Name, tedad = s.Tedad, date = s.Date, agent = s.Agent, description = s.Description, amvalno = s.Amvalno, temp = s.Temp, residno = s.ResidNo }
+                       select new { havalehno = s.HavalehNO, partnumber = s.PartNumber, site = s.tblSite.Name, tedad = s.Tedad, date = s.Date, agent = s.Agent, description = s.Description, amvalno = s.Amvalno, temp = s.Temp, residno = s.ResidNo }
                     );
             if (sql.Count() > 0)
             {
@@ -85,7 +85,7 @@ namespace zirsakht_stock
                        && (s.SiteID == int.Parse(cmbSites.SelectedValue.ToString()) || int.Parse(cmbSites.SelectedValue.ToString()) == -1) 
                        && (faStart.SelectedDateTime == null || faStart.SelectedDateTime < s.dateadded) 
                        && (faEnd.SelectedDateTime > s.dateadded || faEnd.SelectedDateTime == null)
-                       select new { partnumber = s.PartNumber, site = s.tblSite.Name, tedad = s.Tedad, date = s.Date, agent = s.Agent, description = s.Description, amvalno = s.Amvalno, temp = s.Temp, residno = s.ResidNo }
+                       select new { havalehno = s.HavalehNO, partnumber = s.PartNumber, site = s.tblSite.Name, tedad = s.Tedad, date = s.Date, agent = s.Agent, description = s.Description, amvalno = s.Amvalno, temp = s.Temp, residno = s.ResidNo }
                        );
             else
                 sql = (from s in lq.tblDelivereds
@@ -95,7 +95,7 @@ namespace zirsakht_stock
                        && (s.SiteID == int.Parse(cmbSites.SelectedValue.ToString()) || int.Parse(cmbSites.SelectedValue.ToString()) == -1)
                        && (faStart.SelectedDateTime == null || faStart.SelectedDateTime < s.dateadded)
                        && (faEnd.SelectedDateTime > s.dateadded || faEnd.SelectedDateTime == null)
-                       select new {partnumber=s.PartNumber,site=s.tblSite.Name,tedad=s.Tedad,date=s.Date,agent=s.Agent,description=s.Description,amvalno=s.Amvalno,temp=s.Temp,residno=s.ResidNo }
+                       select new {havalehno=s.HavalehNO, partnumber=s.PartNumber,site=s.tblSite.Name,tedad=s.Tedad,date=s.Date,agent=s.Agent,description=s.Description,amvalno=s.Amvalno,temp=s.Temp,residno=s.ResidNo }
                    );
 
 
@@ -119,6 +119,23 @@ namespace zirsakht_stock
                       m = PersianDateConverter.ToGregorianDateTime(pd);
 
 
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            var sql = (from s in lq.vwHavalehs
+                       select s
+                   ).ToList();
+            vwHavaleh f = new vwHavaleh();
+
+            if (sql.Count() < 9)
+            {
+                for (int i = sql.Count(); i < 9; i++)
+                    sql.Add(f);
+
+            }
+            frHavalehreport m = new frHavalehreport(sql);
+            m.ShowDialog();
         }
 
        

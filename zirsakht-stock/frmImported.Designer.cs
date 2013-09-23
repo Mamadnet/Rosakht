@@ -28,11 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblmostaghim = new System.Windows.Forms.Label();
+            this.txtmostaghim = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnResid = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.cmbTypes = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtTedad = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtDesc = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.cmbKharidType = new System.Windows.Forms.ComboBox();
+            this.txtPartNum = new System.Windows.Forms.TextBox();
+            this.lblanbar = new System.Windows.Forms.Label();
+            this.cmbEquipments = new System.Windows.Forms.ComboBox();
+            this.cmbAnbar = new System.Windows.Forms.ComboBox();
+            this.cmbTypes = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbUints = new System.Windows.Forms.ComboBox();
+            this.txtResid = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtPerson = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtersal = new System.Windows.Forms.TextBox();
+            this.txtTedad = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbSites = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.gbhavaleh = new System.Windows.Forms.GroupBox();
             this.PartNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tedad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,76 +65,80 @@
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtDesc = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbEquipments = new System.Windows.Forms.ComboBox();
-            this.txtersal = new System.Windows.Forms.TextBox();
-            this.txtPerson = new System.Windows.Forms.TextBox();
-            this.txtPartNum = new System.Windows.Forms.TextBox();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cmbKharidType = new System.Windows.Forms.ComboBox();
-            this.lblanbar = new System.Windows.Forms.Label();
-            this.cmbAnbar = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtResid = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnResid = new System.Windows.Forms.Button();
-            this.cmbUints = new System.Windows.Forms.ComboBox();
+            this.residno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.gbhavaleh.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // lblmostaghim
+            // 
+            this.lblmostaghim.AutoSize = true;
+            this.lblmostaghim.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.lblmostaghim.Location = new System.Drawing.Point(169, 22);
+            this.lblmostaghim.Name = "lblmostaghim";
+            this.lblmostaghim.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblmostaghim.Size = new System.Drawing.Size(127, 14);
+            this.lblmostaghim.TabIndex = 1041;
+            this.lblmostaghim.Text = "تحویل گیرنده مستقیم  :";
+            // 
+            // txtmostaghim
+            // 
+            this.txtmostaghim.Location = new System.Drawing.Point(6, 18);
+            this.txtmostaghim.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtmostaghim.Name = "txtmostaghim";
+            this.txtmostaghim.Size = new System.Drawing.Size(161, 23);
+            this.txtmostaghim.TabIndex = 5;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(751, 58);
+            this.label9.Name = "label9";
+            this.label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label9.Size = new System.Drawing.Size(37, 16);
+            this.label9.TabIndex = 1039;
+            this.label9.Text = "نام : ";
+            // 
+            // btnResid
+            // 
+            this.btnResid.Enabled = false;
+            this.btnResid.Location = new System.Drawing.Point(41, 142);
+            this.btnResid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnResid.Name = "btnResid";
+            this.btnResid.Size = new System.Drawing.Size(234, 28);
+            this.btnResid.TabIndex = 13;
+            this.btnResid.Text = "ثبت رسید";
+            this.btnResid.UseVisualStyleBackColor = true;
+            this.btnResid.Click += new System.EventHandler(this.btnResid_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Location = new System.Drawing.Point(115, 492);
+            this.btnDelete.Location = new System.Drawing.Point(168, 101);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(87, 28);
-            this.btnDelete.TabIndex = 13;
+            this.btnDelete.TabIndex = 1028;
             this.btnDelete.Text = "حذف";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // cmbTypes
+            // label8
             // 
-            this.cmbTypes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTypes.FormattingEnabled = true;
-            this.cmbTypes.Location = new System.Drawing.Point(26, 22);
-            this.cmbTypes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cmbTypes.Name = "cmbTypes";
-            this.cmbTypes.Size = new System.Drawing.Size(161, 24);
-            this.cmbTypes.TabIndex = 1;
-            this.cmbTypes.SelectedIndexChanged += new System.EventHandler(this.cmbTypes_SelectedIndexChanged);
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(747, 81);
+            this.label8.Name = "label8";
+            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label8.Size = new System.Drawing.Size(69, 16);
+            this.label8.TabIndex = 1034;
+            this.label8.Text = "نوع رسید :";
             // 
-            // label4
+            // txtDesc
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(228, 238);
-            this.label4.Name = "label4";
-            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label4.Size = new System.Drawing.Size(43, 16);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "تعداد :";
-            // 
-            // txtTedad
-            // 
-            this.txtTedad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTedad.Location = new System.Drawing.Point(26, 235);
-            this.txtTedad.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtTedad.Name = "txtTedad";
-            this.txtTedad.Size = new System.Drawing.Size(161, 23);
-            this.txtTedad.TabIndex = 7;
-            this.txtTedad.Text = "0";
-            this.txtTedad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTedad_KeyPress);
+            this.txtDesc.Location = new System.Drawing.Point(41, 11);
+            this.txtDesc.Multiline = true;
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(234, 83);
+            this.txtDesc.TabIndex = 11;
             // 
             // dataGridView1
             // 
@@ -126,17 +154,224 @@
             this.ersal,
             this.date,
             this.description,
-            this.ID});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.ID,
+            this.residno});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 178);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(825, 604);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
+            this.dataGridView1.Size = new System.Drawing.Size(878, 426);
+            this.dataGridView1.TabIndex = 1012;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(49, 101);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(87, 28);
+            this.btnAdd.TabIndex = 12;
+            this.btnAdd.Text = "ثبت";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // cmbKharidType
+            // 
+            this.cmbKharidType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbKharidType.FormattingEnabled = true;
+            this.cmbKharidType.Location = new System.Drawing.Point(584, 78);
+            this.cmbKharidType.Name = "cmbKharidType";
+            this.cmbKharidType.Size = new System.Drawing.Size(161, 24);
+            this.cmbKharidType.TabIndex = 4;
+            this.cmbKharidType.SelectedIndexChanged += new System.EventHandler(this.cmbKharidType_SelectedIndexChanged_1);
+            // 
+            // txtPartNum
+            // 
+            this.txtPartNum.Location = new System.Drawing.Point(584, 55);
+            this.txtPartNum.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtPartNum.Name = "txtPartNum";
+            this.txtPartNum.Size = new System.Drawing.Size(161, 23);
+            this.txtPartNum.TabIndex = 3;
+            this.txtPartNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPartNum_KeyPress);
+            // 
+            // lblanbar
+            // 
+            this.lblanbar.AutoSize = true;
+            this.lblanbar.Location = new System.Drawing.Point(494, 101);
+            this.lblanbar.Name = "lblanbar";
+            this.lblanbar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblanbar.Size = new System.Drawing.Size(38, 16);
+            this.lblanbar.TabIndex = 1033;
+            this.lblanbar.Text = "انبار :";
+            // 
+            // cmbEquipments
+            // 
+            this.cmbEquipments.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEquipments.FormattingEnabled = true;
+            this.cmbEquipments.Location = new System.Drawing.Point(584, 30);
+            this.cmbEquipments.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbEquipments.Name = "cmbEquipments";
+            this.cmbEquipments.Size = new System.Drawing.Size(161, 24);
+            this.cmbEquipments.TabIndex = 2;
+            this.cmbEquipments.SelectedIndexChanged += new System.EventHandler(this.cmbEquipments_SelectedIndexChanged);
+            // 
+            // cmbAnbar
+            // 
+            this.cmbAnbar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAnbar.FormattingEnabled = true;
+            this.cmbAnbar.Location = new System.Drawing.Point(313, 98);
+            this.cmbAnbar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbAnbar.Name = "cmbAnbar";
+            this.cmbAnbar.Size = new System.Drawing.Size(161, 24);
+            this.cmbAnbar.TabIndex = 10;
+            // 
+            // cmbTypes
+            // 
+            this.cmbTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTypes.FormattingEnabled = true;
+            this.cmbTypes.Location = new System.Drawing.Point(584, 6);
+            this.cmbTypes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbTypes.Name = "cmbTypes";
+            this.cmbTypes.Size = new System.Drawing.Size(161, 24);
+            this.cmbTypes.TabIndex = 1;
+            this.cmbTypes.SelectedIndexChanged += new System.EventHandler(this.cmbTypes_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(480, 78);
+            this.label6.Name = "label6";
+            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label6.Size = new System.Drawing.Size(86, 16);
+            this.label6.TabIndex = 1032;
+            this.label6.Text = "شماره حواله :";
+            // 
+            // cmbUints
+            // 
+            this.cmbUints.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbUints.FormattingEnabled = true;
+            this.cmbUints.Location = new System.Drawing.Point(0, 12);
+            this.cmbUints.Name = "cmbUints";
+            this.cmbUints.Size = new System.Drawing.Size(40, 24);
+            this.cmbUints.TabIndex = 1016;
+            this.cmbUints.Visible = false;
+            // 
+            // txtResid
+            // 
+            this.txtResid.Location = new System.Drawing.Point(313, 75);
+            this.txtResid.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtResid.Name = "txtResid";
+            this.txtResid.Size = new System.Drawing.Size(161, 23);
+            this.txtResid.TabIndex = 9;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(751, 6);
+            this.label3.Name = "label3";
+            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label3.Size = new System.Drawing.Size(39, 16);
+            this.label3.TabIndex = 1030;
+            this.label3.Text = "نوع : ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(751, 30);
+            this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label5.Size = new System.Drawing.Size(37, 16);
+            this.label5.TabIndex = 1031;
+            this.label5.Text = "نام : ";
+            // 
+            // txtPerson
+            // 
+            this.txtPerson.Location = new System.Drawing.Point(313, 6);
+            this.txtPerson.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtPerson.Name = "txtPerson";
+            this.txtPerson.Size = new System.Drawing.Size(161, 23);
+            this.txtPerson.TabIndex = 6;
+            this.txtPerson.Text = "ارواحی";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(489, 55);
+            this.label4.Name = "label4";
+            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label4.Size = new System.Drawing.Size(43, 16);
+            this.label4.TabIndex = 1026;
+            this.label4.Text = "تعداد :";
+            // 
+            // txtersal
+            // 
+            this.txtersal.Location = new System.Drawing.Point(313, 29);
+            this.txtersal.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtersal.Name = "txtersal";
+            this.txtersal.Size = new System.Drawing.Size(161, 23);
+            this.txtersal.TabIndex = 7;
+            // 
+            // txtTedad
+            // 
+            this.txtTedad.Location = new System.Drawing.Point(313, 52);
+            this.txtTedad.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtTedad.Name = "txtTedad";
+            this.txtTedad.Size = new System.Drawing.Size(161, 23);
+            this.txtTedad.TabIndex = 8;
+            this.txtTedad.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(476, 37);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label1.Size = new System.Drawing.Size(90, 16);
+            this.label1.TabIndex = 1018;
+            this.label1.Text = "تحویل دهتده : ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(480, 9);
+            this.label2.Name = "label2";
+            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label2.Size = new System.Drawing.Size(86, 16);
+            this.label2.TabIndex = 1020;
+            this.label2.Text = "دریافت کننده: ";
+            // 
+            // cmbSites
+            // 
+            this.cmbSites.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSites.FormattingEnabled = true;
+            this.cmbSites.Location = new System.Drawing.Point(6, 39);
+            this.cmbSites.Name = "cmbSites";
+            this.cmbSites.Size = new System.Drawing.Size(161, 24);
+            this.cmbSites.TabIndex = 1042;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(194, 46);
+            this.label15.Name = "label15";
+            this.label15.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label15.Size = new System.Drawing.Size(79, 16);
+            this.label15.TabIndex = 1043;
+            this.label15.Text = "محل مصرف :";
+            // 
+            // gbhavaleh
+            // 
+            this.gbhavaleh.Controls.Add(this.txtmostaghim);
+            this.gbhavaleh.Controls.Add(this.cmbSites);
+            this.gbhavaleh.Controls.Add(this.lblmostaghim);
+            this.gbhavaleh.Controls.Add(this.label15);
+            this.gbhavaleh.Location = new System.Drawing.Point(575, 103);
+            this.gbhavaleh.Name = "gbhavaleh";
+            this.gbhavaleh.Size = new System.Drawing.Size(303, 68);
+            this.gbhavaleh.TabIndex = 1044;
+            this.gbhavaleh.TabStop = false;
             // 
             // PartNumber
             // 
@@ -199,279 +434,88 @@
             this.ID.ReadOnly = true;
             this.ID.Visible = false;
             // 
-            // txtDesc
+            // residno
             // 
-            this.txtDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDesc.Location = new System.Drawing.Point(14, 402);
-            this.txtDesc.Multiline = true;
-            this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(234, 83);
-            this.txtDesc.TabIndex = 10;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(189, 176);
-            this.label2.Name = "label2";
-            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label2.Size = new System.Drawing.Size(86, 16);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "دریافت کننده: ";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(189, 209);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(90, 16);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "تحویل دهتده : ";
-            // 
-            // cmbEquipments
-            // 
-            this.cmbEquipments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbEquipments.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEquipments.FormattingEnabled = true;
-            this.cmbEquipments.Location = new System.Drawing.Point(26, 54);
-            this.cmbEquipments.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cmbEquipments.Name = "cmbEquipments";
-            this.cmbEquipments.Size = new System.Drawing.Size(161, 24);
-            this.cmbEquipments.TabIndex = 2;
-            this.cmbEquipments.SelectedIndexChanged += new System.EventHandler(this.cmbEquipments_SelectedIndexChanged);
-            // 
-            // txtersal
-            // 
-            this.txtersal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtersal.Location = new System.Drawing.Point(26, 202);
-            this.txtersal.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtersal.Name = "txtersal";
-            this.txtersal.Size = new System.Drawing.Size(161, 23);
-            this.txtersal.TabIndex = 6;
-            // 
-            // txtPerson
-            // 
-            this.txtPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPerson.Location = new System.Drawing.Point(26, 169);
-            this.txtPerson.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtPerson.Name = "txtPerson";
-            this.txtPerson.Size = new System.Drawing.Size(161, 23);
-            this.txtPerson.TabIndex = 5;
-            this.txtPerson.Text = "ارواحی";
-            // 
-            // txtPartNum
-            // 
-            this.txtPartNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPartNum.Enabled = false;
-            this.txtPartNum.Location = new System.Drawing.Point(26, 87);
-            this.txtPartNum.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtPartNum.Name = "txtPartNum";
-            this.txtPartNum.Size = new System.Drawing.Size(161, 23);
-            this.txtPartNum.TabIndex = 3;
-            this.txtPartNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPartNum_KeyPress);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.Location = new System.Drawing.Point(22, 492);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(87, 28);
-            this.btnAdd.TabIndex = 11;
-            this.btnAdd.Text = "ثبت";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.dataGridView1);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.label8);
-            this.splitContainer1.Panel2.Controls.Add(this.cmbKharidType);
-            this.splitContainer1.Panel2.Controls.Add(this.lblanbar);
-            this.splitContainer1.Panel2.Controls.Add(this.cmbAnbar);
-            this.splitContainer1.Panel2.Controls.Add(this.label6);
-            this.splitContainer1.Panel2.Controls.Add(this.txtResid);
-            this.splitContainer1.Panel2.Controls.Add(this.label5);
-            this.splitContainer1.Panel2.Controls.Add(this.label3);
-            this.splitContainer1.Panel2.Controls.Add(this.btnResid);
-            this.splitContainer1.Panel2.Controls.Add(this.cmbUints);
-            this.splitContainer1.Panel2.Controls.Add(this.btnDelete);
-            this.splitContainer1.Panel2.Controls.Add(this.cmbTypes);
-            this.splitContainer1.Panel2.Controls.Add(this.label4);
-            this.splitContainer1.Panel2.Controls.Add(this.txtTedad);
-            this.splitContainer1.Panel2.Controls.Add(this.txtDesc);
-            this.splitContainer1.Panel2.Controls.Add(this.label2);
-            this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Panel2.Controls.Add(this.cmbEquipments);
-            this.splitContainer1.Panel2.Controls.Add(this.txtersal);
-            this.splitContainer1.Panel2.Controls.Add(this.txtPerson);
-            this.splitContainer1.Panel2.Controls.Add(this.txtPartNum);
-            this.splitContainer1.Panel2.Controls.Add(this.btnAdd);
-            this.splitContainer1.Size = new System.Drawing.Size(1116, 604);
-            this.splitContainer1.SplitterDistance = 825;
-            this.splitContainer1.SplitterWidth = 5;
-            this.splitContainer1.TabIndex = 2;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(202, 283);
-            this.label8.Name = "label8";
-            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label8.Size = new System.Drawing.Size(69, 16);
-            this.label8.TabIndex = 1011;
-            this.label8.Text = "نوع رسید :";
-            // 
-            // cmbKharidType
-            // 
-            this.cmbKharidType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbKharidType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbKharidType.FormattingEnabled = true;
-            this.cmbKharidType.Location = new System.Drawing.Point(14, 280);
-            this.cmbKharidType.Name = "cmbKharidType";
-            this.cmbKharidType.Size = new System.Drawing.Size(161, 24);
-            this.cmbKharidType.TabIndex = 8;
-            this.cmbKharidType.SelectedIndexChanged += new System.EventHandler(this.cmbKharidType_SelectedIndexChanged);
-            // 
-            // lblanbar
-            // 
-            this.lblanbar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblanbar.AutoSize = true;
-            this.lblanbar.Location = new System.Drawing.Point(181, 366);
-            this.lblanbar.Name = "lblanbar";
-            this.lblanbar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblanbar.Size = new System.Drawing.Size(38, 16);
-            this.lblanbar.TabIndex = 1009;
-            this.lblanbar.Text = "انبار :";
-            // 
-            // cmbAnbar
-            // 
-            this.cmbAnbar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbAnbar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbAnbar.FormattingEnabled = true;
-            this.cmbAnbar.Location = new System.Drawing.Point(18, 366);
-            this.cmbAnbar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cmbAnbar.Name = "cmbAnbar";
-            this.cmbAnbar.Size = new System.Drawing.Size(161, 24);
-            this.cmbAnbar.TabIndex = 9;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(185, 334);
-            this.label6.Name = "label6";
-            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label6.Size = new System.Drawing.Size(86, 16);
-            this.label6.TabIndex = 1006;
-            this.label6.Text = "شماره حواله :";
-            // 
-            // txtResid
-            // 
-            this.txtResid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtResid.Location = new System.Drawing.Point(14, 327);
-            this.txtResid.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtResid.Name = "txtResid";
-            this.txtResid.Size = new System.Drawing.Size(161, 23);
-            this.txtResid.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(189, 57);
-            this.label5.Name = "label5";
-            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label5.Size = new System.Drawing.Size(37, 16);
-            this.label5.TabIndex = 1005;
-            this.label5.Text = "نام : ";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(189, 25);
-            this.label3.Name = "label3";
-            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label3.Size = new System.Drawing.Size(39, 16);
-            this.label3.TabIndex = 1004;
-            this.label3.Text = "نوع : ";
-            // 
-            // btnResid
-            // 
-            this.btnResid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnResid.Location = new System.Drawing.Point(26, 528);
-            this.btnResid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnResid.Name = "btnResid";
-            this.btnResid.Size = new System.Drawing.Size(222, 28);
-            this.btnResid.TabIndex = 1003;
-            this.btnResid.Text = "ثبت رسید";
-            this.btnResid.UseVisualStyleBackColor = true;
-            this.btnResid.Click += new System.EventHandler(this.btnResid_Click);
-            // 
-            // cmbUints
-            // 
-            this.cmbUints.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbUints.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbUints.FormattingEnabled = true;
-            this.cmbUints.Location = new System.Drawing.Point(26, 128);
-            this.cmbUints.Name = "cmbUints";
-            this.cmbUints.Size = new System.Drawing.Size(161, 24);
-            this.cmbUints.TabIndex = 4;
-            this.cmbUints.Visible = false;
+            this.residno.DataPropertyName = "residno";
+            this.residno.HeaderText = "residno";
+            this.residno.Name = "residno";
+            this.residno.ReadOnly = true;
+            this.residno.Visible = false;
             // 
             // frmImported
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1116, 604);
-            this.Controls.Add(this.splitContainer1);
+            this.ClientSize = new System.Drawing.Size(878, 604);
+            this.Controls.Add(this.gbhavaleh);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.btnResid);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtDesc);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.cmbKharidType);
+            this.Controls.Add(this.txtPartNum);
+            this.Controls.Add(this.lblanbar);
+            this.Controls.Add(this.cmbEquipments);
+            this.Controls.Add(this.cmbAnbar);
+            this.Controls.Add(this.cmbTypes);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cmbUints);
+            this.Controls.Add(this.txtResid);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtPerson);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtersal);
+            this.Controls.Add(this.txtTedad);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "frmImported";
-            this.Text = "ورود کالا";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "ورود کالا به انبار";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmImported_FormClosing);
             this.Load += new System.EventHandler(this.frmImported_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            this.splitContainer1.ResumeLayout(false);
+            this.gbhavaleh.ResumeLayout(false);
+            this.gbhavaleh.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.ComboBox cmbTypes;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtTedad;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox txtDesc;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbEquipments;
-        private System.Windows.Forms.TextBox txtersal;
-        private System.Windows.Forms.TextBox txtPerson;
-        private System.Windows.Forms.TextBox txtPartNum;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button btnResid;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtDesc;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.ComboBox cmbKharidType;
+        private System.Windows.Forms.TextBox txtPartNum;
+        private System.Windows.Forms.Label lblanbar;
+        private System.Windows.Forms.ComboBox cmbEquipments;
+        private System.Windows.Forms.ComboBox cmbAnbar;
+        private System.Windows.Forms.ComboBox cmbTypes;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbUints;
+        private System.Windows.Forms.TextBox txtResid;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtPerson;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtersal;
+        private System.Windows.Forms.TextBox txtTedad;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblmostaghim;
+        private System.Windows.Forms.TextBox txtmostaghim;
+        private System.Windows.Forms.ComboBox cmbSites;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.GroupBox gbhavaleh;
         private System.Windows.Forms.DataGridViewTextBoxColumn PartNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn pid;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tedad;
@@ -480,13 +524,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblanbar;
-        private System.Windows.Forms.ComboBox cmbAnbar;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtResid;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cmbKharidType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn residno;
+
     }
 }

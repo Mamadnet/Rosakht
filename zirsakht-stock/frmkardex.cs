@@ -151,6 +151,7 @@ namespace zirsakht_stock
                    where s.partnumber.Contains(txtDevice.Text)
                    select s);
             dataGridView1.DataSource = sql;
+            logEvents.RegEvent((int)logEvents.Actions.Use_Kardex, int.Parse(frmLogin._usercode), "جستجو در کاردکس");
         }
 
         private void lblvaredeh_Click(object sender, EventArgs e)
