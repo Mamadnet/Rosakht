@@ -22,6 +22,7 @@ namespace zirsakht_stock
             InitializeComponent();
             
             resid = (int)lq.fnGetResidNO();
+            txtResid.Text = resid.ToString();
             dataGridView1.AutoGenerateColumns = false;
             _Fillgrid();
 
@@ -158,6 +159,8 @@ namespace zirsakht_stock
               
 
                 txtPartNum.Text = "";
+                txtTedad.Text = "";
+                txtPartNum.Focus();
             }
             else
             {
@@ -358,7 +361,8 @@ namespace zirsakht_stock
                 cmbAnbar.Visible = true;
                 lblanbar.Visible = true;
                 txtResid.Enabled = true;
-                txtResid.Text = "";
+               // txtResid.Text = "";
+                txtResid.Text = resid.ToString();
 
             }
             else

@@ -48,6 +48,15 @@
             this.txtPartNum = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.PartNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tedad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Agent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReceivedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.txtAmval = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -59,15 +68,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.lblMojodi = new System.Windows.Forms.Label();
-            this.PartNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tedad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Agent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReceivedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -268,6 +268,76 @@
             this.dataGridView1.Size = new System.Drawing.Size(899, 388);
             this.dataGridView1.TabIndex = 1017;
             // 
+            // PartNumber
+            // 
+            this.PartNumber.DataPropertyName = "PartNumber";
+            this.PartNumber.HeaderText = "part number";
+            this.PartNumber.Name = "PartNumber";
+            this.PartNumber.ReadOnly = true;
+            this.PartNumber.Width = 120;
+            // 
+            // Tedad
+            // 
+            this.Tedad.DataPropertyName = "Tedad";
+            this.Tedad.HeaderText = "تعداد";
+            this.Tedad.Name = "Tedad";
+            this.Tedad.ReadOnly = true;
+            this.Tedad.Width = 50;
+            // 
+            // unit
+            // 
+            this.unit.DataPropertyName = "unit";
+            this.unit.HeaderText = "واحد";
+            this.unit.Name = "unit";
+            this.unit.ReadOnly = true;
+            this.unit.Width = 50;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "سایت";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // Agent
+            // 
+            this.Agent.DataPropertyName = "agent";
+            this.Agent.HeaderText = "تحویل دهنده";
+            this.Agent.Name = "Agent";
+            this.Agent.ReadOnly = true;
+            this.Agent.Width = 130;
+            // 
+            // ReceivedBy
+            // 
+            this.ReceivedBy.DataPropertyName = "ReceivedBy";
+            this.ReceivedBy.HeaderText = "تحویل گیرنده";
+            this.ReceivedBy.Name = "ReceivedBy";
+            this.ReceivedBy.ReadOnly = true;
+            this.ReceivedBy.Width = 130;
+            // 
+            // date
+            // 
+            this.date.DataPropertyName = "date";
+            this.date.HeaderText = "تاریخ";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            // 
+            // description
+            // 
+            this.description.DataPropertyName = "description";
+            this.description.HeaderText = "شرح";
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            this.description.Width = 150;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -338,7 +408,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(820, 105);
+            this.label15.Location = new System.Drawing.Point(808, 106);
             this.label15.Name = "label15";
             this.label15.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label15.Size = new System.Drawing.Size(79, 16);
@@ -373,76 +443,6 @@
             this.lblMojodi.Size = new System.Drawing.Size(12, 16);
             this.lblMojodi.TabIndex = 1047;
             this.lblMojodi.Text = " ";
-            // 
-            // PartNumber
-            // 
-            this.PartNumber.DataPropertyName = "PartNumber";
-            this.PartNumber.HeaderText = "part number";
-            this.PartNumber.Name = "PartNumber";
-            this.PartNumber.ReadOnly = true;
-            this.PartNumber.Width = 120;
-            // 
-            // Tedad
-            // 
-            this.Tedad.DataPropertyName = "Tedad";
-            this.Tedad.HeaderText = "تعداد";
-            this.Tedad.Name = "Tedad";
-            this.Tedad.ReadOnly = true;
-            this.Tedad.Width = 50;
-            // 
-            // unit
-            // 
-            this.unit.DataPropertyName = "unit";
-            this.unit.HeaderText = "واحد";
-            this.unit.Name = "unit";
-            this.unit.ReadOnly = true;
-            this.unit.Width = 50;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "سایت";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // Agent
-            // 
-            this.Agent.DataPropertyName = "agent";
-            this.Agent.HeaderText = "تحویل دهنده";
-            this.Agent.Name = "Agent";
-            this.Agent.ReadOnly = true;
-            this.Agent.Width = 130;
-            // 
-            // ReceivedBy
-            // 
-            this.ReceivedBy.DataPropertyName = "ReceivedBy";
-            this.ReceivedBy.HeaderText = "تحویل گیرنده";
-            this.ReceivedBy.Name = "ReceivedBy";
-            this.ReceivedBy.ReadOnly = true;
-            this.ReceivedBy.Width = 130;
-            // 
-            // date
-            // 
-            this.date.DataPropertyName = "date";
-            this.date.HeaderText = "تاریخ";
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            // 
-            // description
-            // 
-            this.description.DataPropertyName = "description";
-            this.description.HeaderText = "شرح";
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
-            this.description.Width = 150;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
             // 
             // frmDeliverto
             // 

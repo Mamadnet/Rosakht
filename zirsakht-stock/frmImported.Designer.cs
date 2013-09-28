@@ -28,14 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblmostaghim = new System.Windows.Forms.Label();
+            this.gbhavaleh = new System.Windows.Forms.GroupBox();
             this.txtmostaghim = new System.Windows.Forms.TextBox();
+            this.cmbSites = new System.Windows.Forms.ComboBox();
+            this.lblmostaghim = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnResid = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.PartNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tedad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ersal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.residno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.cmbKharidType = new System.Windows.Forms.ComboBox();
             this.txtPartNum = new System.Windows.Forms.TextBox();
@@ -54,21 +66,38 @@
             this.txtTedad = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmbSites = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.gbhavaleh = new System.Windows.Forms.GroupBox();
-            this.PartNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tedad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ersal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.residno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbhavaleh.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // gbhavaleh
+            // 
+            this.gbhavaleh.Controls.Add(this.txtmostaghim);
+            this.gbhavaleh.Controls.Add(this.cmbSites);
+            this.gbhavaleh.Controls.Add(this.lblmostaghim);
+            this.gbhavaleh.Controls.Add(this.label15);
+            this.gbhavaleh.Location = new System.Drawing.Point(575, 103);
+            this.gbhavaleh.Name = "gbhavaleh";
+            this.gbhavaleh.Size = new System.Drawing.Size(303, 68);
+            this.gbhavaleh.TabIndex = 1044;
+            this.gbhavaleh.TabStop = false;
+            // 
+            // txtmostaghim
+            // 
+            this.txtmostaghim.Location = new System.Drawing.Point(6, 18);
+            this.txtmostaghim.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtmostaghim.Name = "txtmostaghim";
+            this.txtmostaghim.Size = new System.Drawing.Size(161, 23);
+            this.txtmostaghim.TabIndex = 5;
+            // 
+            // cmbSites
+            // 
+            this.cmbSites.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSites.FormattingEnabled = true;
+            this.cmbSites.Location = new System.Drawing.Point(6, 39);
+            this.cmbSites.Name = "cmbSites";
+            this.cmbSites.Size = new System.Drawing.Size(161, 24);
+            this.cmbSites.TabIndex = 1042;
             // 
             // lblmostaghim
             // 
@@ -81,13 +110,15 @@
             this.lblmostaghim.TabIndex = 1041;
             this.lblmostaghim.Text = "تحویل گیرنده مستقیم  :";
             // 
-            // txtmostaghim
+            // label15
             // 
-            this.txtmostaghim.Location = new System.Drawing.Point(6, 18);
-            this.txtmostaghim.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtmostaghim.Name = "txtmostaghim";
-            this.txtmostaghim.Size = new System.Drawing.Size(161, 23);
-            this.txtmostaghim.TabIndex = 5;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(194, 46);
+            this.label15.Name = "label15";
+            this.label15.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label15.Size = new System.Drawing.Size(79, 16);
+            this.label15.TabIndex = 1043;
+            this.label15.Text = "محل مصرف :";
             // 
             // label9
             // 
@@ -166,6 +197,75 @@
             this.dataGridView1.Size = new System.Drawing.Size(878, 426);
             this.dataGridView1.TabIndex = 1012;
             // 
+            // PartNumber
+            // 
+            this.PartNumber.DataPropertyName = "PartNumber";
+            this.PartNumber.HeaderText = "part number";
+            this.PartNumber.Name = "PartNumber";
+            this.PartNumber.ReadOnly = true;
+            this.PartNumber.Width = 180;
+            // 
+            // pid
+            // 
+            this.pid.DataPropertyName = "pid";
+            this.pid.HeaderText = "pid";
+            this.pid.Name = "pid";
+            this.pid.ReadOnly = true;
+            this.pid.Visible = false;
+            // 
+            // Tedad
+            // 
+            this.Tedad.DataPropertyName = "Tedad";
+            this.Tedad.HeaderText = "تعداد";
+            this.Tedad.Name = "Tedad";
+            this.Tedad.ReadOnly = true;
+            // 
+            // unit
+            // 
+            this.unit.DataPropertyName = "unit";
+            this.unit.HeaderText = "واحد";
+            this.unit.Name = "unit";
+            this.unit.ReadOnly = true;
+            // 
+            // ersal
+            // 
+            this.ersal.DataPropertyName = "ersal";
+            this.ersal.HeaderText = "فرستنده";
+            this.ersal.Name = "ersal";
+            this.ersal.ReadOnly = true;
+            this.ersal.Width = 130;
+            // 
+            // date
+            // 
+            this.date.DataPropertyName = "date";
+            this.date.HeaderText = "تاریخ";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            // 
+            // description
+            // 
+            this.description.DataPropertyName = "description";
+            this.description.HeaderText = "شرح";
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            this.description.Width = 220;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // residno
+            // 
+            this.residno.DataPropertyName = "residno";
+            this.residno.HeaderText = "residno";
+            this.residno.Name = "residno";
+            this.residno.ReadOnly = true;
+            this.residno.Visible = false;
+            // 
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(49, 101);
@@ -199,12 +299,12 @@
             // lblanbar
             // 
             this.lblanbar.AutoSize = true;
-            this.lblanbar.Location = new System.Drawing.Point(494, 101);
+            this.lblanbar.Location = new System.Drawing.Point(489, 101);
             this.lblanbar.Name = "lblanbar";
             this.lblanbar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblanbar.Size = new System.Drawing.Size(38, 16);
+            this.lblanbar.Size = new System.Drawing.Size(64, 16);
             this.lblanbar.TabIndex = 1033;
-            this.lblanbar.Text = "انبار :";
+            this.lblanbar.Text = "انبار مبدا :";
             // 
             // cmbEquipments
             // 
@@ -244,9 +344,9 @@
             this.label6.Location = new System.Drawing.Point(480, 78);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label6.Size = new System.Drawing.Size(86, 16);
+            this.label6.Size = new System.Drawing.Size(87, 16);
             this.label6.TabIndex = 1032;
-            this.label6.Text = "شماره حواله :";
+            this.label6.Text = "شماره رسید :";
             // 
             // cmbUints
             // 
@@ -325,7 +425,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(476, 37);
+            this.label1.Location = new System.Drawing.Point(476, 32);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label1.Size = new System.Drawing.Size(90, 16);
@@ -341,106 +441,6 @@
             this.label2.Size = new System.Drawing.Size(86, 16);
             this.label2.TabIndex = 1020;
             this.label2.Text = "دریافت کننده: ";
-            // 
-            // cmbSites
-            // 
-            this.cmbSites.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSites.FormattingEnabled = true;
-            this.cmbSites.Location = new System.Drawing.Point(6, 39);
-            this.cmbSites.Name = "cmbSites";
-            this.cmbSites.Size = new System.Drawing.Size(161, 24);
-            this.cmbSites.TabIndex = 1042;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(194, 46);
-            this.label15.Name = "label15";
-            this.label15.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label15.Size = new System.Drawing.Size(79, 16);
-            this.label15.TabIndex = 1043;
-            this.label15.Text = "محل مصرف :";
-            // 
-            // gbhavaleh
-            // 
-            this.gbhavaleh.Controls.Add(this.txtmostaghim);
-            this.gbhavaleh.Controls.Add(this.cmbSites);
-            this.gbhavaleh.Controls.Add(this.lblmostaghim);
-            this.gbhavaleh.Controls.Add(this.label15);
-            this.gbhavaleh.Location = new System.Drawing.Point(575, 103);
-            this.gbhavaleh.Name = "gbhavaleh";
-            this.gbhavaleh.Size = new System.Drawing.Size(303, 68);
-            this.gbhavaleh.TabIndex = 1044;
-            this.gbhavaleh.TabStop = false;
-            // 
-            // PartNumber
-            // 
-            this.PartNumber.DataPropertyName = "PartNumber";
-            this.PartNumber.HeaderText = "part number";
-            this.PartNumber.Name = "PartNumber";
-            this.PartNumber.ReadOnly = true;
-            this.PartNumber.Width = 180;
-            // 
-            // pid
-            // 
-            this.pid.DataPropertyName = "pid";
-            this.pid.HeaderText = "pid";
-            this.pid.Name = "pid";
-            this.pid.ReadOnly = true;
-            this.pid.Visible = false;
-            // 
-            // Tedad
-            // 
-            this.Tedad.DataPropertyName = "Tedad";
-            this.Tedad.HeaderText = "تعداد";
-            this.Tedad.Name = "Tedad";
-            this.Tedad.ReadOnly = true;
-            // 
-            // unit
-            // 
-            this.unit.DataPropertyName = "unit";
-            this.unit.HeaderText = "واحد";
-            this.unit.Name = "unit";
-            this.unit.ReadOnly = true;
-            // 
-            // ersal
-            // 
-            this.ersal.DataPropertyName = "ersal";
-            this.ersal.HeaderText = "فرستنده";
-            this.ersal.Name = "ersal";
-            this.ersal.ReadOnly = true;
-            this.ersal.Width = 130;
-            // 
-            // date
-            // 
-            this.date.DataPropertyName = "date";
-            this.date.HeaderText = "تاریخ";
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            // 
-            // description
-            // 
-            this.description.DataPropertyName = "description";
-            this.description.HeaderText = "شرح";
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
-            this.description.Width = 220;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // residno
-            // 
-            this.residno.DataPropertyName = "residno";
-            this.residno.HeaderText = "residno";
-            this.residno.Name = "residno";
-            this.residno.ReadOnly = true;
-            this.residno.Visible = false;
             // 
             // frmImported
             // 
@@ -477,9 +477,9 @@
             this.Text = "ورود کالا به انبار";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmImported_FormClosing);
             this.Load += new System.EventHandler(this.frmImported_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gbhavaleh.ResumeLayout(false);
             this.gbhavaleh.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
